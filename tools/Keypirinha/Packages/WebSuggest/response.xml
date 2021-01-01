@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchDicItemResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://btonic.est.co.jp/NetDic/NetDicV09">
+  <ErrorMessage />
+  <TotalHitCount>22</TotalHitCount>
+  <ItemCount>5</ItemCount>
+  <TitleList>
+    <DicItemTitle>
+      <ItemID>041386</ItemID>
+      <LocID />
+      <Title>
+        <span class="NetDicTitle" xmlns="">test</span>
+      </Title>
+    </DicItemTitle>
+    <DicItemTitle>
+      <ItemID>041387</ItemID>
+      <LocID />
+      <Title>
+        <span class="NetDicTitle" xmlns="">Test.</span>
+      </Title>
+    </DicItemTitle>
+    <DicItemTitle>
+      <ItemID>041388</ItemID>
+      <LocID />
+      <Title>
+        <span class="NetDicTitle" xmlns="">testament</span>
+      </Title>
+    </DicItemTitle>
+    <DicItemTitle>
+      <ItemID>041389</ItemID>
+      <LocID />
+      <Title>
+        <span class="NetDicTitle" xmlns="">testamentary</span>
+      </Title>
+    </DicItemTitle>
+    <DicItemTitle>
+      <ItemID>041390</ItemID>
+      <LocID />
+      <Title>
+        <span class="NetDicTitle" xmlns="">testate</span>
+      </Title>
+    </DicItemTitle>
+  </TitleList>
+</SearchDicItemResult>

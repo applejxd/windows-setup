@@ -1,0 +1,2281 @@
+{
+   ".header" : {
+      "creator" : "Keypirinha v2.26 (e037f62)",
+      "creator_url" : "http://keypirinha.com/",
+      "format" : 102,
+      "modified" : "2020-12-31T07:15:27+0000",
+      "type" : "history"
+   },
+   "history" : [
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-08-24T14:59:08+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-08-24T22:44:42+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11834455697281111681,
+         "label" : "shutdown",
+         "time" : "2020-08-24T22:59:33+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11834455697281111681,
+         "label" : "shutdown",
+         "time" : "2020-08-24T23:14:13+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-08-27T10:59:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-08-27T11:45:47+0000"
+      },
+      {
+         "action" : null,
+         "item" : 4602216375410309795,
+         "label" : "App: Ubuntu 18.04 LTS",
+         "time" : "2020-08-27T13:18:03+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-08-28T10:50:42+0000"
+      },
+      {
+         "action" : null,
+         "item" : 4602216375410309795,
+         "label" : "App: Ubuntu 18.04 LTS",
+         "time" : "2020-08-28T10:55:30+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14689436664763851056,
+         "label" : "GitHub (ブックマーク)",
+         "time" : "2020-08-28T11:27:40+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-08-28T18:46:49+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-08-29T06:07:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-08-29T09:24:26+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-08-29T10:42:26+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1699919848304945510,
+         "label" : "config.py (ツール)",
+         "time" : "2020-08-30T11:59:25+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14689436664763851056,
+         "label" : "GitHub (ブックマーク)",
+         "time" : "2020-08-30T12:27:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7282454893776170348,
+         "label" : "Evernote 検索",
+         "time" : "2020-08-30T12:36:16+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11352061093170324172,
+         "label" : "GitHub 検索",
+         "time" : "2020-08-30T12:36:40+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7282454893776170348,
+         "label" : "Evernote 検索",
+         "time" : "2020-08-30T12:36:52+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11352061093170324172,
+         "label" : "GitHub 検索",
+         "time" : "2020-08-30T12:47:17+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-08-30T15:30:22+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17754053555992845519,
+         "label" : "PyCharm Community Edition 2020.1.2",
+         "time" : "2020-08-31T12:00:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 18350631716764197546,
+         "label" : "choco.exe",
+         "time" : "2020-08-31T12:05:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14361349618356278004,
+         "label" : "Chocolatey GUI",
+         "time" : "2020-08-31T12:06:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-08-31T14:12:13+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-08-31T15:18:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17754053555992845519,
+         "label" : "PyCharm Community Edition 2020.1.2",
+         "time" : "2020-08-31T22:28:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11834455697281111681,
+         "label" : "shutdown",
+         "time" : "2020-08-31T22:54:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17754053555992845519,
+         "label" : "PyCharm Community Edition 2020.1.2",
+         "time" : "2020-09-01T00:12:10+0000"
+      },
+      {
+         "action" : null,
+         "item" : 787180899379667212,
+         "label" : "Spotify (ブックマーク)",
+         "time" : "2020-09-01T02:26:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14361349618356278004,
+         "label" : "Chocolatey GUI",
+         "time" : "2020-09-01T02:27:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 13521938269725910055,
+         "label" : "Spotify",
+         "time" : "2020-09-01T02:31:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-09-01T11:13:45+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-09-01T11:15:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-01T15:05:05+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14689436664763851056,
+         "label" : "GitHub (ブックマーク)",
+         "time" : "2020-09-02T08:50:50+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17652512588618074037,
+         "label" : "URL Shortener",
+         "time" : "2020-09-02T13:01:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17652512588618074037,
+         "label" : "URL Shortener",
+         "time" : "2020-09-02T13:28:32+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17652512588618074037,
+         "label" : "URL Shortener",
+         "time" : "2020-09-02T14:36:23+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-02T14:53:04+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-02T22:30:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-03T22:26:53+0000"
+      },
+      {
+         "action" : null,
+         "item" : 13521938269725910055,
+         "label" : "Spotify",
+         "time" : "2020-09-04T10:43:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-09-04T15:36:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-09-05T10:55:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-09-05T13:37:07+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14361349618356278004,
+         "label" : "Chocolatey GUI",
+         "time" : "2020-09-05T14:47:52+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9289189184064659194,
+         "label" : "XLaunch",
+         "time" : "2020-09-05T14:52:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-05T15:52:13+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7639696413839446240,
+         "label" : "BUFFALO NAS Navigator2",
+         "time" : "2020-09-05T23:45:33+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5066845539269275513,
+         "label" : "BunBackup",
+         "time" : "2020-09-06T00:41:48+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5066845539269275513,
+         "label" : "BunBackup",
+         "time" : "2020-09-06T00:41:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11264978083356178294,
+         "label" : "C:\\tools",
+         "time" : "2020-09-06T00:42:22+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7639696413839446240,
+         "label" : "BUFFALO NAS Navigator2",
+         "time" : "2020-09-06T01:16:31+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7639696413839446240,
+         "label" : "BUFFALO NAS Navigator2",
+         "time" : "2020-09-06T01:19:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7639696413839446240,
+         "label" : "BUFFALO NAS Navigator2",
+         "time" : "2020-09-06T03:28:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7639696413839446240,
+         "label" : "BUFFALO NAS Navigator2",
+         "time" : "2020-09-06T03:50:50+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7639696413839446240,
+         "label" : "BUFFALO NAS Navigator2",
+         "time" : "2020-09-06T09:42:45+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7282454893776170348,
+         "label" : "Evernote 検索",
+         "time" : "2020-09-06T10:57:22+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-09-07T10:21:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17754053555992845519,
+         "label" : "PyCharm Community Edition 2020.1.2",
+         "time" : "2020-09-07T10:58:29+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17754053555992845519,
+         "label" : "PyCharm Community Edition 2020.1.2",
+         "time" : "2020-09-07T12:45:30+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17754053555992845519,
+         "label" : "PyCharm Community Edition 2020.1.2",
+         "time" : "2020-09-07T13:19:41+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-07T15:29:10+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-07T16:00:16+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-08T14:10:17+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-08T14:22:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17754053555992845519,
+         "label" : "PyCharm Community Edition 2020.1.2",
+         "time" : "2020-09-09T14:21:05+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-09T23:07:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-10T22:27:25+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-09-11T12:49:31+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-09-11T17:21:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-09-11T17:32:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-11T17:53:33+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-09-12T01:54:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8347081008701728401,
+         "label" : "Spotify",
+         "time" : "2020-09-12T02:50:25+0000"
+      },
+      {
+         "action" : null,
+         "item" : 10538361641506912706,
+         "label" : "WolframAlpha 検索",
+         "time" : "2020-09-12T04:28:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-09-12T10:19:28+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17652512588618074037,
+         "label" : "URL Shortener",
+         "time" : "2020-09-12T13:58:42+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6604788085129329512,
+         "label" : "explorer.exe",
+         "time" : "2020-09-12T23:55:57+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8347081008701728401,
+         "label" : "Spotify",
+         "time" : "2020-09-12T23:57:06+0000"
+      },
+      {
+         "action" : null,
+         "item" : 15753629364505597234,
+         "label" : "dejizo",
+         "time" : "2020-09-14T11:29:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-14T14:19:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8347081008701728401,
+         "label" : "Spotify",
+         "time" : "2020-09-14T23:23:31+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-15T14:46:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 18197377528914292955,
+         "label" : "osu!",
+         "time" : "2020-09-16T14:00:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5906449401321219426,
+         "label" : "osu!/osu!.exe (ゲーム)",
+         "time" : "2020-09-16T14:00:41+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-16T14:26:08+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5906449401321219426,
+         "label" : "osu!/osu!.exe (ゲーム)",
+         "time" : "2020-09-16T22:07:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-17T15:08:15+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9862200723326511098,
+         "label" : "iTunes",
+         "time" : "2020-09-18T12:08:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-09-18T12:09:48+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-18T18:50:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-22T16:00:03+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-22T23:24:43+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-23T13:07:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-09-24T14:48:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-24T15:35:22+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-09-26T13:27:49+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-28T15:33:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2803330055637970635,
+         "label" : "Google",
+         "time" : "2020-09-30T13:32:08+0000"
+      },
+      {
+         "action" : null,
+         "item" : 10099299073041890822,
+         "label" : "keyhac - ショートカット",
+         "time" : "2020-09-30T13:37:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-09-30T13:52:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-01T09:14:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-10-01T12:55:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 10099299073041890822,
+         "label" : "keyhac - ショートカット",
+         "time" : "2020-10-01T15:44:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-02T09:00:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6691845239862034220,
+         "label" : "key.js (ツール)",
+         "time" : "2020-10-02T09:24:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 10099299073041890822,
+         "label" : "keyhac - ショートカット",
+         "time" : "2020-10-02T09:24:32+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-03T04:05:26+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-03T08:30:47+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-10-03T10:50:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-03T17:47:07+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-04T09:35:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-04T14:47:37+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9289189184064659194,
+         "label" : "XLaunch",
+         "time" : "2020-10-05T12:30:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-05T14:14:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 16504043729316994675,
+         "label" : "Juliaで量子力学.pdf (教科書)",
+         "time" : "2020-10-06T11:20:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-06T13:55:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-07T11:34:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9289189184064659194,
+         "label" : "XLaunch",
+         "time" : "2020-10-07T11:46:38+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-07T13:18:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-07T22:40:15+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-08T13:35:19+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-10T07:37:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-12T15:30:34+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-14T10:15:58+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-14T14:14:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-15T13:42:49+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-16T18:22:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 3193297612944407720,
+         "label" : "Nambu-Goto String Motion with Symmetric Helical String on the Kerr geometry.pdf (教科書)",
+         "time" : "2020-10-17T22:05:25+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11846341199187187814,
+         "label" : "ElonaPlus Custom/ElonaC.exe (ゲーム)",
+         "time" : "2020-10-17T22:05:43+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-18T14:10:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-19T14:03:19+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-19T15:00:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8347081008701728401,
+         "label" : "Spotify",
+         "time" : "2020-10-19T23:02:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5906449401321219426,
+         "label" : "osu!/osu!.exe (ゲーム)",
+         "time" : "2020-10-20T10:49:51+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-21T12:40:32+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-21T14:15:50+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8347081008701728401,
+         "label" : "Spotify",
+         "time" : "2020-10-22T02:02:49+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-22T13:33:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-23T11:08:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-10-25T13:00:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-25T15:17:07+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9862200723326511098,
+         "label" : "iTunes",
+         "time" : "2020-10-26T11:26:56+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-10-26T15:42:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-02T14:38:24+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-02T17:58:32+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-03T15:54:24+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-04T14:12:29+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-04T22:40:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-05T15:26:21+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-05T15:43:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-06T20:45:42+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-11-07T10:56:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-07T13:40:19+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-08T01:21:24+0000"
+      },
+      {
+         "action" : null,
+         "item" : 15648245163205442135,
+         "label" : "21世紀の統計科学(数理・計算の統計科学).pdf (教科書)",
+         "time" : "2020-11-08T11:37:23+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-08T14:28:08+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-09T14:01:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-10T14:11:58+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-10T22:16:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8718831844291083621,
+         "label" : "Reset Spyder Settings",
+         "time" : "2020-11-11T10:40:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-11T10:41:33+0000"
+      },
+      {
+         "action" : null,
+         "item" : 4602216375410309795,
+         "label" : "App: Ubuntu 18.04 LTS",
+         "time" : "2020-11-12T10:34:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-12T10:43:27+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9289189184064659194,
+         "label" : "XLaunch",
+         "time" : "2020-11-12T13:07:04+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-12T14:52:53+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8303970506109869343,
+         "label" : "GR.pdf (教科書)",
+         "time" : "2020-11-13T14:04:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2944137030530517470,
+         "label" : "須藤靖(-+++).pdf (教科書)",
+         "time" : "2020-11-13T14:05:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8303970506109869343,
+         "label" : "GR.pdf (教科書)",
+         "time" : "2020-11-13T14:27:19+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11803708183505221014,
+         "label" : "Keypirinha: Refresh Catalog: Steam",
+         "time" : "2020-11-13T23:53:42+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-13T23:53:46+0000"
+      },
+      {
+         "action" : null,
+         "item" : 9862200723326511098,
+         "label" : "iTunes",
+         "time" : "2020-11-14T08:21:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-14T14:09:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-15T13:55:16+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-15T14:34:37+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14361349618356278004,
+         "label" : "Chocolatey GUI",
+         "time" : "2020-11-16T12:59:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-16T14:29:00+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-11-17T22:31:13+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14574058054814076009,
+         "label" : "restart",
+         "time" : "2020-11-18T10:26:20+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-18T14:54:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-18T18:24:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-20T16:08:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-11-20T17:42:00+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14403868249352615885,
+         "label" : "Everything: Rebuild DB",
+         "time" : "2020-12-03T15:39:18+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7095231884105470210,
+         "label" : "Steam",
+         "time" : "2020-12-03T15:52:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11834455697281111681,
+         "label" : "shutdown",
+         "time" : "2020-12-03T16:32:59+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-09T14:35:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-10T14:09:37+0000"
+      },
+      {
+         "action" : null,
+         "item" : 7273783907233302861,
+         "label" : "Notepad",
+         "time" : "2020-12-12T07:09:22+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-12-12T10:04:11+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-13T13:20:16+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-12-14T14:23:13+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-15T15:43:16+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-16T15:12:04+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-16T22:42:49+0000"
+      },
+      {
+         "action" : null,
+         "item" : 17652512588618074037,
+         "label" : "URL Shortener",
+         "time" : "2020-12-17T10:18:15+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-17T15:03:06+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-17T22:51:09+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-18T17:32:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 2888815460112997876,
+         "label" : "Discord",
+         "time" : "2020-12-19T04:14:45+0000"
+      },
+      {
+         "action" : null,
+         "item" : 6401675955483954625,
+         "label" : ".",
+         "time" : "2020-12-20T09:54:48+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11264978083356178294,
+         "label" : "C:\\tools",
+         "time" : "2020-12-20T09:54:54+0000"
+      },
+      {
+         "action" : null,
+         "item" : 1398402532359251743,
+         "label" : "App: Windows Terminal",
+         "time" : "2020-12-20T09:55:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5903017325251977247,
+         "label" : "keyhac.exe (ツール)",
+         "time" : "2020-12-20T10:00:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5903017325251977247,
+         "label" : "keyhac.exe (ツール)",
+         "time" : "2020-12-20T10:03:19+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5903017325251977247,
+         "label" : "keyhac.exe (ツール)",
+         "time" : "2020-12-20T10:03:44+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5903017325251977247,
+         "label" : "keyhac.exe (ツール)",
+         "time" : "2020-12-20T11:21:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5903017325251977247,
+         "label" : "keyhac.exe (ツール)",
+         "time" : "2020-12-20T11:43:14+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5903017325251977247,
+         "label" : "keyhac.exe (ツール)",
+         "time" : "2020-12-20T11:43:21+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-20T15:52:50+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-20T15:54:58+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5903017325251977247,
+         "label" : "keyhac.exe (ツール)",
+         "time" : "2020-12-22T14:34:01+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-22T22:44:21+0000"
+      },
+      {
+         "action" : null,
+         "item" : 12962864915301044741,
+         "label" : "sleep",
+         "time" : "2020-12-23T15:08:36+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11153610549102624624,
+         "label" : "Beat Saber",
+         "time" : "2020-12-30T13:28:12+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11153610549102624624,
+         "label" : "Beat Saber",
+         "time" : "2020-12-31T03:14:10+0000"
+      },
+      {
+         "action" : null,
+         "item" : 14170631124025410598,
+         "label" : "Codic:",
+         "time" : "2020-12-31T06:55:45+0000"
+      },
+      {
+         "action" : null,
+         "item" : 938472205729174194,
+         "label" : "Keypirinha: Configure Package: Ditto",
+         "time" : "2020-12-31T06:56:41+0000"
+      },
+      {
+         "action" : null,
+         "item" : 16868564327211373006,
+         "label" : "Keypirinha: Configure Package: URLShortener",
+         "time" : "2020-12-31T06:57:21+0000"
+      },
+      {
+         "action" : null,
+         "item" : 8295556688807839350,
+         "label" : "Keypirinha: Configure Package: Snippets",
+         "time" : "2020-12-31T06:57:58+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11955276868204494730,
+         "label" : "Keypirinha: Refresh Catalog",
+         "time" : "2020-12-31T07:00:42+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5605469801929522029,
+         "label" : "Keypirinha: Refresh Catalog: Ditto",
+         "time" : "2020-12-31T07:02:35+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5605469801929522029,
+         "label" : "Keypirinha: Refresh Catalog: Ditto",
+         "time" : "2020-12-31T07:02:39+0000"
+      },
+      {
+         "action" : null,
+         "item" : 938472205729174194,
+         "label" : "Keypirinha: Configure Package: Ditto",
+         "time" : "2020-12-31T07:02:45+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11955276868204494730,
+         "label" : "Keypirinha: Refresh Catalog",
+         "time" : "2020-12-31T07:04:02+0000"
+      },
+      {
+         "action" : null,
+         "item" : 5782590033711008996,
+         "label" : "Ditto",
+         "time" : "2020-12-31T07:04:16+0000"
+      },
+      {
+         "action" : null,
+         "item" : 938472205729174194,
+         "label" : "Keypirinha: Configure Package: Ditto",
+         "time" : "2020-12-31T07:04:55+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11955276868204494730,
+         "label" : "Keypirinha: Refresh Catalog",
+         "time" : "2020-12-31T07:05:32+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11955276868204494730,
+         "label" : "Keypirinha: Refresh Catalog",
+         "time" : "2020-12-31T07:05:52+0000"
+      },
+      {
+         "action" : null,
+         "item" : 938472205729174194,
+         "label" : "Keypirinha: Configure Package: Ditto",
+         "time" : "2020-12-31T07:12:49+0000"
+      },
+      {
+         "action" : null,
+         "item" : 11955276868204494730,
+         "label" : "Keypirinha: Refresh Catalog",
+         "time" : "2020-12-31T07:13:23+0000"
+      },
+      {
+         "action" : null,
+         "item" : 4347510019417994106,
+         "label" : "Keypirinha: Configure Package: Codic",
+         "time" : "2020-12-31T07:15:27+0000"
+      }
+   ],
+   "sets" : {
+      "actions" : [],
+      "items" : [
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 6401675955483954625,
+            "label" : ".",
+            "loop_on_suggest" : true,
+            "plugin" : "FileBrowser.FileBrowser",
+            "short_desc" : "",
+            "target" : "C:\\"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 15648245163205442135,
+            "label" : "21世紀の統計科学(数理・計算の統計科学).pdf (教科書)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\Users\\masashi\\Google ドライブ\\GoodNotes\\テキスト\\書籍\\21世紀の統計科学(数理・計算の統計科学).pdf"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "cmdline",
+            "data_bag" : "CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc",
+            "hit_hint" : "noargs",
+            "id" : 4602216375410309795,
+            "label" : "App: Ubuntu 18.04 LTS",
+            "loop_on_suggest" : false,
+            "plugin" : "WindowsApps.WindowsApps",
+            "short_desc" : "Ubuntu 18.04 LTS on Windows",
+            "target" : "shell:AppsFolder\\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc!ubuntu1804"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "cmdline",
+            "data_bag" : "Microsoft.WindowsTerminal_8wekyb3d8bbwe",
+            "hit_hint" : "noargs",
+            "id" : 1398402532359251743,
+            "label" : "App: Windows Terminal",
+            "loop_on_suggest" : false,
+            "plugin" : "WindowsApps.WindowsApps",
+            "short_desc" : "新しい Windows ターミナル",
+            "target" : "shell:AppsFolder\\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "#1001",
+            "data_bag" : "620980|c:/program files (x86)/steam/steam.exe",
+            "hit_hint" : "keepall",
+            "id" : 11153610549102624624,
+            "label" : "Beat Saber",
+            "loop_on_suggest" : false,
+            "plugin" : "Steam.Steam",
+            "short_desc" : "Launch game",
+            "target" : "620980"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 7639696413839446240,
+            "label" : "BUFFALO NAS Navigator2",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\BUFFALO\\BUFFALO NAS Navigator2",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\BUFFALO\\BUFFALO NAS Navigator2\\BUFFALO NAS Navigator2.LNK"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 5066845539269275513,
+            "label" : "BunBackup",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Startup",
+            "target" : "C:\\Users\\masashi\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\BunBackup.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 11264978083356178294,
+            "label" : "C:\\tools",
+            "loop_on_suggest" : true,
+            "plugin" : "FileBrowser.FileBrowser",
+            "short_desc" : "",
+            "target" : "C:\\tools"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 18350631716764197546,
+            "label" : "choco.exe",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.EnvPath",
+            "short_desc" : "",
+            "target" : "C:\\ProgramData\\chocolatey\\bin\\choco.exe"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 14361349618356278004,
+            "label" : "Chocolatey GUI",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Chocolatey GUI.lnk"
+         },
+         {
+            "args_hint" : "required",
+            "category" : "#1001",
+            "hit_hint" : "noargs",
+            "id" : 14170631124025410598,
+            "label" : "Codic:",
+            "loop_on_suggest" : false,
+            "plugin" : "Codic.Codic",
+            "short_desc" : "Codic Translate (default):",
+            "target" : "0"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 1699919848304945510,
+            "label" : "config.py (ツール)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\tools\\keyhac\\extension\\config.py"
+         },
+         {
+            "args_hint" : "required",
+            "category" : "#1001",
+            "hit_hint" : "noargs",
+            "id" : 15753629364505597234,
+            "label" : "dejizo",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSuggest.WebSuggest",
+            "short_desc" : "Suggest via dejizo (default action: browse)",
+            "target" : "profile=%27dejizo%27"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 2888815460112997876,
+            "label" : "Discord",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Discord Inc",
+            "target" : "C:\\Users\\masashi\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Discord Inc\\Discord.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 5782590033711008996,
+            "label" : "Ditto",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Ditto",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Ditto\\Ditto.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 11846341199187187814,
+            "label" : "ElonaPlus Custom/ElonaC.exe (ゲーム)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\Users\\masashi\\Saved Games\\FreeGames\\ElonaPlus Custom\\ElonaC.exe"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 7282454893776170348,
+            "label" : "Evernote 検索",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSearch.WebSearch",
+            "short_desc" : "Search Evernote",
+            "target" : "site=%27evernote%27"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "keyword",
+            "hit_hint" : "noargs",
+            "id" : 14403868249352615885,
+            "label" : "Everything: Rebuild DB",
+            "loop_on_suggest" : false,
+            "plugin" : "Everything.Everything",
+            "short_desc" : "Ask Everything to rebuild its database (v1.4+ only)",
+            "target" : "rebuild_db"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 6604788085129329512,
+            "label" : "explorer.exe",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.EnvPath",
+            "short_desc" : "",
+            "target" : "C:\\WINDOWS\\explorer.exe"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "url",
+            "hit_hint" : "noargs",
+            "id" : 14689436664763851056,
+            "label" : "GitHub (ブックマーク)",
+            "loop_on_suggest" : false,
+            "plugin" : "Bookmarks.Bookmarks",
+            "short_desc" : "",
+            "target" : "https://github.com/applejxd?tab=repositories"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 11352061093170324172,
+            "label" : "GitHub 検索",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSearch.WebSearch",
+            "short_desc" : "Search GitHub",
+            "target" : "site=%27github%27"
+         },
+         {
+            "args_hint" : "required",
+            "category" : "#1001",
+            "hit_hint" : "noargs",
+            "id" : 2803330055637970635,
+            "label" : "Google",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSuggest.WebSuggest",
+            "short_desc" : "Suggest via Google (default action: browse)",
+            "target" : "profile=%27google%27"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 8303970506109869343,
+            "label" : "GR.pdf (教科書)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\Users\\masashi\\Google ドライブ\\テキスト\\公式\\GR.pdf"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 9862200723326511098,
+            "label" : "iTunes",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\iTunes",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\iTunes\\iTunes.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 16504043729316994675,
+            "label" : "Juliaで量子力学.pdf (教科書)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\Users\\masashi\\Google ドライブ\\テキスト\\プログラミング\\Juliaで量子力学.pdf"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 6691845239862034220,
+            "label" : "key.js (ツール)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\tools\\VSCode\\data\\extensions\\chrmarti.regex-0.2.0\\node_modules\\sshpk\\lib\\key.js"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 10099299073041890822,
+            "label" : "keyhac - ショートカット",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Startup",
+            "target" : "C:\\Users\\masashi\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\keyhac - ショートカット.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 5903017325251977247,
+            "label" : "keyhac.exe (ツール)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\tools\\keyhac\\keyhac.exe"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 4347510019417994106,
+            "label" : "Keypirinha: Configure Package: Codic",
+            "loop_on_suggest" : false,
+            "plugin" : "Internal.About",
+            "short_desc" : "Configure Package \"Codic\"",
+            "target" : "pack_config Codic"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 938472205729174194,
+            "label" : "Keypirinha: Configure Package: Ditto",
+            "loop_on_suggest" : false,
+            "plugin" : "Internal.About",
+            "short_desc" : "Configure Package \"Ditto\"",
+            "target" : "pack_config Ditto"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 8295556688807839350,
+            "label" : "Keypirinha: Configure Package: Snippets",
+            "loop_on_suggest" : false,
+            "plugin" : "Internal.About",
+            "short_desc" : "Configure Package \"Snippets\"",
+            "target" : "pack_config Snippets"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 16868564327211373006,
+            "label" : "Keypirinha: Configure Package: URLShortener",
+            "loop_on_suggest" : false,
+            "plugin" : "Internal.About",
+            "short_desc" : "Configure Package \"URLShortener\"",
+            "target" : "pack_config URLShortener"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "keyword",
+            "hit_hint" : "noargs",
+            "id" : 11955276868204494730,
+            "label" : "Keypirinha: Refresh Catalog",
+            "loop_on_suggest" : false,
+            "plugin" : "Internal.About",
+            "short_desc" : "Ask all plugins to refresh their catalog",
+            "target" : "refresh_catalog"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 5605469801929522029,
+            "label" : "Keypirinha: Refresh Catalog: Ditto",
+            "loop_on_suggest" : false,
+            "plugin" : "Internal.About",
+            "short_desc" : "Refresh the Catalog of Package \"Ditto\"",
+            "target" : "pack_refresh Ditto"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 11803708183505221014,
+            "label" : "Keypirinha: Refresh Catalog: Steam",
+            "loop_on_suggest" : false,
+            "plugin" : "Internal.About",
+            "short_desc" : "Refresh the Catalog of Package \"Steam\"",
+            "target" : "pack_refresh Steam"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 3193297612944407720,
+            "label" : "Nambu-Goto String Motion with Symmetric Helical String on the Kerr geometry.pdf (教科書)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\Users\\masashi\\Google ドライブ\\GoodNotes\\ノート\\メモ\\Nambu-Goto String Motion with Symmetric Helical String on the Kerr geometry.pdf"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 7273783907233302861,
+            "label" : "Notepad",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Accessories",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\Notepad.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 18197377528914292955,
+            "label" : "osu!",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\osu!",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\osu!\\osu!.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 5906449401321219426,
+            "label" : "osu!/osu!.exe (ゲーム)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\Users\\masashi\\Saved Games\\osu!\\osu!.exe"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 17754053555992845519,
+            "label" : "PyCharm Community Edition 2020.1.2",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\JetBrains",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\JetBrains\\PyCharm Community Edition 2020.1.2.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 8718831844291083621,
+            "label" : "Reset Spyder Settings",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Anaconda3 (64-bit)",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Anaconda3 (64-bit)\\Reset Spyder Settings.lnk"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "keyword",
+            "hit_hint" : "noargs",
+            "id" : 14574058054814076009,
+            "label" : "restart",
+            "loop_on_suggest" : false,
+            "plugin" : "SystemCommands.SystemCommands",
+            "short_desc" : "Restart the computer.",
+            "target" : "restart"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "keyword",
+            "hit_hint" : "noargs",
+            "id" : 11834455697281111681,
+            "label" : "shutdown",
+            "loop_on_suggest" : false,
+            "plugin" : "SystemCommands.SystemCommands",
+            "short_desc" : "Shutdown the computer.",
+            "target" : "shutdown"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "keyword",
+            "hit_hint" : "noargs",
+            "id" : 12962864915301044741,
+            "label" : "sleep",
+            "loop_on_suggest" : false,
+            "plugin" : "SystemCommands.SystemCommands",
+            "short_desc" : "Put the computer to sleep.",
+            "target" : "sleep"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 13521938269725910055,
+            "label" : "Spotify",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.Desktop",
+            "short_desc" : "Desktop: Desktop",
+            "target" : "C:\\Users\\masashi\\Desktop\\Spotify.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 8347081008701728401,
+            "label" : "Spotify",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs",
+            "target" : "C:\\Users\\masashi\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Spotify.lnk"
+         },
+         {
+            "args_hint" : "forbidden",
+            "category" : "url",
+            "hit_hint" : "noargs",
+            "id" : 787180899379667212,
+            "label" : "Spotify (ブックマーク)",
+            "loop_on_suggest" : false,
+            "plugin" : "Bookmarks.Bookmarks",
+            "short_desc" : "",
+            "target" : "https://open.spotify.com/"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 7095231884105470210,
+            "label" : "Steam",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\Steam",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Steam\\Steam.lnk"
+         },
+         {
+            "args_hint" : "required",
+            "category" : "keyword",
+            "hit_hint" : "noargs",
+            "id" : 17652512588618074037,
+            "label" : "URL Shortener",
+            "loop_on_suggest" : false,
+            "plugin" : "URLShortener.URLShortener",
+            "short_desc" : "Shorten an URL and copy the result",
+            "target" : "urlshortener"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "reference",
+            "hit_hint" : "noargs",
+            "id" : 10538361641506912706,
+            "label" : "WolframAlpha 検索",
+            "loop_on_suggest" : false,
+            "plugin" : "WebSearch.WebSearch",
+            "short_desc" : "Search WolframAlpha",
+            "target" : "site=%27wolframalpha%27"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 9289189184064659194,
+            "label" : "XLaunch",
+            "loop_on_suggest" : false,
+            "plugin" : "Apps.StartMenu",
+            "short_desc" : "Start Menu: Programs\\VcXsrv",
+            "target" : "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\VcXsrv\\XLaunch.lnk"
+         },
+         {
+            "args_hint" : "accepted",
+            "category" : "file",
+            "hit_hint" : "keepall",
+            "id" : 2944137030530517470,
+            "label" : "須藤靖(-+++).pdf (教科書)",
+            "loop_on_suggest" : false,
+            "plugin" : "FilesCatalog.FilesCatalog",
+            "short_desc" : "",
+            "target" : "C:\\Users\\masashi\\Google ドライブ\\テキスト\\物理\\重力理論\\須藤靖(-+++).pdf"
+         }
+      ],
+      "terms" : [
+         {
+            "items" : [ 15648245163205442135 ],
+            "search" : "21"
+         },
+         {
+            "items" : [ 11153610549102624624 ],
+            "search" : "beat"
+         },
+         {
+            "items" : [ 5066845539269275513 ],
+            "search" : "bun"
+         },
+         {
+            "items" : [ 6401675955483954625 ],
+            "search" : "c:"
+         },
+         {
+            "items" : [ 11264978083356178294 ],
+            "search" : "c:/too"
+         },
+         {
+            "items" : [ 11264978083356178294 ],
+            "search" : "c:tools"
+         },
+         {
+            "items" : [ 14361349618356278004, 18350631716764197546 ],
+            "search" : "choco"
+         },
+         {
+            "items" : [ 14170631124025410598 ],
+            "search" : "codi"
+         },
+         {
+            "items" : [ 4347510019417994106 ],
+            "search" : "codic"
+         },
+         {
+            "items" : [ 1699919848304945510 ],
+            "search" : "config.py"
+         },
+         {
+            "items" : [ 2888815460112997876 ],
+            "search" : "d"
+         },
+         {
+            "items" : [ 15753629364505597234 ],
+            "search" : "deji"
+         },
+         {
+            "items" : [ 15753629364505597234 ],
+            "search" : "dejizo"
+         },
+         {
+            "items" : [ 2888815460112997876 ],
+            "search" : "di"
+         },
+         {
+            "items" : [ 2888815460112997876 ],
+            "search" : "dis"
+         },
+         {
+            "items" : [ 2888815460112997876 ],
+            "search" : "disco"
+         },
+         {
+            "items" : [ 2888815460112997876 ],
+            "search" : "discor"
+         },
+         {
+            "items" : [ 938472205729174194 ],
+            "search" : "dit"
+         },
+         {
+            "items" : [ 938472205729174194, 5782590033711008996, 5605469801929522029 ],
+            "search" : "ditto"
+         },
+         {
+            "items" : [ 3193297612944407720 ],
+            "search" : "elko"
+         },
+         {
+            "items" : [ 11846341199187187814 ],
+            "search" : "elons"
+         },
+         {
+            "items" : [ 7282454893776170348 ],
+            "search" : "ever"
+         },
+         {
+            "items" : [ 7282454893776170348 ],
+            "search" : "evernote"
+         },
+         {
+            "items" : [ 14403868249352615885 ],
+            "search" : "every"
+         },
+         {
+            "items" : [ 6604788085129329512 ],
+            "search" : "explo"
+         },
+         {
+            "items" : [ 14689436664763851056, 11352061093170324172 ],
+            "search" : "gith"
+         },
+         {
+            "items" : [ 11352061093170324172, 14689436664763851056 ],
+            "search" : "github"
+         },
+         {
+            "items" : [ 2803330055637970635 ],
+            "search" : "goo"
+         },
+         {
+            "items" : [ 8303970506109869343 ],
+            "search" : "gr."
+         },
+         {
+            "items" : [ 8303970506109869343 ],
+            "search" : "gr.p"
+         },
+         {
+            "items" : [ 9862200723326511098 ],
+            "search" : "itu"
+         },
+         {
+            "items" : [ 9862200723326511098 ],
+            "search" : "itunes"
+         },
+         {
+            "items" : [ 16504043729316994675 ],
+            "search" : "julia"
+         },
+         {
+            "items" : [ 6691845239862034220 ],
+            "search" : "key"
+         },
+         {
+            "items" : [ 10099299073041890822 ],
+            "search" : "keyha"
+         },
+         {
+            "items" : [ 5903017325251977247, 10099299073041890822 ],
+            "search" : "keyhac"
+         },
+         {
+            "items" : [ 7639696413839446240 ],
+            "search" : "nas"
+         },
+         {
+            "items" : [ 7273783907233302861 ],
+            "search" : "notepad"
+         },
+         {
+            "items" : [ 5906449401321219426, 18197377528914292955 ],
+            "search" : "osu"
+         },
+         {
+            "items" : [ 17754053555992845519 ],
+            "search" : "pycha"
+         },
+         {
+            "items" : [ 17754053555992845519 ],
+            "search" : "pycharm"
+         },
+         {
+            "items" : [ 14574058054814076009 ],
+            "search" : "re"
+         },
+         {
+            "items" : [ 11955276868204494730 ],
+            "search" : "refre"
+         },
+         {
+            "items" : [ 11955276868204494730 ],
+            "search" : "refres"
+         },
+         {
+            "items" : [ 11955276868204494730 ],
+            "search" : "refresh"
+         },
+         {
+            "items" : [ 14574058054814076009 ],
+            "search" : "res"
+         },
+         {
+            "items" : [ 8718831844291083621 ],
+            "search" : "resstt"
+         },
+         {
+            "items" : [ 14574058054814076009 ],
+            "search" : "rest"
+         },
+         {
+            "items" : [ 14574058054814076009 ],
+            "search" : "resta"
+         },
+         {
+            "items" : [ 14574058054814076009 ],
+            "search" : "restar"
+         },
+         {
+            "items" : [ 14574058054814076009 ],
+            "search" : "restart"
+         },
+         {
+            "items" : [ 11803708183505221014 ],
+            "search" : "rreess"
+         },
+         {
+            "items" : [ 11834455697281111681 ],
+            "search" : "shut"
+         },
+         {
+            "items" : [ 11834455697281111681 ],
+            "search" : "shutdo"
+         },
+         {
+            "items" : [ 12962864915301044741 ],
+            "search" : "sle"
+         },
+         {
+            "items" : [ 12962864915301044741 ],
+            "search" : "slee"
+         },
+         {
+            "items" : [ 12962864915301044741 ],
+            "search" : "sleep"
+         },
+         {
+            "items" : [ 8295556688807839350 ],
+            "search" : "snip"
+         },
+         {
+            "items" : [ 8347081008701728401, 13521938269725910055 ],
+            "search" : "spo"
+         },
+         {
+            "items" : [ 8347081008701728401 ],
+            "search" : "spoi"
+         },
+         {
+            "items" : [ 787180899379667212 ],
+            "search" : "spotify"
+         },
+         {
+            "items" : [ 7095231884105470210 ],
+            "search" : "steam"
+         },
+         {
+            "items" : [ 4602216375410309795 ],
+            "search" : "ubu"
+         },
+         {
+            "items" : [ 4602216375410309795 ],
+            "search" : "ubuntu"
+         },
+         {
+            "items" : [ 17652512588618074037 ],
+            "search" : "url"
+         },
+         {
+            "items" : [ 16868564327211373006 ],
+            "search" : "urlshorter"
+         },
+         {
+            "items" : [ 10538361641506912706 ],
+            "search" : "wolf"
+         },
+         {
+            "items" : [ 1398402532359251743 ],
+            "search" : "wt"
+         },
+         {
+            "items" : [ 9289189184064659194 ],
+            "search" : "xl"
+         },
+         {
+            "items" : [ 9289189184064659194 ],
+            "search" : "xla"
+         },
+         {
+            "items" : [ 2944137030530517470 ],
+            "search" : "須藤"
+         }
+      ]
+   }
+}
