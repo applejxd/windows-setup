@@ -70,6 +70,8 @@ code --install-extension yzhang.markdown-all-in-one
 cinst iTunes
 cinst kindle
 cinst steam
+cinst mo2
+# cinst vortex
 
 cinst anaconda3
 cinst pycharm-community
