@@ -12,8 +12,12 @@ if (-not (Test-Path $env:UserProfile\src\windows-setup)){
 
 # PowerShell
 $path = $wsh.SpecialFolders("MyDocuments") + "\WindowsPowerShell"
+Remove-Item $path\Microsoft.PowerShell_profile.ps1 
 cmd /c mklink $path\Microsoft.PowerShell_profile.ps1 $env:UserProfile\src\windows-setup\config\Microsoft.PowerShell_profile.ps1
-git clone https://github.com/JannesMeyer/z.ps.git $path\Modules\z
+
+# Windows Terminal
+Remove-Item $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json 
+cmd /c mklink $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json $env:UserProfile\src\windows-setup\config\settings.json
 
 # Keyhac
 cmd /c rmdir /s /q $env:AppData\Keyhac

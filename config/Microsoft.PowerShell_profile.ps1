@@ -12,6 +12,14 @@ Set-PSReadLineOption -BellStyle None
 # 標準だと Ctrl+d は DeleteCharOrExit のため、うっかり端末が終了することを防ぐ
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 
+#########
+# alias #
+#########
+
+Set-Alias open explorer.exe
+Set-Alias pbcopy clip.exe
+Set-Alias pbpaste 'powershell.exe Get-Clipboard'
+
 #######
 # fzf #
 #######
