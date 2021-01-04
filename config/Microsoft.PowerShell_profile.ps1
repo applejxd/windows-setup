@@ -15,9 +15,12 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 #######
 # fzf #
 #######
+#cf. https://github.com/junegunn/fzf/wiki/Windows
 
 $env:FZF_DEFAULT_OPTS="--reverse --border"
-# $env:FZF_DEFAULT_COMMAND='fd -HL --exclude ".git" .'
+
+# C-t と C-r のラッパー
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 # ghq-fzf
 # C-x C-g のキーバインドに関数割り当て

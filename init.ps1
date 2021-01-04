@@ -5,6 +5,8 @@ scoop install ghq fzf
 scoop install sed gawk
 git config --global ghq.root ~/src
 
+# fzf wrapper
+Install-Module -Name PSFzf -RequiredVersion 2.1.0 -Scope CurrentUser -Force
 # z コマンド
 Install-Module ZLocation -Scope CurrentUser -Force
 
