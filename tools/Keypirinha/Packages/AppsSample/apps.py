@@ -5,26 +5,26 @@ import keypirinha_util as kpu
 from collections import namedtuple
 import datetime
 import os
-
-#　処理結果のタプル定義
-AnswerTuple = namedtuple('AnswerTuple', ('value', 'datetime'))
+import subprocess
 
 
-class YesNo(kp.Plugin):
-    """A simple "Yes or No" plugin"""
-
+class Ghq(kp.Plugin):
     ITEMCAT_RESULT = kp.ItemCategory.USER_BASE + 1
 
     # 処理結果を保存するリスト
-    history = []
+    ghq_root = ""
+    repos = []
 
     def __init__(self):
         super().__init__()
 
     def on_start(self):
         """初期化"""
-        self.history = []
-
+        self.ghq_root = subprocess.run(
+            'powershell -ExecutionPolicy Bypass ghq root',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8')
+        self.repos = []
         # ItemCategory に CatalogAction のリストを割り当て
         self.set_actions(self.ITEMCAT_RESULT, [
             # CatalogAction オブジェクトの生成
@@ -46,16 +46,27 @@ class YesNo(kp.Plugin):
                 # 入力のカテゴリ
                 category=kp.ItemCategory.KEYWORD,
                 # 表示名
-                label="YesNo",
+                label="ghq",
                 # 説明
-                short_desc="Yes or No",
+                short_desc="Open project cloned by ghq",
                 # 起動キーワード
-                target="yesno",
+                target="ghq",
                 # 引数を要求する
                 args_hint=kp.ItemArgsHint.REQUIRED,
                 # 重複なしで履歴を保存
                 hit_hint=kp.ItemHitHint.NOARGS)
         ])
+
+    def on_activated(self):
+        """
+        ランチャー表示時の処理.
+        ghq のリスト取得
+        """
+        # バイナリ文字列を変換・改行コードでリスト化
+        self.repos = subprocess.run(
+            'powershell -ExecutionPolicy Bypass ghq list',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').split()
 
     def on_suggest(self, user_input, items_chain):
         """検索処理
@@ -68,37 +79,39 @@ class YesNo(kp.Plugin):
         if not items_chain or items_chain[-1].category() != kp.ItemCategory.KEYWORD:
             return
 
-        # 入力内容がない場合
-        if not user_input:
-            self.history = []
+        # # 入力内容がない場合
+        # if not user_input:
+        #     self.history = []
 
         # 結果を履歴に追加
-        self.history.append(AnswerTuple(
-            os.urandom(1)[0] % 2,
-            datetime.datetime.now()))
+        # self.history.append(AnswerTuple(
+        #     os.urandom(1)[0] % 2,
+        #     datetime.datetime.now()))
 
         # サジェスト作成
         suggestions = []
         # 降順ループ
-        for idx in range(len(self.history) - 1, -1, -1):
-            answer = self.history[idx]
-            # メッセージ
-            desc = "{}. {} (press Enter to copy)".format(
-                idx + 1, answer.datetime.strftime("%H:%M:%S"))
+        for idx in range(0, len(self.repos)):
             # サジェスト追加
             suggestions.append(
                 # CatalogItem オブジェクト生成
                 self.create_item(
                     category=self.ITEMCAT_RESULT,
-                    label=self._value_to_string(answer.value),
-                    short_desc=desc,
-                    target="{},{}".format(answer.value, idx),
+                    label=self.repos[idx],
+                    short_desc=self.repos[idx],
+                    target=self.repos[idx],
                     args_hint=kp.ItemArgsHint.FORBIDDEN,
                     hit_hint=kp.ItemHitHint.IGNORE)
             )
 
         # サジェスト表示
-        self.set_suggestions(suggestions, kp.Match.ANY, kp.Sort.NONE)
+        self.set_suggestions(
+            suggestions,
+            # マッチング方式
+            kp.Match.FUZZY,
+            # ソートのルール
+            kp.Sort.NONE
+        )
 
     def on_execute(self, item, action):
         """実行処理
@@ -108,10 +121,5 @@ class YesNo(kp.Plugin):
             action : 
         """
         if item and item.category() == self.ITEMCAT_RESULT:
-            value = int(item.target().split(',', maxsplit=1)[0])
-            # クリップボードに保存
-            kpu.set_clipboard(self._value_to_string(value))
-
-    def _value_to_string(self, value):
-        # 三項演算子で string に変換
-        return "Yes" if value else "No"
+            command = 'code ' + self.ghq_root + "/" + item.target()
+            subprocess.run(command, shell=True, check=True)
