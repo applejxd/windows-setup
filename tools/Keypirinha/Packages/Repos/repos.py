@@ -9,7 +9,7 @@ import datetime
 import os
 import subprocess
 
-class Ghq(kp.Plugin):
+class Repos(kp.Plugin):
     ITEMCAT_RESULT = kp.ItemCategory.USER_BASE + 1
 
     # 処理結果を保存するリスト
@@ -54,11 +54,11 @@ class Ghq(kp.Plugin):
                 # 入力のカテゴリ
                 category=kp.ItemCategory.KEYWORD,
                 # 表示名
-                label="ghq",
+                label="repos",
                 # 説明
-                short_desc="Open project cloned by ghq",
+                short_desc="Open repositories",
                 # 起動キーワード
-                target="ghq",
+                target="repos",
                 # 引数を要求する
                 args_hint=kp.ItemArgsHint.REQUIRED,
                 # 重複なしで履歴を保存
