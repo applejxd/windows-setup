@@ -1,4 +1,6 @@
 # cf. https://keypirinha.com/api/plugin.html
+from typing import List
+
 import keypirinha as kp
 import keypirinha_util as kpu
 
@@ -7,12 +9,12 @@ import datetime
 import os
 import subprocess
 
-
 class Ghq(kp.Plugin):
     ITEMCAT_RESULT = kp.ItemCategory.USER_BASE + 1
 
     # 処理結果を保存するリスト
-    ghq_root = ""
+    ghq_root_win = ""
+    ghq_root_wsl = ""
     repos = []
 
     def __init__(self):
@@ -20,10 +22,16 @@ class Ghq(kp.Plugin):
 
     def on_start(self):
         """初期化"""
-        self.ghq_root = subprocess.run(
-            'powershell -ExecutionPolicy Bypass ghq root',
-            shell=True, stdout=subprocess.PIPE, check=True
-        ).stdout.decode('utf-8')
+        self.ghq_root_win = subprocess.run(
+                'powershell -ExecutionPolicy Bypass ghq root',
+                shell=True, stdout=subprocess.PIPE, check=True
+            ).stdout.decode('utf-8').strip()
+        
+        self.ghq_root_wsl = subprocess.run(
+                'wsl ghq root',
+                shell=True, stdout=subprocess.PIPE, check=True
+            ).stdout.decode('utf-8').strip()
+        
         self.repos = []
         # ItemCategory に CatalogAction のリストを割り当て
         self.set_actions(self.ITEMCAT_RESULT, [
@@ -57,17 +65,6 @@ class Ghq(kp.Plugin):
                 hit_hint=kp.ItemHitHint.NOARGS)
         ])
 
-    def on_activated(self):
-        """
-        ランチャー表示時の処理.
-        ghq のリスト取得
-        """
-        # バイナリ文字列を変換・改行コードでリスト化
-        self.repos = subprocess.run(
-            'powershell -ExecutionPolicy Bypass ghq list',
-            shell=True, stdout=subprocess.PIPE, check=True
-        ).stdout.decode('utf-8').split()
-
     def on_suggest(self, user_input, items_chain):
         """検索処理
 
@@ -88,8 +85,31 @@ class Ghq(kp.Plugin):
         #     os.urandom(1)[0] % 2,
         #     datetime.datetime.now()))
 
+        self.repos = []
+
+        # バイナリ文字列を変換・改行コードでリスト化
+        repos_win = subprocess.run(
+            'powershell -ExecutionPolicy Bypass ghq list',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').split()
+    
+        for idx in range(0, len(repos_win)):
+            self.repos += [["PowerShell", repos_win[idx]]]
+
+        repos_wsl = subprocess.run(
+            'wsl ghq list',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').split()
+
+        for idx in range(0, len(repos_wsl)):
+            self.repos += [["Ubuntu", repos_wsl[idx]]]
+
+        # for idx in range(repos_wsl):
+        #     self.repos.append(["wsl", repos_wsl[idx]])
+
         # サジェスト作成
         suggestions = []
+
         # 降順ループ
         for idx in range(0, len(self.repos)):
             # サジェスト追加
@@ -97,9 +117,9 @@ class Ghq(kp.Plugin):
                 # CatalogItem オブジェクト生成
                 self.create_item(
                     category=self.ITEMCAT_RESULT,
-                    label=self.repos[idx],
-                    short_desc=self.repos[idx],
-                    target=self.repos[idx],
+                    label=self.repos[idx][1],
+                    short_desc=self.repos[idx][0],
+                    target=self.repos[idx][1],
                     args_hint=kp.ItemArgsHint.FORBIDDEN,
                     hit_hint=kp.ItemHitHint.IGNORE)
             )
@@ -121,5 +141,10 @@ class Ghq(kp.Plugin):
             action : 
         """
         if item and item.category() == self.ITEMCAT_RESULT:
-            command = 'code ' + self.ghq_root + "/" + item.target()
+            if item.short_desc() == "PowerShell":
+                command = f'code {self.ghq_root_win}/{item.target()}'
+            elif item.short_desc() == "Ubuntu":
+                command = f'wsl code {self.ghq_root_wsl}/{item.target()}'
+            
+            kpu.set_clipboard(command)
             subprocess.run(command, shell=True, check=True)
