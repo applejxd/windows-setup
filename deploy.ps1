@@ -41,18 +41,20 @@ cmd /c mklink /D $env:AppData\Everything $env:UserProfile\src\windows-setup\tool
 # ショートカット名を定義
 $path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
 
-# ショートカットオブジェクトの生成
-$shortcut = $wsh.CreateShortcut($path)
+if (-not (Test-Path $path)){
+  # ショートカットオブジェクトの生成
+  $shortcut = $wsh.CreateShortcut($path)
 
-# 作業ディレクトリのパスを設定
-$shortcut.WorkingDirectory = "C:\ProgramData\chocolatey\bin"
-# ショートカット先のパスを設定
-$shortcut.TargetPath = "C:\ProgramData\chocolatey\bin\keyhac.exe"
-# アイコンのパスを設定
-$shortcut.IconLocation = "C:\ProgramData\chocolatey\bin\keyhac.exe"
+  # 作業ディレクトリのパスを設定
+  $shortcut.WorkingDirectory = "C:\ProgramData\chocolatey\bin"
+  # ショートカット先のパスを設定
+  $shortcut.TargetPath = "C:\ProgramData\chocolatey\bin\keyhac.exe"
+  # アイコンのパスを設定
+  $shortcut.IconLocation = "C:\ProgramData\chocolatey\bin\keyhac.exe"
 
-# ショートカットの生成
-$shortcut.Save()
+  # ショートカットの生成
+  $shortcut.Save()
+}
 
 ###################
 # Keypirinha 拡張 #
@@ -92,6 +94,6 @@ InstallRelease "fran-f/keypirinha-terminal-profiles" "Terminal-Profiles.keypirin
 # 検索エンジンの短縮名で簡易検索
 InstallRelease "bantya/Keypirinha-EasySearch" "EasySearch.keypirinha-package"
 # > に続いてコマンド実行
-InstallRelease "bantya/Keypirinha-Command" "SystemCommands.keypirinha-package"
+InstallRelease "bantya/Keypirinha-Command" "Command.keypirinha-package"
 # Steam アプリ
 Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
