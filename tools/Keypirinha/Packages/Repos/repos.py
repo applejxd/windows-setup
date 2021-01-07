@@ -65,26 +65,7 @@ class Repos(kp.Plugin):
                 hit_hint=kp.ItemHitHint.NOARGS)
         ])
 
-    def on_suggest(self, user_input, items_chain):
-        """検索処理
-
-        Args:
-            user_input : 入力内容
-            items_chain : 選択したアイテム
-        """
-        # カテゴリが異なる場合
-        if not items_chain or items_chain[-1].category() != kp.ItemCategory.KEYWORD:
-            return
-
-        # # 入力内容がない場合
-        # if not user_input:
-        #     self.history = []
-
-        # 結果を履歴に追加
-        # self.history.append(AnswerTuple(
-        #     os.urandom(1)[0] % 2,
-        #     datetime.datetime.now()))
-
+    def on_activated(self):
         self.repos = []
 
         # バイナリ文字列を変換・改行コードでリスト化
@@ -104,8 +85,16 @@ class Repos(kp.Plugin):
         for idx in range(0, len(repos_wsl)):
             self.repos += [["Ubuntu", repos_wsl[idx]]]
 
-        # for idx in range(repos_wsl):
-        #     self.repos.append(["wsl", repos_wsl[idx]])
+    def on_suggest(self, user_input, items_chain):
+        """検索処理
+
+        Args:
+            user_input : 入力内容
+            items_chain : 選択したアイテム
+        """
+        # カテゴリが異なる場合
+        if not items_chain or items_chain[-1].category() != kp.ItemCategory.KEYWORD:
+            return
 
         # サジェスト作成
         suggestions = []
