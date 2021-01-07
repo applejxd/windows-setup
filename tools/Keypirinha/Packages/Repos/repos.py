@@ -9,7 +9,7 @@ import datetime
 import os
 import subprocess
 
-class Repos(kp.Plugin):
+class Ghq(kp.Plugin):
     ITEMCAT_RESULT = kp.ItemCategory.USER_BASE + 1
 
     # 処理結果を保存するリスト
@@ -54,11 +54,11 @@ class Repos(kp.Plugin):
                 # 入力のカテゴリ
                 category=kp.ItemCategory.KEYWORD,
                 # 表示名
-                label="Repos",
+                label="ghq",
                 # 説明
-                short_desc="Open repositries",
+                short_desc="Open project cloned by ghq",
                 # 起動キーワード
-                target="repos",
+                target="ghq",
                 # 引数を要求する
                 args_hint=kp.ItemArgsHint.REQUIRED,
                 # 重複なしで履歴を保存
@@ -145,7 +145,6 @@ class Repos(kp.Plugin):
                 command = f'code {self.ghq_root_win}/{item.target()}'
             elif item.short_desc() == "Ubuntu":
                 command = f'wsl code {self.ghq_root_wsl}/{item.target()}'
-                
             
             kpu.set_clipboard(command)
             subprocess.run(command, shell=True, check=True)
