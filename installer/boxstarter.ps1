@@ -32,7 +32,7 @@ Set-WindowsExplorerOptions -EnableShowFrequentFoldersInQuickAccess
 
 cinst chocolateygui
 cinst 7zip
-cinst git
+choco install git.install --params "/GitAndUnixToolsOnPath"
 
 cinst GoogleChrome
 cinst GoogleJapaneseInput
