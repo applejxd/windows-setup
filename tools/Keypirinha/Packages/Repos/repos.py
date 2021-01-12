@@ -9,12 +9,15 @@ import datetime
 import os
 import subprocess
 
-class Repos(kp.Plugin):
+
+class _BasePlugin(kp.Plugin):
+    """
+    リポジトリを開くクラスの抽象基底クラス
+    """
     ITEMCAT_RESULT = kp.ItemCategory.USER_BASE + 1
 
     # 処理結果を保存するリスト
-    ghq_root_win = ""
-    ghq_root_wsl = ""
+    root_path = ""
     repos = []
 
     def __init__(self):
@@ -22,16 +25,6 @@ class Repos(kp.Plugin):
 
     def on_start(self):
         """初期化"""
-        self.ghq_root_win = subprocess.run(
-                'powershell -ExecutionPolicy Bypass ghq root',
-                shell=True, stdout=subprocess.PIPE, check=True
-            ).stdout.decode('utf-8').strip()
-        
-        self.ghq_root_wsl = subprocess.run(
-                'wsl ghq root',
-                shell=True, stdout=subprocess.PIPE, check=True
-            ).stdout.decode('utf-8').strip()
-        
         self.repos = []
         # ItemCategory に CatalogAction のリストを割り当て
         self.set_actions(self.ITEMCAT_RESULT, [
@@ -47,43 +40,7 @@ class Repos(kp.Plugin):
         カタログ生成.
         Keypirinha で起動するためのトリガー・説明など.
         """
-        # CatalogItem のリストで catalog の変更
-        self.set_catalog([
-            # CatalogItem 生成
-            self.create_item(
-                # 入力のカテゴリ
-                category=kp.ItemCategory.KEYWORD,
-                # 表示名
-                label="repos",
-                # 説明
-                short_desc="Open repositories",
-                # 起動キーワード
-                target="repos",
-                # 引数を要求する
-                args_hint=kp.ItemArgsHint.REQUIRED,
-                # 重複なしで履歴を保存
-                hit_hint=kp.ItemHitHint.NOARGS)
-        ])
-
-    def on_activated(self):
-        self.repos = []
-
-        # バイナリ文字列を変換・改行コードでリスト化
-        repos_win = subprocess.run(
-            'powershell -ExecutionPolicy Bypass ghq list',
-            shell=True, stdout=subprocess.PIPE, check=True
-        ).stdout.decode('utf-8').split()
-    
-        for idx in range(0, len(repos_win)):
-            self.repos += [["PowerShell", repos_win[idx]]]
-
-        repos_wsl = subprocess.run(
-            'wsl ghq list',
-            shell=True, stdout=subprocess.PIPE, check=True
-        ).stdout.decode('utf-8').split()
-
-        for idx in range(0, len(repos_wsl)):
-            self.repos += [["Ubuntu", repos_wsl[idx]]]
+        pass
 
     def on_suggest(self, user_input, items_chain):
         """検索処理
@@ -106,9 +63,9 @@ class Repos(kp.Plugin):
                 # CatalogItem オブジェクト生成
                 self.create_item(
                     category=self.ITEMCAT_RESULT,
-                    label=self.repos[idx][1],
-                    short_desc=self.repos[idx][0],
-                    target=self.repos[idx][1],
+                    label=self.repos[idx],
+                    short_desc=self.repos[idx],
+                    target=self.repos[idx],
                     args_hint=kp.ItemArgsHint.FORBIDDEN,
                     hit_hint=kp.ItemHitHint.IGNORE)
             )
@@ -123,17 +80,98 @@ class Repos(kp.Plugin):
         )
 
     def on_execute(self, item, action):
-        """実行処理
+        """ 実行処理
 
         Args:
-            item : CatalogItem
-            action : 
+            item (CatalogItem): on_suggest で選択した項目
+            action (CatalogAction): [description]
         """
-        if item and item.category() == self.ITEMCAT_RESULT:
-            if item.short_desc() == "PowerShell":
-                command = f'code {self.ghq_root_win}/{item.target()}'
-            elif item.short_desc() == "Ubuntu":
-                command = f'wsl code {self.ghq_root_wsl}/{item.target()}'
-            
-            kpu.set_clipboard(command)
-            subprocess.run(command, shell=True, check=True)
+        command = f'{self.open_command} {self.root_path}/{item.target()}'
+        subprocess.run(command, shell=True, check=True)
+
+class GhqWindows(_BasePlugin):
+    def __init__(self):
+        super().__init__()
+        self.open_command = "code"
+
+    def on_start(self):
+        """初期化"""
+        super().on_start()
+        self.root_path = subprocess.run(
+            'powershell -ExecutionPolicy Bypass ghq root',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').strip()
+
+    def on_catalog(self):
+        """
+        カタログ生成.
+        Keypirinha で起動するためのトリガー・説明など.
+        """
+        # CatalogItem のリストで catalog の変更
+        self.set_catalog([
+            # CatalogItem 生成
+            self.create_item(
+                # 入力のカテゴリ
+                category=kp.ItemCategory.KEYWORD,
+                # 表示名
+                label="repos (ghq for Windows)",
+                # 説明
+                short_desc="Open repositories",
+                # 起動キーワード
+                target="repos_win",
+                # 引数を要求する
+                args_hint=kp.ItemArgsHint.REQUIRED,
+                # 重複なしで履歴を保存
+                hit_hint=kp.ItemHitHint.NOARGS)
+        ])
+
+    def on_activated(self):
+        # バイナリ文字列を変換・改行コードでリスト化
+        self.repos = subprocess.run(
+            'powershell -ExecutionPolicy Bypass ghq list',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').split()
+
+
+class GhqWsl(_BasePlugin):
+    def __init__(self):
+        super().__init__()
+        self.open_command = "wsl code"
+
+    def on_start(self):
+        """初期化"""
+        super().on_start()
+
+        self.root_path = subprocess.run(
+            'wsl ghq root',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').strip()
+
+    def on_catalog(self):
+        """
+        カタログ生成.
+        Keypirinha で起動するためのトリガー・説明など.
+        """
+        # CatalogItem のリストで catalog の変更
+        self.set_catalog([
+            # CatalogItem 生成
+            self.create_item(
+                # 入力のカテゴリ
+                category=kp.ItemCategory.KEYWORD,
+                # 表示名
+                label="repos (ghq for Ubuntu)",
+                # 説明
+                short_desc="Open repositories",
+                # 起動キーワード
+                target="repos_ghq",
+                # 引数を要求する
+                args_hint=kp.ItemArgsHint.REQUIRED,
+                # 重複なしで履歴を保存
+                hit_hint=kp.ItemHitHint.NOARGS)
+        ])
+
+    def on_activated(self):
+        self.repos = subprocess.run(
+            'wsl ghq list',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').split()
