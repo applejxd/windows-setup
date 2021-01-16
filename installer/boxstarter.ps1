@@ -45,27 +45,7 @@ cinst Everything
 cinst QuickLook
 cinst ditto
 cinst WinSCP
-
-# Step 1. of https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
-cinst Microsoft-Windows-Subsystem-Linux -source windowsfeatures
-# Step 3. of https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
-cinst VirtualMachinePlatform -source windowsfeatures
-
-cinst wsl
-cinst vcxsrv
-cinst microsoft-windows-terminal
-cinst hackfont
-cinst cascadia-code-nerd-font
-
-cinst vscode
-# enable path to vscode command
-refreshenv
-code --install-extension ms-ceintl.vscode-language-pack-ja
-code --install-extension cocopon.iceberg-theme
-code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension eamodio.gitlens
-code --install-extension coenraads.bracket-pair-colorizer-2
-code --install-extension yzhang.markdown-all-in-one
+cinst InkScape
 
 cinst iTunes
 cinst kindle
@@ -73,11 +53,43 @@ cinst steam
 cinst mo2
 # cinst vortex
 
-cinst anaconda3
-cinst pycharm-community
-cinst InkScape
+################
+# WSL/Terminal #
+################
 
-# Remove default apps of Windows 10
+# Step 1. of https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
+cinst Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+# Step 3. of https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
+cinst VirtualMachinePlatform -source windowsfeatures
+
+# Terminal Environment
+cinst wsl
+cinst vcxsrv
+cinst microsoft-windows-terminal
+cinst hackfont
+cinst cascadia-code-nerd-font
+
+#####################
+# Development Tools #
+#####################
+
+# Development environments
+cinst Cygwin
+cinst anaconda3
+
+# JetBrains toolbox -> Install IDEs manually
+cinst jetbrainstoolbox
+
+cinst vscode
+# Enable path to vscode command
+refreshenv
+# Install VSCode extensions
+code --install-extension ms-ceintl.vscode-language-pack-ja
+code --install-extension cocopon.iceberg-theme
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension eamodio.gitlens
+code --install-extension coenraads.bracket-pair-colorizer-2
+code --install-extension yzhang.markdown-all-in-one
 
 Enable-UAC
 Enable-MicrosoftUpdate
