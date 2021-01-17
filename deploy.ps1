@@ -34,6 +34,9 @@ cmd /c mklink /D $env:AppData\Keypirinha $env:UserProfile\src\windows-setup\tool
 cmd /c rmdir /s /q $env:AppData\Everything
 cmd /c mklink /D $env:AppData\Everything $env:UserProfile\src\windows-setup\tools\Everything
 
+# Original bat files
+cmd /c mklink /D C:\tools\bin $env:UserProfile\src\windows-setup\bin
+
 ####################
 # スタートアップ登録 #
 ####################
