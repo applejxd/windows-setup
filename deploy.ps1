@@ -65,6 +65,9 @@ if (-not (Test-Path $path)){
 
 # インストールディレクトリ
 $install_dir = "$env:UserProfile\src\windows-setup\tools\Keypirinha\InstalledPackages"
+if (-not (Test-Path $install_dir)){
+  New-Item $install_dir
+}
 
 function InstallRelease($repo_name, $file_name) {
   $install_dir = "$env:UserProfile\src\windows-setup\tools\Keypirinha\InstalledPackages"
