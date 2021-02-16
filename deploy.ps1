@@ -10,6 +10,9 @@ if (-not (Test-Path $env:UserProfile\src\windows-setup)){
   git clone https://github.com/applejxd/windows-setup.git $env:UserProfile\src\windows-setup
 }
 
+# gitconfig
+cmd /c mklink $env:UserProfile\.gitconfig $env:UserProfile\src\windows-setup\config\.gitconfig
+
 # PowerShell
 $path = $wsh.SpecialFolders("MyDocuments") + "\WindowsPowerShell"
 Remove-Item $path\Microsoft.PowerShell_profile.ps1 

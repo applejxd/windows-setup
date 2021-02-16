@@ -1,0 +1,13 @@
+[init]
+    defaultBranch = main
+[user]
+	name = applejxd
+	email = 9639592+applejxd@users.noreply.github.com
+[ghq]
+    root = ~/src
+[core]
+	editor = vim
+	;; distinguish between uppercase and lowercase
+	ignorecase = false
+	;; to display Japanese files
+	quotepath = false
