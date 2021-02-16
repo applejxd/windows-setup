@@ -1,4 +1,4 @@
-# Boxstarter
+# windows-setup
 
 Initialize Windows 10 by Chocolatey and Boxstarter
 
