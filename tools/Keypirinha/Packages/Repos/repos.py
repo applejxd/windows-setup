@@ -133,6 +133,50 @@ class GhqWindows(_BasePlugin):
         ).stdout.decode('utf-8').split()
 
 
+class SrcWindows(_BasePlugin):
+    def __init__(self):
+        super().__init__()
+        self.open_command = "code"
+
+    def on_start(self):
+        """初期化"""
+        super().on_start()
+        self.root_path = subprocess.run(
+            'powershell -ExecutionPolicy Bypass $env:UserProfile',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').strip() + "\src"
+
+    def on_catalog(self):
+        """
+        カタログ生成.
+        Keypirinha で起動するためのトリガー・説明など.
+        """
+        # CatalogItem のリストで catalog の変更
+        self.set_catalog([
+            # CatalogItem 生成
+            self.create_item(
+                # 入力のカテゴリ
+                category=kp.ItemCategory.KEYWORD,
+                # 表示名
+                label="repos (src folder in Windows)",
+                # 説明
+                short_desc="Open repositories",
+                # 起動キーワード
+                target="repos_src_win",
+                # 引数を要求する
+                args_hint=kp.ItemArgsHint.REQUIRED,
+                # 重複なしで履歴を保存
+                hit_hint=kp.ItemHitHint.NOARGS)
+        ])
+
+    def on_activated(self):
+        # バイナリ文字列を変換・改行コードでリスト化
+        self.repos = subprocess.run(
+            'powershell -ExecutionPolicy Bypass Get-ChildItem $env:UserProfile\src -Name',
+            shell=True, stdout=subprocess.PIPE, check=True
+        ).stdout.decode('utf-8').split()
+
+
 class GhqWsl(_BasePlugin):
     def __init__(self):
         super().__init__()
