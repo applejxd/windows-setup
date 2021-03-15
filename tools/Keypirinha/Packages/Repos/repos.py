@@ -89,6 +89,7 @@ class _BasePlugin(kp.Plugin):
         command = f'{self.open_command} {self.root_path}/{item.target()}'
         subprocess.run(command, shell=True, check=True)
 
+
 class GhqWindows(_BasePlugin):
     def __init__(self):
         super().__init__()
