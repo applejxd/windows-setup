@@ -1,3 +1,5 @@
+# NuGet プロバイダー更新
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 # fzf wrapper
 Install-Module -Name PSFzf -RequiredVersion 2.1.0 -Scope CurrentUser -Force
 # z コマンド
