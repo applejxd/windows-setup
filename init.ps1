@@ -1,10 +1,3 @@
-# Scoop のインストール
-Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
-scoop install sudo vim
-scoop install ghq fzf
-scoop install sed gawk
-git config --global ghq.root ~/src
-
 # fzf wrapper
 Install-Module -Name PSFzf -RequiredVersion 2.1.0 -Scope CurrentUser -Force
 # z コマンド
@@ -28,3 +21,10 @@ Import-Module Boxstarter.Chocolatey
 
 # Boxstarter スクリプト実行
 Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/boxstarter.ps1" -DisableReboots
+
+# Scoop のインストール
+Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
+scoop install sudo vim
+scoop install ghq fzf
+scoop install sed gawk
+git config --global ghq.root ~/src
