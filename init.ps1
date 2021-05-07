@@ -10,7 +10,9 @@ Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 
 # Chocolatey のインストール
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+if(!(gcm choco -ea SilentlyContinue)) {
+  iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+}
 
 choco install -y Boxstarter
 # Boxstarter のコマンドレットを Powershell に追加
