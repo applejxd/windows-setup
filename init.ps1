@@ -10,16 +10,16 @@ Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 
 # Chocolatey のインストール
-if(!(gcm choco -ea SilentlyContinue)) {
-  iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-}
+# if(!(gcm choco -ea SilentlyContinue)) {
+#   iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# }
 
-choco install -y Boxstarter
+# choco install -y Boxstarter
 # Boxstarter のコマンドレットを Powershell に追加
-Import-Module Boxstarter.Chocolatey
+# Import-Module Boxstarter.Chocolatey
 
 # Install boxstarter and chocolatey simultaneously
-# . { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
+. { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
 
 # Boxstarter スクリプト実行
 Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/boxstarter.ps1" -DisableReboots
