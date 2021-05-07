@@ -1,3 +1,5 @@
+# Memo: Japanese comments cause 
+
 # for special folders
 $wsh = New-Object -ComObject WScript.Shell
 
