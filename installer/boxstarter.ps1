@@ -51,6 +51,7 @@ cinst InkScape
 cinst iTunes
 cinst kindle
 cinst steam
+cinst discord
 cinst mo2
 # cinst vortex
 
