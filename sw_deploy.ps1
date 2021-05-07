@@ -1,4 +1,4 @@
-# Memo: Japanese comments cause 
+# Memo: Japanese comments cause new line error
 
 # for special folders
 $wsh = New-Object -ComObject WScript.Shell
