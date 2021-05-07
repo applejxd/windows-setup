@@ -25,7 +25,9 @@ Install-Module oh-my-posh -Scope CurrentUser -Force
 Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/boxstarter.ps1" -DisableReboots
 
 # Scoop のインストール
-Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
+if(!(gcm scoop -ea SilentlyContinue)) {
+  Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
+}
 scoop install sudo vim
 scoop install ghq fzf
 scoop install sed gawk
