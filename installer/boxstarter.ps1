@@ -38,6 +38,7 @@ cinst GoogleChrome
 cinst GoogleJapaneseInput
 cinst google-backup-and-sync
 cinst avastfreeantivirus
+cinst baffalo-nas-navigator
 
 cinst Keyhac
 cinst Keypirinha
