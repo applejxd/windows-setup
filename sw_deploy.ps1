@@ -76,10 +76,10 @@ function InstallRelease($repo_name, $file_name) {
 
 InstallRelease "Fuhrmann/keypirinha-url-shortener" "URLShortener.keypirinha-package"
 InstallRelease "psistorm/keypirinha-systemcommands" "SystemCommands.keypirinha-package"
-# Clipborad Manager
-InstallRelease "tuteken/Keypirinha-Plugin-Ditto" "Ditto.keypirinha-package"
 InstallRelease "clinden/keypirinha-colorpicker" "ColorPicker.keypirinha-package"
 InstallRelease "dozius/keypirinha-snippets" "Snippets.keypirinha-package"
+# Clipborad Manager
+InstallRelease "tuteken/Keypirinha-Plugin-Ditto" "Ditto.keypirinha-package"
 # Default Windows Apps
 InstallRelease "ueffel/Keypirinha-WindowsApps" "WindowsApps.keypirinha-package"
 # Windows Terminal Profiles
@@ -88,4 +88,5 @@ InstallRelease "fran-f/keypirinha-terminal-profiles" "Terminal-Profiles.keypirin
 InstallRelease "bantya/Keypirinha-EasySearch" "EasySearch.keypirinha-package"
 # Execute commands from >
 InstallRelease "bantya/Keypirinha-Command" "Command.keypirinha-package"
+
 Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
