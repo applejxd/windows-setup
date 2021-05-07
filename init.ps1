@@ -31,4 +31,4 @@ if(!(gcm scoop -ea SilentlyContinue)) {
 scoop install sudo vim
 scoop install ghq fzf
 scoop install sed gawk
-git config --global ghq.root ~/src
+# git config --global ghq.root ~/src
