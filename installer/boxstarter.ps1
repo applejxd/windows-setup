@@ -50,7 +50,6 @@ cinst InkScape
 
 cinst iTunes
 cinst kindle
-cinst geforce-game-ready-driver
 cinst steam
 cinst discord
 cinst mo2
