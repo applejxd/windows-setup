@@ -4,7 +4,7 @@
 # OneDrive の MyDocuments 同期は非推奨（パスが変更されるため）
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme Paradox
+Set-PoshPrompt Paradox
 
 # キーバインド
 Set-PSReadLineOption -EditMode Emacs
