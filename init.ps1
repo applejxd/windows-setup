@@ -32,3 +32,7 @@ scoop install sudo vim
 scoop install ghq fzf
 scoop install sed gawk
 # git config --global ghq.root ~/src
+
+# WSL
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
