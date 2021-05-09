@@ -64,6 +64,9 @@ cinst Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 # Step 3. of https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
 cinst VirtualMachinePlatform -source windowsfeatures
 
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
 # Terminal Environment
 cinst wsl
 cinst vcxsrv
