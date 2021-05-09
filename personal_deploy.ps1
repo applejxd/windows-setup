@@ -10,6 +10,7 @@ if (Test-Path $env:UserProfile\.gitconfig) {
 cmd /c mklink $env:UserProfile\.gitconfig $env:UserProfile\src\windows-setup\config\.gitconfig
 
 # PowerShell
+# Set-ExecutionPolicy RemoteSigned
 $path = $wsh.SpecialFolders("MyDocuments") + "\WindowsPowerShell"
 if (Test-Path $path\Microsoft.PowerShell_profile.ps1) {
   Remove-Item $path\Microsoft.PowerShell_profile.ps1 
