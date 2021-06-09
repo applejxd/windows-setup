@@ -54,9 +54,8 @@ if (-not (Test-Path $install_dir)){
 }
 
 # function for downloading Keypirinha extensions
-function InstallRelease($repo_name, $file_name) {
-  $install_dir = "$env:UserProfile\src\windows-setup\tools\Keypirinha\InstalledPackages"
-  if (-not (Test-Path $install_dir\$file_name)){
+function InstallRelease($repo_name, $file_path) { 
+  if (-not (Test-Path $install_dir\$file_path)){
     # GitHub Release API
     $uri = "https://api.github.com/repos/" + $repo_name + "/releases/latest"
     # Read json
@@ -64,23 +63,33 @@ function InstallRelease($repo_name, $file_name) {
     # Get URL
     $url = $json.assets.browser_download_url
     # Download
-    Invoke-WebRequest $url -OutFile "$install_dir\$file_name"
+    Invoke-WebRequest $url -OutFile $file_path
   }
 }
 
-InstallRelease "Fuhrmann/keypirinha-url-shortener" "URLShortener.keypirinha-package"
-InstallRelease "psistorm/keypirinha-systemcommands" "SystemCommands.keypirinha-package"
-InstallRelease "clinden/keypirinha-colorpicker" "ColorPicker.keypirinha-package"
-InstallRelease "dozius/keypirinha-snippets" "Snippets.keypirinha-package"
+InstallRelease "Fuhrmann/keypirinha-url-shortener" "$install_dir\URLShortener.keypirinha-package"
+InstallRelease "psistorm/keypirinha-systemcommands" "$install_dir\SystemCommands.keypirinha-package"
+InstallRelease "clinden/keypirinha-colorpicker" "$install_dir\ColorPicker.keypirinha-package"
+InstallRelease "dozius/keypirinha-snippets" "$install_dir\Snippets.keypirinha-package"
 # Clipborad Manager
-InstallRelease "tuteken/Keypirinha-Plugin-Ditto" "Ditto.keypirinha-package"
+InstallRelease "tuteken/Keypirinha-Plugin-Ditto" "$install_dir\Ditto.keypirinha-package"
 # Default Windows Apps
-InstallRelease "ueffel/Keypirinha-WindowsApps" "WindowsApps.keypirinha-package"
+InstallRelease "ueffel/Keypirinha-WindowsApps" "$install_dir\WindowsApps.keypirinha-package"
 # Windows Terminal Profiles
-InstallRelease "fran-f/keypirinha-terminal-profiles" "Terminal-Profiles.keypirinha-package"
+InstallRelease "fran-f/keypirinha-terminal-profiles" "$install_dir\Terminal-Profiles.keypirinha-package"
 # Search by abbrev
-InstallRelease "bantya/Keypirinha-EasySearch" "EasySearch.keypirinha-package"
+InstallRelease "bantya/Keypirinha-EasySearch" "$install_dir\EasySearch.keypirinha-package"
 # Execute commands from >
-InstallRelease "bantya/Keypirinha-Command" "Command.keypirinha-package"
+InstallRelease "bantya/Keypirinha-Command" "$install_dir\Command.keypirinha-package"
 
 Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
+
+###################
+# Other softwares #
+###################
+
+$json = Invoke-WebRequest "https://api.github.com/repos/QL-Win/QuickLook/releases/latest" | ConvertFrom-Json
+$url = $json.assets.browser_download_url[1]
+Invoke-WebRequest $url -OutFile C:/tools/QuickLook.zip
+Expand-Archive -Path C:/tools/QuickLook.zip -DestinationPath C:/tools/QuickLook -Force
+Remove-Item C:/tools/QuickLook.zip
