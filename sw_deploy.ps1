@@ -28,22 +28,6 @@ cmd /c mklink /D $env:AppData\Keypirinha $env:UserProfile\src\windows-setup\tool
 cmd /c rmdir /s /q $env:AppData\Everything
 cmd /c mklink /D $env:AppData\Everything $env:UserProfile\src\windows-setup\tools\Everything
 
-###########
-# Startup #
-###########
-
-$path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
-
-if (-not (Test-Path $path)){
-  $shortcut = $wsh.CreateShortcut($path)
-  
-  $shortcut.WorkingDirectory = "C:\ProgramData\chocolatey\bin"
-  $shortcut.TargetPath = "C:\ProgramData\chocolatey\bin\keyhac.exe"
-  $shortcut.IconLocation = "C:\ProgramData\chocolatey\bin\keyhac.exe"
-
-  $shortcut.Save()
-}
-
 ##############
 # Keypirinha #
 ##############
@@ -93,3 +77,33 @@ $url = $json.assets.browser_download_url[1]
 Invoke-WebRequest $url -OutFile C:/tools/QuickLook.zip
 Expand-Archive -Path C:/tools/QuickLook.zip -DestinationPath C:/tools/QuickLook -Force
 Remove-Item C:/tools/QuickLook.zip
+
+###########
+# Startup #
+###########
+
+$path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
+
+if (-not (Test-Path $path)){
+  $shortcut = $wsh.CreateShortcut($path)
+  
+  $shortcut.WorkingDirectory = "C:\ProgramData\chocolatey\bin"
+  $shortcut.TargetPath = "C:\ProgramData\chocolatey\bin\keyhac.exe"
+  $shortcut.IconLocation = "C:\ProgramData\chocolatey\bin\keyhac.exe"
+
+  $shortcut.Save()
+}
+
+$path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
+
+if (-not (Test-Path $path)){
+  $shortcut = $wsh.CreateShortcut($path)
+  
+  $shortcut.WorkingDirectory = "C:\tools\QuickLook
+  
+  hocolatey\bin"
+  $shortcut.TargetPath = "C:\tools\QuickLook\QuickLook.exe"
+  $shortcut.IconLocation = "C:\tools\QuickLook\QuickLook.exe"
+
+  $shortcut.Save()
+}
