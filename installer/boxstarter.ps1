@@ -80,7 +80,8 @@ cinst cascadia-code-nerd-font
 
 # Development environments
 cinst Cygwin
-cinst anaconda3
+# cinst anaconda3
+cinst miniconda3
 
 # JetBrains toolbox -> Install IDEs manually
 cinst jetbrainstoolbox
