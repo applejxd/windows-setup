@@ -99,9 +99,7 @@ $path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
 if (-not (Test-Path $path)){
   $shortcut = $wsh.CreateShortcut($path)
   
-  $shortcut.WorkingDirectory = "C:\tools\QuickLook
-  
-  hocolatey\bin"
+  $shortcut.WorkingDirectory = "C:\tools\QuickLook"
   $shortcut.TargetPath = "C:\tools\QuickLook\QuickLook.exe"
   $shortcut.IconLocation = "C:\tools\QuickLook\QuickLook.exe"
 
