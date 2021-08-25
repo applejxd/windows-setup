@@ -75,11 +75,14 @@ fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t"],
                           }
 
 # 左右どちらの Ctrlキーを使うかを指定する（"L": 左、"R": 右）
-fc.side_of_ctrl_key = "R"
+fc.side_of_ctrl_key = "L"
+
+# 左右どちらの Altキーを使うかを指定する（"L": 左、"R": 右）
+fc.side_of_alt_key = "L"
 
 # Escキーを Metaキーとして使うかどうかを指定する（True: 使う、False: 使わない）
 # （True（Metaキーとして使う）に設定されている場合、ESC の二回押下で ESC が入力されます）
-# fc.use_esc_as_meta = True
+fc.use_esc_as_meta = False
 
 # Emacs日本語入力モードを使うかどうかを指定する（True: 使う、False: 使わない）
 fc.use_emacs_ime_mode = True
@@ -238,3 +241,5 @@ fc.lancherList_listers = [
 # クリップボードに格納したファイルもしくはフォルダのパスを emacsclient で開く
 # fc.emacsclient_name = r"<emacsclient プログラムをインストールしている Windows のパス>\wslclient-n.exe"
 # exec(readConfigExtension(r"emacsclient/config.py"), dict(globals(), **locals()))
+
+define_key(keymap_emacs, "M-x", reset_search(reset_undo(reset_counter(set_mark_command))))
