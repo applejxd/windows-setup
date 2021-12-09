@@ -37,5 +37,6 @@ if(!(Get-Command scoop -ea SilentlyContinue)) {
 }
 scoop install sudo vim
 scoop install ghq fzf
+scoop install which
 scoop install sed gawk
 # git config --global ghq.root ~/src
