@@ -50,10 +50,13 @@ scoop install sed gawk
 #######
 
 # cf. https://tinyurl.com/y4e34c8d
+# cf. https://tinyurl.com/yxul956j
+
 # wsl --list --verbose
-wsl --install -d Ubuntu
+wsl --install -d Ubuntu-20.04
 wsl --update
 # WSL2 へ変更
+wsl --set-version Ubuntu-20.04 2
 wsl --set-default-version2
 # バージョン確認
 # wsl --status
