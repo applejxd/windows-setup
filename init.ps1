@@ -10,7 +10,7 @@ Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 
 ##############
-# Boxstarter #
+# Chocolatey #
 ##############
 
 # Chocolatey のインストール
@@ -21,6 +21,10 @@ Install-Module oh-my-posh -Scope CurrentUser -Force
 # choco install -y Boxstarter
 # Boxstarter のコマンドレットを Powershell に追加
 # Import-Module Boxstarter.Chocolatey
+
+##############
+# Boxstarter #
+##############
 
 # Install boxstarter and chocolatey simultaneously
 . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
@@ -40,3 +44,16 @@ scoop install ghq fzf
 scoop install which
 scoop install sed gawk
 # git config --global ghq.root ~/src
+
+#######
+# WSL #
+#######
+
+# cf. https://tinyurl.com/y4e34c8d
+# wsl --list --verbose
+wsl --install -d Ubuntu
+wsl --update
+# WSL2 へ変更
+wsl --set-default-version2
+# バージョン確認
+# wsl --status
