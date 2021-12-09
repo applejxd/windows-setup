@@ -9,6 +9,10 @@ Install-Module ZLocation -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 
+##############
+# Boxstarter #
+##############
+
 # Chocolatey のインストール
 # if(!(gcm choco -ea SilentlyContinue)) {
 #   iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -19,13 +23,16 @@ Install-Module oh-my-posh -Scope CurrentUser -Force
 # Import-Module Boxstarter.Chocolatey
 
 # Install boxstarter and chocolatey simultaneously
-. { iwr -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
+. { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
 
 # Boxstarter スクリプト実行
 Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/boxstarter.ps1" -DisableReboots
 
-# Scoop のインストール
-if(!(gcm scoop -ea SilentlyContinue)) {
+#########
+# Scoop #
+#########
+
+if(!(Get-Command scoop -ea SilentlyContinue)) {
   Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 }
 scoop install sudo vim
