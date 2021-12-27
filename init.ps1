@@ -49,8 +49,8 @@ scoop install sed gawk
 # WSL #
 #######
 
-# cf. https://tinyurl.com/y4e34c8d
-# cf. https://tinyurl.com/yxul956j
+# cf. https://netlog.jpn.org/r271-635/2021/08/windows10ver21h1_wsl2_inst.html
+# cf. https://minettyo.com/entry/wsl_wsl2conversion
 
 # wsl --list --verbose
 wsl --install -d Ubuntu-20.04
