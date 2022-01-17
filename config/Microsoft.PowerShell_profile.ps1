@@ -66,7 +66,11 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
   Clear-Host
 }
 
-function wbk {
+#######
+# WSL #
+#######
+
+function wex {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
   # null 文字を削除
@@ -78,6 +82,19 @@ function wbk {
 }
 
 function wim {
-  $fname = [System.IO.Path]::GetFileNameWithoutExtension($args[0]);
-  wsl --import $fname %LOCALPROFILE
+  $fname = [System.IO.Path]::GetFileNameWithoutExtension($args[0])
+  $import_path = [Environment]::GetFolderPath('LocalApplicationData') + "\WSL"
+  if (!(Test-Path $import_path)) {
+    mkdir $import_path
+  }
+  wsl --import $fname "${import_path}\${fname}" $args[0]
+}
+
+function wrm {
+  # Where-Object で空行削除
+  $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
+  # null 文字を削除
+  # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
+  $distro = $distro -replace "`0",""
+  wsl --unregister $distro
 }

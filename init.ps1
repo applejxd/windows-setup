@@ -22,16 +22,6 @@ Install-Module oh-my-posh -Scope CurrentUser -Force
 # Boxstarter のコマンドレットを Powershell に追加
 # Import-Module Boxstarter.Chocolatey
 
-##############
-# Boxstarter #
-##############
-
-# Install boxstarter and chocolatey simultaneously
-. { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
-
-# Boxstarter スクリプト実行
-Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/boxstarter.ps1" -DisableReboots
-
 #########
 # Scoop #
 #########
@@ -53,10 +43,12 @@ scoop install sed gawk
 # cf. https://minettyo.com/entry/wsl_wsl2conversion
 
 # wsl --list --verbose
-wsl --install -d Ubuntu-20.04
-wsl --update
+# wsl --install -d Ubuntu-20.04
+# wsl --update
+
 # WSL2 へ変更
-wsl --set-version Ubuntu-20.04 2
-wsl --set-default-version2
+# wsl --set-version Ubuntu-20.04 2
+# wsl --set-default-version2
+
 # バージョン確認
 # wsl --status

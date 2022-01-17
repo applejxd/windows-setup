@@ -3,6 +3,15 @@
 # for special folders
 $wsh = New-Object -ComObject WScript.Shell
 
+##############
+# Boxstarter #
+##############
+
+# Install boxstarter (and chocolatey simultaneously)
+. { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
+
+Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box_install.ps1" -DisableReboots
+
 #################
 # Symbolic Link #
 #################
