@@ -76,3 +76,8 @@ function wbk {
   # https://sevenb.jp/wordpress/ura/2016/06/01/powershell%E6%96%87%E5%AD%97%E5%88%97%E5%86%85%E3%81%AE%E5%A4%89%E6%95%B0%E5%B1%95%E9%96%8B%E3%81%A7%E5%A4%89%E6%95%B0%E5%90%8D%E3%82%92%E7%A2%BA%E5%AE%9A%E3%81%95%E3%81%9B%E3%82%8B/
   wsl --export "${distro}" "${distro}_${date}.tar"
 }
+
+function wim {
+  $fname = [System.IO.Path]::GetFileNameWithoutExtension($args[0]);
+  wsl --import $fname %LOCALPROFILE
+}
