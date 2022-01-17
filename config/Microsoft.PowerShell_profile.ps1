@@ -98,3 +98,12 @@ function wrm {
   $distro = $distro -replace "`0",""
   wsl --unregister $distro
 }
+
+function wrun {
+  # Where-Object で空行削除
+  $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
+  # null 文字を削除
+  # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
+  $distro = $distro -replace "`0",""
+  wsl -d $distro $args
+}
