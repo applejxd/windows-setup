@@ -52,3 +52,17 @@ scoop install sed gawk
 
 # バージョン確認
 # wsl --status
+
+#######
+# Git #
+#######
+
+git config --global init.defaultBranch main
+
+git config --global core.editor vim
+git config --global core.ignorecase false
+git config --global core.quotepath false
+
+git config --global ghq.root ~/src
+
+git config --global gitflow.branch.master main
