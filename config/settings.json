@@ -77,6 +77,11 @@
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{73f2cc3f-3276-57d3-b64a-40f67971799c}",
+                "name": "Ubuntu-18.04_22.01.17",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
