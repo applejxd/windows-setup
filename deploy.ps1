@@ -13,12 +13,14 @@ if (-not (Test-Path $install_path)){
 }
 
 # PowerShell
+# cf. https://qiita.com/smicle/items/0ca4e6ae14ea92000d18
+# cf. https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2 
+
 # Set-ExecutionPolicy RemoteSigned
-$path = $wsh.SpecialFolders("MyDocuments") + "\WindowsPowerShell"
-if (Test-Path $path\Microsoft.PowerShell_profile.ps1) {
-  Remove-Item $path\Microsoft.PowerShell_profile.ps1 
+if (Test-Path $Profile.CurrentUserAllHosts) {
+  Remove-Item $Profile.CurrentUserAllHosts
 }
-cmd /c mklink $path\Microsoft.PowerShell_profile.ps1 $env:UserProfile\src\windows-setup\config\Microsoft.PowerShell_profile.ps1
+cmd /c mklink $Profile.CurrentUserAllHosts $env:UserProfile\src\windows-setup\config\profile.ps1
 
 # Windows Terminal
 if (Test-Path $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json) {
