@@ -1,9 +1,12 @@
-# WSL2のIPアドレスを取得
-$WSL2_IPV4=(wsl bash /mnt/c/Users/$env:UserName/src/windows-setup/config/get_ipv4.bash)
-$HOST_IPV4=((Get-WmiObject Win32_NetworkAdapterConfiguration).IPAddress)[1]
+# cf. https://qiita.com/yabeenico/items/15532c703974dc40a7f5
+
+$IP=(wsl --exec hostname -I | awk '{print $1}')
 $PORT=22000
 
 # 古い設定を削除
-netsh interface portproxy delete v4tov4 listenport=$PORT
+netsh interface portproxy delete v4tov4 listenaddress=localhost listenport=$PORT
 # ホストIP:PORTへアクセスがあったら、WSL2_IP:PORTに転送します。
-netsh interface portproxy add v4tov4 listenaddress=$HOST_IPV4 listenport=$PORT connectaddress=$WSL2_IPV4 connectport=22
+netsh interface portproxy add v4tov4 listenaddress=localhost listenport=$PORT connectaddress=$IP connectport=22
+
+# 確認コマンド
+# netsh interface portproxy show all

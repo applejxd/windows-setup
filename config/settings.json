@@ -71,6 +71,11 @@
                 "hidden": true,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{f7900814-dc9b-5f76-a4bc-65789c05a4eb}",
+                "name": "Distrod",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
