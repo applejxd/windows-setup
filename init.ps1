@@ -100,5 +100,5 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 # cf. https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/register-scheduledtask?view=windowsserver2022-ps
 
 $Trigger = New-ScheduledTaskTrigger -AtStartup
-$PS = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy RemoteSigned $env:UserProfile\src\windows-setup\config\wsl_port_forwarding.ps1"
+$PS = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy RemoteSigned $env:UserProfile\src\windows-setup\config\wsl_por.ps1"
 Register-ScheduledTask -TaskName "WSL Port Forwarding" -RunLevel Highest -Trigger $Trigger -Action $PS
