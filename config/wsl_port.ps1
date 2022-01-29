@@ -10,3 +10,7 @@ netsh interface portproxy add v4tov4 listenport=$PORT connectaddress=$IP connect
 
 # 確認コマンド
 # netsh interface portproxy show all
+
+if (!(Get-NetFirewallRule -Name "WSL-SSH" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
+    New-NetFirewallRule -Name 'WSL-SSH' -DisplayName 'sshd in WSL' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort $PORT
+}
