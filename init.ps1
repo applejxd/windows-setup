@@ -97,9 +97,9 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 
 # cf. https://zenn.dev/fate_shelled/scraps/f6252654277ca0
 # cf. http://sloppy-content.blog.jp/archives/11834895.html
-# cf. https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/register-scheduledtask?view=windowsserver2022-ps
+# cf. https://docs.microsoft.com/en-us/powershell/module/ scheduledtasks/register-scheduledtask?view=windowsserver2022-ps
 
-$Trigger = New-ScheduledTaskTrigger -AtLogon
-$PS = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy RemoteSigned $env:UserProfile\src\windows-setup\config\wsl_port.ps1"
-
-Register-ScheduledTask -TaskName "WSL Port Forwarding" -RunLevel Highest -Trigger $Trigger -Action $PS
+$Sta = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy RemoteSigned $env:UserProfile\src\windows-setup\config\wsl_port.ps1"
+$Stt = New-ScheduledTaskTrigger -AtLogon
+    
+Register-ScheduledTask -TaskName "WSL Port Forwarding" -RunLevel Highest -Action $Sta -Trigger $Stt
