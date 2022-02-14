@@ -67,6 +67,9 @@ git config --global ghq.root ~/src
 
 git config --global gitflow.branch.master main
 
+# for ssh push
+git config --global url."git@github.com:".PushInsteadOf https://github.com/
+
 ########
 # sshd #
 ########
