@@ -181,14 +181,14 @@ class SrcWindows(_BasePlugin):
 class GhqWsl(_BasePlugin):
     def __init__(self):
         super().__init__()
-        self.open_command = "wsl code"
+        self.open_command = "wsl '/mnt/c/Progra~1/Microsoft VS Code/bin/code'"
 
     def on_start(self):
         """初期化"""
         super().on_start()
 
         self.root_path = subprocess.run(
-            'wsl ghq root',
+            'wsl ~/.go/bin/ghq root',
             shell=True, stdout=subprocess.PIPE, check=True
         ).stdout.decode('utf-8').strip()
 
@@ -217,6 +217,6 @@ class GhqWsl(_BasePlugin):
 
     def on_activated(self):
         self.repos = subprocess.run(
-            'wsl ghq list',
+            'wsl ~/.go/bin/ghq list',
             shell=True, stdout=subprocess.PIPE, check=True
         ).stdout.decode('utf-8').split()
