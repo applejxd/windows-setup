@@ -1,25 +1,29 @@
 # cf. https://qiita.com/yabeenico/items/15532c703974dc40a7f5
 
+# 設定パラメータ
+$base_port_array = 50022, 53389, 58888
+$port_name_array = "SSH", "RDP", "HTTP"
+$range=20
+
 # IP アドレス取得
-$IP=(wsl --exec hostname -I | awk '{print $1}')
-$SSH_PORT=22000
-$RDP_PORT=33890
+$wsl_ip=(wsl --exec hostname -I | awk '{print $1}')
 
-# 古いポートフォワード設定を削除
-netsh interface portproxy delete v4tov4 listenport=$SSH_PORT
-netsh interface portproxy delete v4tov4 listenport=$RDP_PORT
+for ($port_index=0; $port_index -lt $base_port_array.Count; $port_index++){
+    for ($shift_index=0; $shift_index -lt $range; $shift_index++){
+        $port_num = $base_port_array[$port_index] + $shift_index
+        # 古いポートフォワード設定を削除
+        netsh interface portproxy delete v4tov4 listenport=$port_num
+        # ポートフォワード設定
+        netsh interface portproxy add v4tov4 listenport=$port_num connectaddress=$wsl_ip connectport=$port_num
 
-# ポートフォワード設定
-netsh interface portproxy add v4tov4 listenport=$SSH_PORT connectaddress=$IP connectport=2222
-netsh interface portproxy add v4tov4 listenport=$RDP_PORT connectaddress=$IP connectport=3390
+        # ポート開放
+        $rule_name = "WSL-" + $port_name_array[$port_index] + "-" + [string]$shift_index
+        if (!(Get-NetFirewallRule -Name $rule_name -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
+            New-NetFirewallRule -Name $rule_name -DisplayName $rule_name -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort $port_num
+            # Remove-NetFireRule -DisplayName $rule_name
+        }
+    }
+}
 
 # 確認コマンド
 # netsh interface portproxy show all
-
-# ポート開放
-if (!(Get-NetFirewallRule -Name "WSL-SSH" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
-    New-NetFirewallRule -Name 'WSL-SSH' -DisplayName 'sshd in WSL' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort $SSH_PORT
-}
-if (!(Get-NetFirewallRule -Name "WSL-RDP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
-    New-NetFirewallRule -Name 'WSL-RDP' -DisplayName 'xrdp in WSL' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort $RDP_PORT
-}
