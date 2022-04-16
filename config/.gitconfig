@@ -1,8 +1,5 @@
 [init]
     defaultBranch = main
-[user]
-	name = applejxd
-	email = 9639592+applejxd@users.noreply.github.com
 [core]
 	editor = vim
 	;; distinguish between uppercase and lowercase
@@ -13,3 +10,5 @@
     root = ~/src
 [gitflow "branch"]
 	master = main
+[url "github:"]
+	pushInstedOf = https://github.com/
