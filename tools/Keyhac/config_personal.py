@@ -45,7 +45,7 @@ fc.emacs_target_class   = []
 # （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
 fc.not_emacs_target    += ["ElonaC.exe",
                            "Akashicverse.exe"
-                           "Osu.exe"
+                           "osu.exe"
                           ]
 
 # IME の切り替え“のみをしたい”アプリケーションソフトを指定する
