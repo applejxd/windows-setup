@@ -16,7 +16,10 @@ if (-not (Test-Path $install_path)){
 # PowerShell Config
 # cf. https://qiita.com/smicle/items/0ca4e6ae14ea92000d18
 # cf. https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2 
-if (Test-Path $Profile.CurrentUserAllHosts) {
+if (!(Test-Path $Profile.CurrentUserAllHosts)) {
+  New-Item $Profile.CurrentUserAllHosts -type file -Force
+}
+if (!((Get-ItemProperty c:\temp\targetfile).Mode.Substring(5,1) -eq 'l')) {
   Remove-Item $Profile.CurrentUserAllHosts
 }
 cmd /c mklink $Profile.CurrentUserAllHosts $env:UserProfile\src\windows-setup\config\profile.ps1
