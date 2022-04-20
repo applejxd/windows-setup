@@ -1,3 +1,7 @@
+#########
+# NuGet #
+#########
+
 # NuGet プロバイダー更新
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 # fzf wrapper
@@ -9,31 +13,40 @@ Install-Module ZLocation -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 
-##############
-# Chocolatey #
-##############
+########
+# Font #
+########
+
+# cf. https://stackoverflow.com/questions/16023238/installing-system-font-with-powershell
+
+# The CLSID of the special folder
+# cf. https://tarma.com/support/im9/using/symbols/functions/csidls.htm
+Invoke-WebRequest https://github.com/mzyy94/RictyDiminished-for-Powerline/raw/master/powerline-fontpatched/Ricty%20Diminished%20Regular%20for%20Powerline.ttf -OutFile $Home\RictyDiminished-for-Powerline.ttf
+(New-Object -ComObject Shell.Application).Namespace(0x14).CopyHere("$Home\RictyDiminished-for-Powerline.ttf", 0x10)
+Remove-Item $Home\RictyDiminished-for-Powerline.ttf
+
+###################
+# Package Manager #
+###################
+
+winget import -i "$env:USERPROFILE\src\windows-setup\installer\winget.json"  --accept-package-agreements --accept-source-agreements
 
 # Chocolatey のインストール
-# if(!(gcm choco -ea SilentlyContinue)) {
-#   iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-# }
+if(!(Get-Command choco -ea SilentlyContinue)) {
+  Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+}
+cinst -y "$env:USERPROFILE\src\windows-setup\installer\choco.config"
 
-# choco install -y Boxstarter
-# Boxstarter のコマンドレットを Powershell に追加
-# Import-Module Boxstarter.Chocolatey
-
-#########
-# Scoop #
-#########
-
+# Scoop のインストール
 if(!(Get-Command scoop -ea SilentlyContinue)) {
   Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 }
-scoop install sudo vim
-scoop install ghq fzf
-scoop install which
-scoop install sed gawk
+scoop install sudo vim ghq fzf which sed gawk
 # git config --global ghq.root ~/src
+
+# Install boxstarter (and chocolatey simultaneously)
+. { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
+Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
 
 #######
 # WSL #
@@ -70,39 +83,14 @@ git config --global gitflow.branch.master main
 # for ssh push
 git config --global url."git@github.com:".PushInsteadOf https://github.com/
 
-########
-# sshd #
-########
+##########
+# VSCode #
+##########
 
-# cf. https://docs.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_install_firstuse
-
-# Install the OpenSSH Client
-Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
-# Install the OpenSSH Server
-Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-
-# Start the sshd service
-Start-Service sshd
-# OPTIONAL but recommended:
-Set-Service -Name sshd -StartupType 'Automatic'
-
-# Confirm the Firewall rule is configured. It should be created automatically by setup. Run the following to verify
-if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
-    Write-Output "Firewall Rule 'OpenSSH-Server-In-TCP' does not exist, creating it..."
-    New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
-} else {
-    Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists."
-}
-
-###########################
-# Port Forwarding for WSL #
-###########################
-
-# cf. https://zenn.dev/fate_shelled/scraps/f6252654277ca0
-# cf. http://sloppy-content.blog.jp/archives/11834895.html
-# cf. https://docs.microsoft.com/en-us/powershell/module/ scheduledtasks/register-scheduledtask?view=windowsserver2022-ps
-
-$Sta = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy RemoteSigned $env:UserProfile\src\windows-setup\config\wsl_port.ps1"
-$Stt = New-ScheduledTaskTrigger -AtLogon
-    
-Register-ScheduledTask -TaskName "WSL Port Forwarding" -RunLevel Highest -Action $Sta -Trigger $Stt
+# Install VSCode extensions
+code --install-extension ms-ceintl.vscode-language-pack-ja
+code --install-extension cocopon.iceberg-theme
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension eamodio.gitlens
+code --install-extension coenraads.bracket-pair-colorizer-2
+code --install-extension yzhang.markdown-all-in-one
