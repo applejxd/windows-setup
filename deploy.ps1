@@ -17,7 +17,8 @@ if (Test-Path $Profile.CurrentUserAllHosts) {
 }
 cmd /c mklink $Profile.CurrentUserAllHosts $env:UserProfile\src\windows-setup\config\profile.ps1
 
-# Windows Terminal COnfig
+# Windows Terminal Config
+winget install --silent --accept-package-agreements --accept-source-agreements Microsoft.WindowsTerminal
 if (Test-Path $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json) {
   Remove-Item $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json 
 }
