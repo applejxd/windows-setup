@@ -19,7 +19,7 @@ if (-not (Test-Path $install_path)){
 if (!(Test-Path $Profile.CurrentUserAllHosts)) {
   New-Item $Profile.CurrentUserAllHosts -type file -Force
 }
-if (!((Get-ItemProperty c:\temp\targetfile).Mode.Substring(5,1) -eq 'l')) {
+if (!((Get-ItemProperty $Profile.CurrentUserAllHosts).Mode.Substring(5,1) -eq 'l')) {
   Remove-Item $Profile.CurrentUserAllHosts
 }
 cmd /c mklink $Profile.CurrentUserAllHosts $env:UserProfile\src\windows-setup\config\profile.ps1
