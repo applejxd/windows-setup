@@ -1,4 +1,5 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
     [
@@ -35,19 +36,18 @@
     {
         "defaults": 
         {
-            "acrylicOpacity": 1.0,
             "colorScheme": "Iceberg",
             "font": 
             {
                 "face": "Hack",
                 "size": 12
             },
+            "opacity": 100,
             "useAcrylic": true
         },
         "list": 
         [
             {
-                "commandline": "powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -60,17 +60,29 @@
                 "name": "Git Bash"
             },
             {
-                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -e /opt/distrod/alias/usr/bin/zsh",
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-                "hidden": false,
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": true,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -e /opt/distrod/alias/usr/bin/zsh",
+                "guid": "{dd948317-d0f0-45be-a266-7a5a18ad2d4a}",
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu 20.04",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{fdef466b-bf3a-5af1-8824-99be1ea376b5}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2017",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{0d27a5b3-7d6d-5816-9e0a-6ae39949a98b}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2017",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
