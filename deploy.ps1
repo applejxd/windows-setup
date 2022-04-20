@@ -6,6 +6,7 @@
 
 $install_path = "$env:UserProfile\src\windows-setup"
 if (-not (Test-Path $install_path)){
+  winget install --silent --accept-package-agreements --accept-source-agreements Git.Git
   git clone https://github.com/applejxd/windows-setup.git $install_path
 }
 
