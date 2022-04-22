@@ -146,6 +146,8 @@ git config --global gitflow.branch.master main
 # for ssh push
 git config --global url."git@github.com:".PushInsteadOf https://github.com/
 
+ghq get https://github.com/applejxd/windows-setup.git
+
 #------#
 # Font #
 #------#
