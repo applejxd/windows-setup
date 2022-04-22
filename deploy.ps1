@@ -1,8 +1,8 @@
 # Memo: Japanese comments cause new line error
 
-#################
-# Symbolic Link #
-#################
+#--------------#
+# Link Configs #
+#--------------#
 
 $install_path = "$env:UserProfile\src\windows-setup"
 if (-not (Test-Path $install_path)){
@@ -32,3 +32,17 @@ if (Test-Path $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe
   Remove-Item $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json 
 }
 cmd /c mklink $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json $env:UserProfile\src\windows-setup\config\settings.json
+
+#-----------------#
+# Package Manager #
+#-----------------#
+
+# cf. https://boxstarter.org/Learn/WebLauncher
+
+# Install boxstarter (and chocolatey simultaneously)
+. { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
+# Run script
+Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
+
+# 3rd party
+Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/3rd_party.ps1'))
