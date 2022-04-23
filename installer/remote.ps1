@@ -1,6 +1,6 @@
-########
+#------#
 # sshd #
-########
+#------#
 
 # cf. https://docs.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_install_firstuse
 
@@ -22,15 +22,27 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
     Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists."
 }
 
-###########################
-# Port Forwarding for WSL #
-###########################
+#----------#
+# Firewall #
+#----------#
 
-# cf. https://zenn.dev/fate_shelled/scraps/f6252654277ca0
-# cf. http://sloppy-content.blog.jp/archives/11834895.html
-# cf. https://docs.microsoft.com/en-us/powershell/module/ scheduledtasks/register-scheduledtask?view=windowsserver2022-ps
+# 設定パラメータ
+$base_port_array = 50022, 53389, 58888
+$port_name_array = "SSH", "RDP", "HTTP"
+$range=20
 
-$Sta = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy RemoteSigned $env:UserProfile\src\windows-setup\config\wsl_port.ps1"
-$Stt = New-ScheduledTaskTrigger -AtLogon
-    
-Register-ScheduledTask -TaskName "WSL Port Forwarding" -RunLevel Highest -Action $Sta -Trigger $Stt
+for ($port_index=0; $port_index -lt $base_port_array.Count; $port_index++){
+    for ($shift_index=0; $shift_index -lt $range; $shift_index++){
+        $port_num = $base_port_array[$port_index] + $shift_index
+
+        # ポート開放
+        $rule_name = "WSL-" + $port_name_array[$port_index] + "-" + [string]$shift_index
+        if (!(Get-NetFirewallRule -Name $rule_name -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
+            New-NetFirewallRule -Name $rule_name -DisplayName $rule_name -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort $port_num
+            # Remove-NetFireRule -DisplayName $rule_name
+        }
+    }
+}
+
+# 確認コマンド
+# netsh interface portproxy show all
