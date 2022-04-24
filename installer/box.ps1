@@ -46,6 +46,9 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 # Terminal Environment
 cinst wsl
 
+# for GUI when using ssh
+[System.Environment]::SetEnvironmentVariable("DISPLAY", "localhost:0.0", "User")
+
 # cf. https://netlog.jpn.org/r271-635/2021/08/windows10ver21h1_wsl2_inst.html
 # cf. https://minettyo.com/entry/wsl_wsl2conversion
 
