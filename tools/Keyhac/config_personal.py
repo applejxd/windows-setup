@@ -44,7 +44,7 @@ fc.emacs_target_class   = []
 # Emacs のキーバインドに“したくない”アプリケーションソフトを指定する
 # （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
 fc.not_emacs_target    += ["ElonaC.exe",
-                           "Akashicverse.exe"
+                           "Akashicverse.exe",
                            "osu.exe"
                           ]
 
