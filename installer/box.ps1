@@ -123,7 +123,7 @@ cinst spotify iTunes
 if(!(Get-Command scoop -ea SilentlyContinue)) {
     Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 }
-scoop install sudo vim ghq fzf which sed gawk
+scoop install sudo vim ghq fzf which sed gawk pdftk
 
 #-------------------#
 # Development Tools #
