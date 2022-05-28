@@ -107,6 +107,7 @@ winst Piriform.Recuva
 
 winst Discord.Discord
 winst Valve.Steam
+winst Spotify.Spotify
 winst Amazon.Kindle
 
 winst Nvidia.GeForceExperience
@@ -122,7 +123,6 @@ cinst hackfont
 cinst cascadia-code-nerd-font
 
 cinst buffalo-nas-navigator
-cinst spotify 
 cinst iTunes
 # cinst mo2 vortex
 
