@@ -73,7 +73,7 @@ My-Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/
 # QuickLook #
 #############
 
-$json = Invoke-WebRequest "https://api.github.com/repos/QL-Win/QuickLook/releases/latest" | ConvertFrom-Json
+$json = My-Invoke-WebRequest "https://api.github.com/repos/QL-Win/QuickLook/releases/latest" | ConvertFrom-Json
 $url = $json.assets.browser_download_url[1]
 My-Invoke-WebRequest $url -OutFile C:/tools/QuickLook.zip
 Expand-Archive -Path C:/tools/QuickLook.zip -DestinationPath C:/tools/QuickLook -Force
