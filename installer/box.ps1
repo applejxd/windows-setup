@@ -109,7 +109,7 @@ winst Discord.Discord
 winst Valve.Steam
 winst Amazon.Kindle
 
-winst Nvidia.GeForceExperienc
+winst Nvidia.GeForceExperience
 
 cinst chocolateygui
 cinst avastfreeantivirus
