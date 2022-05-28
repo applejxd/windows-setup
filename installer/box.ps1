@@ -121,7 +121,7 @@ cinst Everything
 cinst hackfont
 cinst cascadia-code-nerd-font
 
-cinst baffalo-nas-navigator
+cinst buffalo-nas-navigator
 cinst spotify 
 cinst iTunes
 # cinst mo2 vortex
