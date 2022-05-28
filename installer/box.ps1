@@ -81,6 +81,8 @@ Install-Module oh-my-posh -Scope CurrentUser -Force
 Function winst {
     winget install --silent --accept-package-agreements --accept-source-agreements $args
 }
+
+cinst avastfreeantivirus
 winst Google.Chrome
 winst Google.JapaneseIME
 winst 7zip.7zip
@@ -117,7 +119,6 @@ winst Nvidia.GeForceExperience
 winst SourceFoundry.HackFonts
 
 cinst chocolateygui
-cinst avastfreeantivirus
 
 cinst Keyhac 
 cinst Keypirinha
