@@ -2,10 +2,11 @@
 function My-Invoke-WebRequest() {
   $version = $PSVersionTable.PSVersion.Major
   if ($version -le 5) {
-    Invoke-WebRequest -UseBasicParsing $args
+    $cmd = "Invoke-WebRequest -UseBasicParsing $args"
   } else {
-    Invoke-WebRequest $args
+    $cmd = "Invoke-WebRequest $args" 
   }
+  Invoke-Expression $cmd
 }
 
 ####################    
