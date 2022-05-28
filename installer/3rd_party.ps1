@@ -69,16 +69,6 @@ InstallRelease "bantya/Keypirinha-Command" "$install_dir\Command.keypirinha-pack
 
 My-Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
 
-#############
-# QuickLook #
-#############
-
-$json = My-Invoke-WebRequest "https://api.github.com/repos/QL-Win/QuickLook/releases/latest" | ConvertFrom-Json
-$url = $json.assets.browser_download_url[1]
-My-Invoke-WebRequest $url -OutFile C:/tools/QuickLook.zip
-Expand-Archive -Path C:/tools/QuickLook.zip -DestinationPath C:/tools/QuickLook -Force
-Remove-Item C:/tools/QuickLook.zip
-
 ###########
 # Startup #
 ###########
@@ -96,14 +86,11 @@ if (-not (Test-Path $path)){
   $shortcut.Save()
 }
 
-$path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
-
-if (-not (Test-Path $path)){
-  $shortcut = $wsh.CreateShortcut($path)
-  
-  $shortcut.WorkingDirectory = "C:\tools\QuickLook"
-  $shortcut.TargetPath = "C:\tools\QuickLook\QuickLook.exe"
-  $shortcut.IconLocation = "C:\tools\QuickLook\QuickLook.exe"
-
-  $shortcut.Save()
-}
+# $path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
+# if (-not (Test-Path $path)){
+#   $shortcut = $wsh.CreateShortcut($path)
+#   $shortcut.WorkingDirectory = "C:\tools\QuickLook"
+#   $shortcut.TargetPath = "C:\tools\QuickLook\QuickLook.exe"
+#   $shortcut.IconLocation = "C:\tools\QuickLook\QuickLook.exe"
+#   $shortcut.Save()
+# }
