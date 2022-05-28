@@ -1,3 +1,13 @@
+# To avoid Internet Explorer initialization
+function My-Invoke-WebRequest() {
+  $version = $PSVersionTable.PSVersion.Major
+  if ($version -le 5) {
+    Invoke-WebRequest -UseBasicParsing $args
+  } else {
+    Invoke-WebRequest $args
+  }
+}
+
 ####################    
 # Software configs #
 ####################
@@ -25,16 +35,6 @@ cmd /c mklink /D $env:AppData\Everything $env:UserProfile\src\windows-setup\tool
 $install_dir = "$env:UserProfile\src\windows-setup\tools\Keypirinha\InstalledPackages"
 if (-not (Test-Path $install_dir)){
   New-Item $install_dir -ItemType Directory
-}
-
-# To avoid Internet Explorer initialization
-function My-Invoke-WebRequest() {
-  $version = $PSVersionTable.PSVersion.Major
-  if ($version -le 5) {
-    Invoke-WebRequest -UseBasicParsing $args
-  } else {
-    Invoke-WebRequest $args
-  }
 }
 
 # function for downloading Keypirinha extensions
@@ -66,7 +66,7 @@ InstallRelease "bantya/Keypirinha-EasySearch" "$install_dir\EasySearch.keypirinh
 # Execute commands from >
 InstallRelease "bantya/Keypirinha-Command" "$install_dir\Command.keypirinha-package"
 
-Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
+My-Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
 
 #############
 # QuickLook #
@@ -74,7 +74,7 @@ Invoke-WebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/key
 
 $json = Invoke-WebRequest "https://api.github.com/repos/QL-Win/QuickLook/releases/latest" | ConvertFrom-Json
 $url = $json.assets.browser_download_url[1]
-Invoke-WebRequest $url -OutFile C:/tools/QuickLook.zip
+My-Invoke-WebRequest $url -OutFile C:/tools/QuickLook.zip
 Expand-Archive -Path C:/tools/QuickLook.zip -DestinationPath C:/tools/QuickLook -Force
 Remove-Item C:/tools/QuickLook.zip
 
