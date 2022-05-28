@@ -113,10 +113,17 @@ winst Nvidia.GeForceExperienc
 
 cinst chocolateygui
 cinst avastfreeantivirus
-cinst Keyhac Keypriinha Everything
-cinst hackfont cascadia-code-nerd-font
+
+cinst Keyhac 
+cinst Keypriinha 
+cisnt Everything
+
+cinst hackfont
+cinst cascadia-code-nerd-font
+
 cinst baffalo-nas-navigator
-cinst spotify iTunes
+cinst spotify 
+cinst iTunes
 # cinst mo2 vortex
 
 # Scoop のインストール
