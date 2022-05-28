@@ -27,6 +27,15 @@ if (-not (Test-Path $install_dir)){
   New-Item $install_dir -ItemType Directory
 }
 
+$version = $PSVersionTable.PSVersion.Major
+function MyIex($url) {
+  if ($version -leq 5) {
+    Invoke-WebRequest -UseBasicParsing $url
+  } else {
+    Invoke-WebRequest $url
+  }
+}
+
 # function for downloading Keypirinha extensions
 function InstallRelease($repo_name, $file_path) { 
   if (-not (Test-Path $install_dir\$file_path)){
