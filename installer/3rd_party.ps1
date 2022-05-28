@@ -83,6 +83,7 @@ Remove-Item C:/tools/QuickLook.zip
 # Startup #
 ###########
 
+$wsh = New-Object -ComObject WScript.Shell
 $path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
 
 if (-not (Test-Path $path)){
