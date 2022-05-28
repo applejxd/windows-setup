@@ -115,7 +115,7 @@ cinst chocolateygui
 cinst avastfreeantivirus
 
 cinst Keyhac 
-cinst Keypriinha 
+cinst Keypirinha
 cinst Everything
 
 cinst hackfont
