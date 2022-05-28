@@ -27,12 +27,13 @@ if (-not (Test-Path $install_dir)){
   New-Item $install_dir -ItemType Directory
 }
 
-$version = $PSVersionTable.PSVersion.Major
-function MyIex($url) {
-  if ($version -leq 5) {
-    Invoke-WebRequest -UseBasicParsing $url
+# To avoid Internet Explorer initialization
+function My-Invoke-WebRequest() {
+  $version = $PSVersionTable.PSVersion.Major
+  if ($version -le 5) {
+    Invoke-WebRequest -UseBasicParsing $args
   } else {
-    Invoke-WebRequest $url
+    Invoke-WebRequest $args
   }
 }
 
@@ -42,11 +43,11 @@ function InstallRelease($repo_name, $file_path) {
     # GitHub Release API
     $uri = "https://api.github.com/repos/" + $repo_name + "/releases/latest"
     # Read json
-    $json = Invoke-WebRequest $uri | ConvertFrom-Json
+    $json = My-Invoke-WebRequest $uri | ConvertFrom-Json
     # Get URL
     $url = $json.assets.browser_download_url
     # Download
-    Invoke-WebRequest $url -OutFile $file_path
+    My-Invoke-WebRequest $url -OutFile $file_path
   }
 }
 
