@@ -100,30 +100,31 @@ winst CondaForge.Miniforge3
 winst EclipseAdoptium.Temurin.11
 
 winst QL-Win.QuickLook
+winst voidtools.Everything
 winst Ditto.Ditto
 winst WinSCP.WinSCP
 winst Microsoft.PowerToys
 winst Piriform.Recuva
 
+winst Spotify.Spotify
+winst Apple.iTunes
+
 winst Discord.Discord
 winst Valve.Steam
-winst Spotify.Spotify
 winst Amazon.Kindle
 
 winst Nvidia.GeForceExperience
+winst SourceFoundry.HackFonts
 
 cinst chocolateygui
 cinst avastfreeantivirus
 
 cinst Keyhac 
 cinst Keypirinha
-cinst Everything
 
-cinst hackfont
 cinst cascadia-code-nerd-font
 
 cinst buffalo-nas-navigator
-cinst iTunes
 # cinst mo2 vortex
 
 # Scoop のインストール
