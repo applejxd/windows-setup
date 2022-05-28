@@ -116,7 +116,7 @@ cinst avastfreeantivirus
 
 cinst Keyhac 
 cinst Keypriinha 
-cisnt Everything
+cinst Everything
 
 cinst hackfont
 cinst cascadia-code-nerd-font
