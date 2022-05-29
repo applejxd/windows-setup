@@ -4,7 +4,7 @@ Initialize Windows 10 by Chocolatey and Boxstarter
 
 ## How To Use
 
-1. Run as Admin
+1. Run a script as administrator
    
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process -Force
@@ -13,8 +13,15 @@ Initialize Windows 10 by Chocolatey and Boxstarter
    Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
    ```
    
-2. Run as User
+2. Run a script as current user
+
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process -Force
    iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/user.ps1'))
+   ```
+
+3. Enable profile.ps1
+
+   ```powershell
+   Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
    ```
