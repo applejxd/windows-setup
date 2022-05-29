@@ -25,12 +25,12 @@ Invoke-AsCurrentUser -scriptblock $scriptblock
 # cf. https://boxstarter.org/Learn/WebLauncher
 
 # Install boxstarter (and chocolatey simultaneously)
-. { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
+sudo . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
 # Run script
-Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
+sudo Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
 
 # 3rd party
-Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/3rd_party.ps1'))
+sudo Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/3rd_party.ps1'))
 
 #--------------#
 # Link Configs #
