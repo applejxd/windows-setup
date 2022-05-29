@@ -31,7 +31,7 @@ scoop install sudo vim ghq fzf which sed gawk pdftk
 # cf. https://boxstarter.org/Learn/WebLauncher
 
 # Install boxstarter (and chocolatey simultaneously)
-sudo . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
+sudo . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; sudo Get-Boxstarter -Force
 # Run script
 sudo Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
 
