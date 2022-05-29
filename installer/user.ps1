@@ -1,5 +1,9 @@
 # Memo: Japanese comments cause new line error
 
+Function winst {
+    winget install --silent --accept-package-agreements --accept-source-agreements $args
+}
+
 # To avoid Internet Explorer initialization
 Function My-Invoke-WebRequest {
   $version = $PSVersionTable.PSVersion.Major
@@ -26,6 +30,10 @@ scoop install sudo vim ghq fzf which sed gawk pdftk
 
 $install_path = "$env:UserProfile\src\windows-setup"
 if (-not (Test-Path $install_path)){
+  if (!(Get-Command git -ea SilentlyContinue)) {
+    winst Git.Git
+    $env:Path="C:\Progra~1\Git\bin;"+$env:Path
+  }
   git clone https://github.com/applejxd/windows-setup.git $install_path
 }
 
