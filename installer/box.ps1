@@ -76,7 +76,6 @@ Install-Module ZLocation -Scope CurrentUser -Force
 
 # oh-my-posh v2 for PowerShell v5.1
 Install-Module posh-git -Scope CurrentUser -Force
-Install-Module oh-my-posh -Scope CurrentUser -Force
 
 Function winst {
     winget install --silent --accept-package-agreements --accept-source-agreements $args
@@ -90,6 +89,7 @@ winst Adobe.Acrobat.Reader.32-bit
 
 # Windows Terminal
 winst 9N0DX20HK701
+winst oh-my-posh
 winst Canonical.Ubuntu.2004
 winst marha.VcXsrv
 
