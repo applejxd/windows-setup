@@ -1,9 +1,5 @@
 # Memo: Japanese comments cause new line error
 
-Function winst {
-    winget install --silent --accept-package-agreements --accept-source-agreements $args
-}
-
 # To avoid Internet Explorer initialization
 Function My-Invoke-WebRequest {
   $version = $PSVersionTable.PSVersion.Major
@@ -24,15 +20,19 @@ if(!(Get-Command scoop -ea SilentlyContinue)) {
 }
 scoop install sudo vim ghq fzf which sed gawk pdftk
 
-ghq get https://github.com/applejxd/windows-setup.git
-
 #--------------#
 # Link Configs #
 #--------------#
 
+$install_path = "$env:UserProfile\src\windows-setup"
+if (-not (Test-Path $install_path)){
+  git clone https://github.com/applejxd/windows-setup.git $install_path
+}
+
 # PowerShell Config
 # cf. https://qiita.com/smicle/items/0ca4e6ae14ea92000d18
-# cf. https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2 
+# cf. https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2
+
 if (!(Test-Path $Profile.CurrentUserAllHosts)) {
   # Make directories
   New-Item $Profile.CurrentUserAllHosts -type file -Force
@@ -44,7 +44,6 @@ if (!((Get-ItemProperty $Profile.CurrentUserAllHosts).Mode.Substring(5,1) -eq 'l
 cmd /c mklink $Profile.CurrentUserAllHosts $env:UserProfile\src\windows-setup\config\profile.ps1
 
 # Windows Terminal Config
-winst Microsoft.WindowsTerminal
 if (Test-Path $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json) {
   Remove-Item $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json 
 }
