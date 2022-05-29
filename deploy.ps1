@@ -8,15 +8,10 @@ Function winst {
 # Scoop #
 #-------#
 
-Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-Install-Module RunAsUser
-
 if(!(Get-Command scoop -ea SilentlyContinue)) {
-    $scriptblock = Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
-    Invoke-AsCurrentUser -scriptblock $scriptblock
+    Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 }
-$scriptblock = scoop install sudo vim ghq fzf which sed gawk pdftk
-Invoke-AsCurrentUser -scriptblock $scriptblock
+scoop install sudo vim ghq fzf which sed gawk pdftk
 
 #------------#
 # Boxstarter #
