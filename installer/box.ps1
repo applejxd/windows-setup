@@ -128,16 +128,6 @@ cinst cascadia-code-nerd-font
 cinst buffalo-nas-navigator
 # cinst mo2 vortex
 
-# Scoop のインストール
-Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-Install-Module RunAsUser
-if(!(Get-Command scoop -ea SilentlyContinue)) {
-    $scriptblock = Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
-    Invoke-AsCurrentUser -scriptblock $scriptblock
-}
-$scriptblock = scoop install sudo vim ghq fzf which sed gawk pdftk
-Invoke-AsCurrentUser -scriptblock $scriptblock
-
 #-------------------#
 # Development Tools #
 #-------------------#
