@@ -108,7 +108,8 @@ winst WinSCP.WinSCP
 winst Microsoft.PowerToys
 winst Piriform.Recuva
 
-winst Spotify.Spotify
+# Spotify from Microsoft Store
+winst 9NCBCSZSJRSB
 winst Apple.iTunes
 
 winst Discord.Discord
