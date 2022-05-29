@@ -24,60 +24,6 @@ if(!(Get-Command scoop -ea SilentlyContinue)) {
 }
 scoop install sudo vim ghq fzf which sed gawk pdftk
 
-#--------------#
-# Link Configs #
-#--------------#
-
-$install_path = "$env:UserProfile\src\windows-setup"
-if (-not (Test-Path $install_path)){
-  if (!(Get-Command git -ea SilentlyContinue)) {
-    winst Git.Git
-    $env:Path="C:\Progra~1\Git\bin;"+$env:Path
-  }
-  git clone https://github.com/applejxd/windows-setup.git $install_path
-}
-
-# PowerShell Config
-# cf. https://qiita.com/smicle/items/0ca4e6ae14ea92000d18
-# cf. https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2
-
-if (!(Test-Path $Profile.CurrentUserAllHosts)) {
-  # Make directories
-  New-Item $Profile.CurrentUserAllHosts -type file -Force
-}
-if (!((Get-ItemProperty $Profile.CurrentUserAllHosts).Mode.Substring(5,1) -eq 'l')) {
-  # Remove temporary file
-  Remove-Item $Profile.CurrentUserAllHosts
-}
-cmd /c mklink $Profile.CurrentUserAllHosts $env:UserProfile\src\windows-setup\config\profile.ps1
-
-# Windows Terminal Config
-winst 9N0DX20HK701
-if (Test-Path $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json) {
-  Remove-Item $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json 
-}
-cmd /c mklink $env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json $env:UserProfile\src\windows-setup\config\settings.json
-
-#------------------#    
-# Software configs #
-#------------------#
-
-# Keyhac
-cmd /c rmdir /s /q $env:AppData\Keyhac
-cmd /c mklink /D $env:AppData\Keyhac $env:UserProfile\src\windows-setup\tools\Keyhac
-$install_path = "$env:AppData\Keyhac\extension\fakeymacs"
-if (-not (Test-Path $install_path)){
-  git clone https://github.com/smzht/fakeymacs.git $install_path
-}
-
-# Keypirinha
-cmd /c rmdir /s /q $env:AppData\Keypirinha
-cmd /c mklink /D $env:AppData\Keypirinha $env:UserProfile\src\windows-setup\tools\Keypirinha
-
-# Everything
-cmd /c rmdir /s /q $env:AppData\Everything
-cmd /c mklink /D $env:AppData\Everything $env:UserProfile\src\windows-setup\tools\Everything
-
 #------------#
 # Keypirinha #
 #------------#
