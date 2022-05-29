@@ -24,6 +24,7 @@ if(!(Get-Command scoop -ea SilentlyContinue)) {
 }
 scoop install sudo vim ghq fzf which sed gawk pdftk
 
+ghq get https://github.com/applejxd/windows-setup.git
 
 #--------------#
 # Link Configs #
