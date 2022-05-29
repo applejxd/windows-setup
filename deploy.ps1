@@ -4,9 +4,23 @@ Function winst {
     winget install --silent --accept-package-agreements --accept-source-agreements $args
 }
 
-#-----------------#
-# Package Manager #
-#-----------------#
+#-------#
+# Scoop #
+#-------#
+
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+Install-Module RunAsUser
+
+if(!(Get-Command scoop -ea SilentlyContinue)) {
+    $scriptblock = Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
+    Invoke-AsCurrentUser -scriptblock $scriptblock
+}
+$scriptblock = scoop install sudo vim ghq fzf which sed gawk pdftk
+Invoke-AsCurrentUser -scriptblock $scriptblock
+
+#------------#
+# Boxstarter #
+#------------#
 
 # cf. https://boxstarter.org/Learn/WebLauncher
 
