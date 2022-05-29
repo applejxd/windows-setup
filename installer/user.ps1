@@ -30,15 +30,6 @@ ghq get https://github.com/applejxd/windows-setup.git
 # Link Configs #
 #--------------#
 
-$install_path = "$env:UserProfile\src\windows-setup"
-if (-not (Test-Path $install_path)){
-  if (!(Get-Command git -ea SilentlyContinue)) {
-    winst Git.Git
-    $env:Path="C:\Progra~1\Git\bin;"+$env:Path
-  }
-  git clone https://github.com/applejxd/windows-setup.git $install_path
-}
-
 # PowerShell Config
 # cf. https://qiita.com/smicle/items/0ca4e6ae14ea92000d18
 # cf. https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2 
