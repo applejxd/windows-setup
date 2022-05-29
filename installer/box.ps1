@@ -166,6 +166,34 @@ Invoke-WebRequest https://github.com/mzyy94/RictyDiminished-for-Powerline/raw/ma
 (New-Object -ComObject Shell.Application).Namespace(0x14).CopyHere("$Home\RictyDiminished-for-Powerline.ttf", 0x10)
 Remove-Item $Home\RictyDiminished-for-Powerline.ttf
 
+#---------#
+# Startup #
+#---------#
+
+$wsh = New-Object -ComObject WScript.Shell
+$path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
+
+if (-not (Test-Path $path)){
+  $shortcut = $wsh.CreateShortcut($path)
+  
+  $shortcut.WorkingDirectory = "C:\ProgramData\chocolatey\bin"
+  $shortcut.TargetPath = "C:\ProgramData\chocolatey\bin\keyhac.exe"
+  $shortcut.IconLocation = "C:\ProgramData\chocolatey\bin\keyhac.exe"
+
+  $shortcut.Save()
+}
+
+$path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
+if (-not (Test-Path $path)){
+  $shortcut = $wsh.CreateShortcut($path)
+  
+  $shortcut.WorkingDirectory = $env:LOCALAPPDATA + "\Programs\QuickLook\QuickLook.exe"
+  $shortcut.TargetPath = $env:LOCALAPPDATA + "\Programs\QuickLook\QuickLook.exe"
+  $shortcut.IconLocation = $env:LOCALAPPDATA + "\Programs\QuickLook\QuickLook.exe"
+  
+  $shortcut.Save()
+}
+
 #-----------------#
 # Recover Setting #
 #-----------------#
