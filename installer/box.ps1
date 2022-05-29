@@ -88,7 +88,8 @@ winst Google.JapaneseIME
 winst 7zip.7zip
 winst Adobe.Acrobat.Reader.32-bit
 
-winst Microsoft.WindowsTerminal
+# Windows Terminal
+winst 9N0DX20HK701
 winst Canonical.Ubuntu.2004
 winst marha.VcXsrv
 
