@@ -8,9 +8,7 @@ Initialize Windows 10 by Chocolatey and Boxstarter
    
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process -Force
-   . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
-   # Run script
-   Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
+   iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/deploy.ps1'))
    ```
    
 2. Run a script as current user
