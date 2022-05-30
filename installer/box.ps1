@@ -164,9 +164,11 @@ git config --global url."git@github.com:".PushInsteadOf https://github.com/
 
 # The CLSID of the special folder
 # cf. https://tarma.com/support/im9/using/symbols/functions/csidls.htm
-Invoke-WebRequest https://github.com/mzyy94/RictyDiminished-for-Powerline/raw/master/powerline-fontpatched/Ricty%20Diminished%20Regular%20for%20Powerline.ttf -OutFile $Home\RictyDiminished-for-Powerline.ttf
-(New-Object -ComObject Shell.Application).Namespace(0x14).CopyHere("$Home\RictyDiminished-for-Powerline.ttf", 0x10)
-Remove-Item $Home\RictyDiminished-for-Powerline.ttf
+if (-not ([System.String]::Join(" ",[System.Drawing.FontFamily]::Families)).Contains("Ricty Diminished")){
+    Invoke-WebRequest https://github.com/mzyy94/RictyDiminished-for-Powerline/raw/master/powerline-fontpatched/Ricty%20Diminished%20Regular%20for%20Powerline.ttf -OutFile $Home\RictyDiminished-for-Powerline.ttf
+    (New-Object -ComObject Shell.Application).Namespace(0x14).CopyHere("$Home\RictyDiminished-for-Powerline.ttf", 0x10)
+    Remove-Item $Home\RictyDiminished-for-Powerline.ttf
+}
 
 #---------#
 # Startup #
