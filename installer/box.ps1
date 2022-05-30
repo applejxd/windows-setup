@@ -78,10 +78,12 @@ Install-Module ZLocation -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 
 Function winst {
-    winget install --silent --accept-package-agreements --accept-source-agreements $args
+    $cmd = "winget install --silent --accept-package-agreements --accept-source-agreements $args"
+    Invoke-Expression $cmd
 }
 
-cinst avastfreeantivirus
+# Avast
+winst XPDNZJFNCR1B07
 winst Google.Chrome
 winst Google.JapaneseIME
 winst 7zip.7zip
