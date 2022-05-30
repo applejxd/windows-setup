@@ -77,9 +77,10 @@ Install-Module ZLocation -Scope CurrentUser -Force
 # oh-my-posh v2 for PowerShell v5.1
 Install-Module posh-git -Scope CurrentUser -Force
 
-Function winst {
-    $cmd = "winget install --silent --accept-package-agreements --accept-source-agreements $args"
-    Invoke-Expression $cmd
+Function winst ($name) {
+    if (-not ([System.String]::Join(" ",(winget list)).Contains("$name")) {
+        winget install --silent --accept-package-agreements --accept-source-agreements $name
+    }
 }
 
 # Avast
