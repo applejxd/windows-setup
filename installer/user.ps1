@@ -1,7 +1,8 @@
 # Memo: Japanese comments cause new line error
 
 Function winst {
-    winget install --silent --accept-package-agreements --accept-source-agreements $args
+    $cmd = "winget install --silent --accept-package-agreements --accept-source-agreements $args"
+    Invoke-Expression $cmd
 }
 
 # To avoid Internet Explorer initialization
