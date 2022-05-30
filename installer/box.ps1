@@ -202,10 +202,6 @@ if (-not (Test-Path $path)){
 
 $install_path = "$env:UserProfile\src\windows-setup"
 if (-not (Test-Path $install_path)){
-  if (!(Get-Command git -ea SilentlyContinue)) {
-    winst Git.Git
-    $env:Path="C:\Progra~1\Git\bin;"+$env:Path
-  }
   git clone https://github.com/applejxd/windows-setup.git $install_path
 }
 
