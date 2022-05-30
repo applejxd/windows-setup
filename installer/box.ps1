@@ -78,7 +78,7 @@ Install-Module ZLocation -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 
 Function winst ($name) {
-    if (-not ([System.String]::Join(" ",(winget list)).Contains("$name"))){
+    if (-not ([System.String]::Join(" ",(winget list)).Contains("$name"))) {
           winget install --silent --accept-package-agreements --accept-source-agreements $name  
     }
 }
