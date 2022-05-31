@@ -32,13 +32,13 @@ if (-not ([System.String]::Join(" ",[System.Drawing.FontFamily]::Families)).Cont
 if (-not ([System.String]::Join(" ",[System.Drawing.FontFamily]::Families)).Contains("Cica")){
   $url = "https://github.com/miiton/Cica/releases/download/v5.0.3/Cica_v5.0.3.zip"
   Invoke-WebRequest $url -OutFile $Home\Cica.zip
-  Expand-Archive -Path $Home\Cica.zip -DestinationPath $HOME\Cica
+  Expand-Archive -Path $Home\Cica.zip -DestinationPath $Home\Cica
   
   # The CLSID of the special folder
   # cf. https://tarma.com/support/im9/using/symbols/functions/csidls.htm
   (New-Object -ComObject Shell.Application).Namespace(0x14).CopyHere("$Home\Cica\Cica-Regular.ttf", 0x10)
   Remove-Item $Home\Cica.zip
-  Remove-Item -Recurse\Cica
+  Remove-Item -Recurse $Home\Cica
 }
  
 #---------#
