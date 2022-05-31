@@ -6,9 +6,8 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
 # テーマ
 # OneDrive の MyDocuments 同期は非推奨（パスが変更されるため）
-Import-Module posh-git
+oh-my-posh init pwsh | Invoke-Expression
 Import-Module oh-my-posh
-Set-PoshPrompt Paradox
 
 # キーバインド
 Set-PSReadLineOption -EditMode Emacs
