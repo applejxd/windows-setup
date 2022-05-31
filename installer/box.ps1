@@ -72,10 +72,10 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 # fzf wrapper
 Install-Module -Name PSFzf -RequiredVersion 2.1.0 -Scope CurrentUser -Force
 # z コマンド
-Install-Module ZLocation -Scope CurrentUser -Force
+Install-Module -Name ZLocation -Scope CurrentUser -Force
 
 # oh-my-posh v2 for PowerShell v5.1
-Install-Module posh-git -Scope CurrentUser -Force
+Install-Module -Name posh-git -Scope CurrentUser -Force
 
 Function winst ($name) {
     winget install --silent --accept-package-agreements --accept-source-agreements $name  
