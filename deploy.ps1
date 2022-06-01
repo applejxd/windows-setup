@@ -63,9 +63,9 @@ $path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
 if (-not (Test-Path $path)){
   $shortcut = $wsh.CreateShortcut($path)
   
-  $shortcut.WorkingDirectory = "C:\Progra~1\Keyhac"
-  $shortcut.TargetPath = "C:\Progra~1\Keyhac\keyhac.exe"
-  $shortcut.IconLocation = "C:\Progra~1\Keyhac\keyhac.exe"
+  $shortcut.WorkingDirectory = "C:\Progra~1\keyhac"
+  $shortcut.TargetPath = "C:\Progra~1\keyhac\keyhac.exe"
+  $shortcut.IconLocation = "C:\Progra~1\keyhac\keyhac.exe"
 
   $shortcut.Save()
 }
