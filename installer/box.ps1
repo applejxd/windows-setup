@@ -122,12 +122,7 @@ winst Nvidia.GeForceExperience
 winst SourceFoundry.HackFonts
 
 cinst chocolateygui
-
-cinst Keyhac 
 cinst Keypirinha
-
-cinst cascadia-code-nerd-font
-
 cinst buffalo-nas-navigator
 # cinst mo2 vortex
 
