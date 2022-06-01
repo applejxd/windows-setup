@@ -13,6 +13,18 @@ if (-not (gcm Install-BoxstarterPackage -ea SilentlyContinue)) {
 # Run script
 Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
 
+#--------#
+# Keyhac #
+#--------#
+
+$path = "C:\Progra~1\Keyhac"
+if (-not (Test-Path $path)) {
+  $url = http://crftwr.github.io/keyhac/download/keyhac_182.zip
+  Invoke-WebRequest $url -OutFile $Home\keyhac.zip
+  Expand-Archive -Path $Home\keyhac.zip -DestinationPath $path
+  Remove-Item $Home\keyhac.zip
+}
+
 #------#
 # Font #
 #------#
@@ -51,9 +63,9 @@ $path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
 if (-not (Test-Path $path)){
   $shortcut = $wsh.CreateShortcut($path)
   
-  $shortcut.WorkingDirectory = "C:\ProgramData\chocolatey\bin"
-  $shortcut.TargetPath = "C:\ProgramData\chocolatey\bin\keyhac.exe"
-  $shortcut.IconLocation = "C:\ProgramData\chocolatey\bin\keyhac.exe"
+  $shortcut.WorkingDirectory = "C:\Progra~1\Keyhac"
+  $shortcut.TargetPath = "C:\Progra~1\Keyhac\keyhac.exe"
+  $shortcut.IconLocation = "C:\Progra~1\Keyhac\keyhac.exe"
 
   $shortcut.Save()
 }
