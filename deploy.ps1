@@ -17,12 +17,13 @@ Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applej
 # Keyhac #
 #--------#
 
+# Fakeymacs needs Keyhac>=1.82
 $path = "C:\Progra~1\Keyhac"
 if (-not (Test-Path $path)) {
-  $url = http://crftwr.github.io/keyhac/download/keyhac_182.zip
-  Invoke-WebRequest $url -OutFile $Home\keyhac.zip
-  Expand-Archive -Path $Home\keyhac.zip -DestinationPath $path
-  Remove-Item $Home\keyhac.zip
+  $url = "http://crftwr.github.io/keyhac/download/keyhac_182.zip"
+  Invoke-WebRequest "$url" -OutFile "$Home\keyhac.zip"
+  Expand-Archive -Path "$Home\keyhac.zip" -DestinationPath "$path"
+  Remove-Item "$Home\keyhac.zip"
 }
 
 #------#
