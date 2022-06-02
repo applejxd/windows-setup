@@ -77,8 +77,9 @@ Install-Module -Name ZLocation -Scope CurrentUser -Force
 # oh-my-posh v2 for PowerShell v5.1
 Install-Module -Name posh-git -Scope CurrentUser -Force
 
-Function winst ($name) {
-    winget install --silent --accept-package-agreements --accept-source-agreements $name  
+Function winst {
+   $cmd = "winget install --silent --accept-package-agreements --accept-source-agreements $args"
+   Invoke-Expression $cmd
 }
 
 # Avast
@@ -94,7 +95,7 @@ winst oh-my-posh
 winst Canonical.Ubuntu.2004
 winst marha.VcXsrv
 
-winst Microsoft.VisualStudioCode
+winst --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders""" Microsoft.VisualStudioCode 
 winst JetBrains.Toolbox
 winst Git.Git
 
