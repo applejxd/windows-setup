@@ -116,6 +116,8 @@ winst Piriform.Recuva
 winst 9NCBCSZSJRSB
 winst Apple.iTunes
 
+# iCloud
+winst 9PKTQ5699M62
 winst Obsidian.Obsidian
 winst Discord.Discord
 winst Valve.Steam
@@ -125,7 +127,6 @@ winst Nvidia.GeForceExperience
 winst SourceFoundry.HackFonts
 
 cinst chocolateygui
-cinst iCloud
 cinst Keypirinha
 cinst buffalo-nas-navigator
 # cinst mo2 vortex
