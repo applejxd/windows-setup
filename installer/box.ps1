@@ -125,6 +125,7 @@ winst Nvidia.GeForceExperience
 winst SourceFoundry.HackFonts
 
 cinst chocolateygui
+cinst iCloud
 cinst Keypirinha
 cinst buffalo-nas-navigator
 # cinst mo2 vortex
