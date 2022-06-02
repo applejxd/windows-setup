@@ -120,6 +120,7 @@ cmd /c mklink /D $env:AppData\Keyhac $env:UserProfile\src\windows-setup\tools\Ke
 $path = "$env:AppData\Keyhac\extension\fakeymacs"
 if (-not (Test-Path $path)){
   git clone https://github.com/smzht/fakeymacs.git $path
+  # For reproducibility. Use a revision at 2021/5/6.
   git -C $path checkout 7192a75
 }
 
