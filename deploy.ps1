@@ -119,7 +119,7 @@ cmd /c rmdir /s /q $env:AppData\Keyhac
 cmd /c mklink /D $env:AppData\Keyhac $env:UserProfile\src\windows-setup\tools\Keyhac
 $path = "$env:AppData\Keyhac\extension\fakeymacs"
 if (-not (Test-Path $path)){
-  git clone https://github.com/smzht/fakeymacs.git $path
+  git clone https://github.com/smzht/fakeymacs.git $path -b 7192a75
 }
 
 # Keypirinha
