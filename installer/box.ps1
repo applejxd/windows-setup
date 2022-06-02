@@ -95,7 +95,7 @@ winst oh-my-posh
 winst Canonical.Ubuntu.2004
 winst marha.VcXsrv
 
-winst --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders""" Microsoft.VisualStudioCode 
+winget install Microsoft.VisualStudioCode --silent --accept-package-agreements --accept-source-agreements --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders"""
 winst JetBrains.Toolbox
 winst Git.Git
 
