@@ -116,6 +116,7 @@ winst Piriform.Recuva
 winst 9NCBCSZSJRSB
 winst Apple.iTunes
 
+winst Obsidian.Obsidian
 winst Discord.Discord
 winst Valve.Steam
 winst Amazon.Kindle
