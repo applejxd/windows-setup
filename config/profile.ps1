@@ -72,7 +72,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
 function lex {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
-  if (!([string]::IsNullOrEmpty($str))) {
+  if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = $distro -replace "`0",""
@@ -95,7 +95,7 @@ function lim {
 function lrm {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
-  if (!([string]::IsNullOrEmpty($str))) {
+  if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = $distro -replace "`0",""
@@ -107,7 +107,7 @@ function lrm {
 function lin {
   # Where-Object で空行削除
   $distro = wsl -l --online | Where-Object{$_ -ne ""} | Select-Object -Skip 3 | fzf
-  if (!([string]::IsNullOrEmpty($str))) {
+  if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除 & スペース区切りで最初の文字列取得
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = ($distro -replace "`0","").Split(" ")[0]
@@ -119,7 +119,7 @@ function lin {
 function lrun {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
-  if (!([string]::IsNullOrEmpty($str))) {
+  if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = $distro -replace "`0",""
