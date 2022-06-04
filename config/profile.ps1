@@ -69,7 +69,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
 # WSL #
 #######
 
-function wex {
+function lex {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
   # null 文字を削除
@@ -80,7 +80,7 @@ function wex {
   wsl --export "${distro}" "${distro}_${date}.tar"
 }
 
-function wim {
+function lim {
   $fname = [System.IO.Path]::GetFileNameWithoutExtension($args[0])
   $import_path = [Environment]::GetFolderPath('LocalApplicationData') + "\WSL"
   if (!(Test-Path $import_path)) {
@@ -89,7 +89,7 @@ function wim {
   wsl --import $fname "${import_path}\${fname}" $args[0]
 }
 
-function wrm {
+function lrm {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
   # null 文字を削除
@@ -98,7 +98,16 @@ function wrm {
   wsl --unregister $distro
 }
 
-function wrun {
+function lin {
+  # Where-Object で空行削除
+  $distro = wsl -l --online | Where-Object{$_ -ne ""} | Select-Object -Skip 3 | fzf
+  # null 文字を削除 & スペース区切りで最初の文字列取得
+  # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
+  $distro = ($distro -replace "`0","").Split(" ")[0]
+  wsl --install -d $distro
+}
+
+function lrun {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
   # null 文字を削除
