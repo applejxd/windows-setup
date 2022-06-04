@@ -27,7 +27,7 @@ if (Test-Path($ChocolateyProfile)) {
 
 Set-Alias open explorer.exe
 Set-Alias pbcopy clip.exe
-function pbpaste { powershell Get-Clipboard }
+Set-Alias pbpaste Get-Clipboard
 function relogin { powershell $Profile.CurrentUserAllHosts }
 
 #######
