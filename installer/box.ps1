@@ -145,7 +145,8 @@ git config --global core.quotepath false
 git config --global ghq.root ~/src
 git config --global gitflow.branch.master main
 # for ssh push
-git config --global url."git@github.com:".PushInsteadOf https://github.com/
+git config --global url."https://github.com/".insteadOf git@github.com:
+git config --global url."https://".insteadOf git://
 
 #-----------------#
 # Recover Setting #
