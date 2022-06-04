@@ -81,6 +81,17 @@ if (-not (Test-Path $path)){
   $shortcut.Save()
 }
 
+$path = $wsh.SpecialFolders("Startup") + "\XLaunch.lnk"
+if (-not (Test-Path $path)){
+  $shortcut = $wsh.CreateShortcut($path)
+  
+  $shortcut.WorkingDirectory = "$env:UserProfile\src\windows-setup\config"
+  $shortcut.TargetPath = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
+  $shortcut.IconLocation = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
+  
+  $shortcut.Save()
+}
+
 #--------------#
 # Link Configs #
 #--------------#
