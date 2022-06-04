@@ -27,8 +27,8 @@ if (Test-Path($ChocolateyProfile)) {
 
 Set-Alias open explorer.exe
 Set-Alias pbcopy clip.exe
-Set-Alias pbpaste "powershell Get-Clipboard"
-Set-Alias relogin "powershell $Profile.CurrentUserAllHosts"
+function pbpaste { powershell Get-Clipboard }
+function relogin { powershell $Profile.CurrentUserAllHosts }
 
 #######
 # fzf #
@@ -70,7 +70,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
 # WSL #
 #######
 
-Set-Alias lls "wsl -l -v"
+function lls { wsl -l -v }
 
 function lex {
   # Where-Object で空行削除
