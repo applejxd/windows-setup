@@ -69,6 +69,10 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
 # WSL #
 #######
 
+function lls {
+  wsl -l -v
+}
+
 function lex {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
