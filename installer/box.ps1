@@ -52,16 +52,8 @@ cinst wsl
 # cf. https://netlog.jpn.org/r271-635/2021/08/windows10ver21h1_wsl2_inst.html
 # cf. https://minettyo.com/entry/wsl_wsl2conversion
 
-# wsl --list --verbose
-# wsl --install -d Ubuntu-20.04
-# wsl --update
-
 # WSL2 へ変更
-# wsl --set-version Ubuntu-20.04 2
-# wsl --set-default-version2
-
-# バージョン確認
-# wsl --status
+wsl --set-default-version2
 
 #-----------------#
 # Package Manager #
