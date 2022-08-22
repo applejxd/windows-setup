@@ -42,37 +42,63 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 
 # ghq-fzf
 # C-x C-g のキーバインドに関数割り当て
-Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+g' -ScriptBlock {
-  $path = ghq list | fzf
-  # パスが空の文字列でなければ実行
-  if (!([string]::IsNullOrEmpty($path))) {
-    Set-Location "$(ghq root)\$path"
-    # バッファの内容を実行
-    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+if (Get-Command ghq -ea SilentlyContinue) {
+  Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+g' -ScriptBlock {
+    $path = ghq list | fzf
+    # パスが空の文字列でなければ実行
+    if (!([string]::IsNullOrEmpty($path))) {
+      Set-Location "$(ghq root)\$path"
+      # バッファの内容を実行
+      [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+    }
+    # 画面をクリア
+    Clear-Host
   }
-  # 画面をクリア
-  Clear-Host
 }
 
 # z-fzf
 Import-Module ZLocation
-Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
-  # ZLocation の一覧オブジェクトの Path プロパティ抜き出し
-  $path =  z -l | ForEach-Object {Write-Output $_.Path} | fzf
-  if (!([string]::IsNullOrEmpty($path))) {
-    Set-Location "$path"
-    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+if (Get-Command z -ea SilentlyContinue) {
+  Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
+    # ZLocation の一覧オブジェクトの Path プロパティ抜き出し
+    $path =  z -l | ForEach-Object {Write-Output $_.Path} | fzf
+    if (!([string]::IsNullOrEmpty($path))) {
+      Set-Location "$path"
+      [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+    }
+    Clear-Host
   }
-  Clear-Host
+}
+
+############
+# Anaconda #
+############
+
+if (Get-Command conda -ea SilentlyContinue) {
+  function condals { conda env list }
+
+  function condarun {
+    $env_name = (conda env list | Select-Object -Skip 2 | Select-Object -SkipLast 1 | fzf).Split(" ")[0]
+    if (![string]::IsNullOrEmpty($env_name)) {
+      conda activate "$env_name"
+    }
+  }
+
+  function condarm {
+    $env_name = (conda env list | Select-Object -Skip 2 | Select-Object -SkipLast 1 | fzf).Split(" ")[0]
+    if (![string]::IsNullOrEmpty($env_name)) {
+      conda env remove -n "$env_name"
+    }
+  }
 }
 
 #######
 # WSL #
 #######
 
-function lls { wsl -l -v }
+function wslls { wsl -l -v }
 
-function lex {
+function wslex {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
@@ -86,16 +112,17 @@ function lex {
   Clear-Host
 }
 
-function lim {
-  $fname = [System.IO.Path]::GetFileNameWithoutExtension($args[0])
+function wslim {
+  $file_name = Get-ChildItem ./*.tar -name | fzf
+  $distro_name = [System.IO.Path]::GetFileNameWithoutExtension($file_name)
   $import_path = [Environment]::GetFolderPath('LocalApplicationData') + "\WSL"
   if (!(Test-Path $import_path)) {
     mkdir $import_path
   }
-  wsl --import $fname "${import_path}\${fname}" $args[0]
+  wsl --import $distro_name "${import_path}\${distro_name}" $file_name
 }
 
-function lrm {
+function wslrm {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
@@ -107,7 +134,7 @@ function lrm {
    Clear-Host
 }
 
-function lin {
+function wslin {
   # Where-Object で空行削除
   $distro = wsl -l --online | Where-Object{$_ -ne ""} | Select-Object -Skip 3 | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
@@ -119,7 +146,7 @@ function lin {
   Clear-Host
 }
 
-function lrun {
+function wslrun {
   # Where-Object で空行削除
   $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
@@ -129,4 +156,11 @@ function lrun {
     wsl ~ -d $distro $args -e /usr/bin/zsh
   }
   Clear-Host
+}
+
+function wsluser ($distro, $user) {
+  $registry_path = "Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\"
+  $user_id = wsl -d $distro -u $user -e id -u
+  Get-ItemProperty $registry_path DistributionName | Where-Object -Property DistributionName -eq $distro | `
+  Set-ItemProperty -Name DefaultUid -Value $user_id
 }
