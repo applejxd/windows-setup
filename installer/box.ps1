@@ -53,7 +53,7 @@ cinst wsl
 # cf. https://minettyo.com/entry/wsl_wsl2conversion
 
 # WSL2 へ変更
-wsl --set-default-version2
+wsl --set-default-version 2
 
 #-----------------#
 # Package Manager #
