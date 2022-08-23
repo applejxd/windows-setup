@@ -35,7 +35,7 @@ function relogin { powershell $Profile.CurrentUserAllHosts }
 #######
 #cf. https://github.com/junegunn/fzf/wiki/Windows
 
-$env:FZF_DEFAULT_OPTS="--reverse --border"
+$env:FZF_DEFAULT_OPTS = "--reverse --border"
 
 # C-t と C-r のラッパー
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
@@ -61,7 +61,7 @@ Import-Module ZLocation
 if (Get-Command z -ea SilentlyContinue) {
   Set-PSReadLineKeyHandler -Chord 'Ctrl+x,Ctrl+f' -ScriptBlock {
     # ZLocation の一覧オブジェクトの Path プロパティ抜き出し
-    $path =  z -l | ForEach-Object {Write-Output $_.Path} | fzf
+    $path = z -l | ForEach-Object { Write-Output $_.Path } | fzf
     if (!([string]::IsNullOrEmpty($path))) {
       Set-Location "$path"
       [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
@@ -74,23 +74,22 @@ if (Get-Command z -ea SilentlyContinue) {
 # Anaconda #
 ############
 
-if (Get-Command conda -ea SilentlyContinue) {
-  function condals { conda env list }
+function condals { conda env list }
 
-  function condarun {
-    $env_name = (conda env list | Select-Object -Skip 2 | Select-Object -SkipLast 1 | fzf).Split(" ")[0]
-    if (![string]::IsNullOrEmpty($env_name)) {
-      conda activate "$env_name"
-    }
-  }
-
-  function condarm {
-    $env_name = (conda env list | Select-Object -Skip 2 | Select-Object -SkipLast 1 | fzf).Split(" ")[0]
-    if (![string]::IsNullOrEmpty($env_name)) {
-      conda env remove -n "$env_name"
-    }
+function condarun {
+  $env_name = (conda env list | Select-Object -Skip 2 | Select-Object -SkipLast 1 | fzf).Split(" ")[0]
+  if (![string]::IsNullOrEmpty($env_name)) {
+    conda activate "$env_name"
   }
 }
+
+function condarm {
+  $env_name = (conda env list | Select-Object -Skip 2 | Select-Object -SkipLast 1 | fzf).Split(" ")[0]
+  if (![string]::IsNullOrEmpty($env_name)) {
+    conda env remove -n "$env_name"
+  }
+}
+
 
 #######
 # WSL #
@@ -100,11 +99,11 @@ function wslls { wsl -l -v }
 
 function wslex {
   # Where-Object で空行削除
-  $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
+  $distro = wsl -l -q | Where-Object { $_ -ne "" } | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
-    $distro = $distro -replace "`0",""
+    $distro = $distro -replace "`0", ""
     $date = Get-Date -UFormat "%y.%m.%d"
     # https://sevenb.jp/wordpress/ura/2016/06/01/powershell%E6%96%87%E5%AD%97%E5%88%97%E5%86%85%E3%81%AE%E5%A4%89%E6%95%B0%E5%B1%95%E9%96%8B%E3%81%A7%E5%A4%89%E6%95%B0%E5%90%8D%E3%82%92%E7%A2%BA%E5%AE%9A%E3%81%95%E3%81%9B%E3%82%8B/
     wsl --export "${distro}" "${distro}_${date}.tar"
@@ -124,23 +123,23 @@ function wslim {
 
 function wslrm {
   # Where-Object で空行削除
-  $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
+  $distro = wsl -l -q | Where-Object { $_ -ne "" } | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
-    $distro = $distro -replace "`0",""
+    $distro = $distro -replace "`0", ""
     wsl --unregister $distro
-   }
-   Clear-Host
+  }
+  Clear-Host
 }
 
 function wslin {
   # Where-Object で空行削除
-  $distro = wsl -l --online | Where-Object{$_ -ne ""} | Select-Object -Skip 3 | fzf
+  $distro = wsl -l --online | Where-Object { $_ -ne "" } | Select-Object -Skip 3 | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除 & スペース区切りで最初の文字列取得
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
-    $distro = ($distro -replace "`0","").Split(" ")[0]
+    $distro = ($distro -replace "`0", "").Split(" ")[0]
     wsl --install -d $distro
   }
   Clear-Host
@@ -148,21 +147,18 @@ function wslin {
 
 function wslrun {
   # Where-Object で空行削除
-  $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
+  $distro = wsl -l -q | Where-Object { $_ -ne "" } | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
     # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
-    $distro = $distro -replace "`0",""
+    $distro = $distro -replace "`0", ""
     wsl ~ -d $distro $args -e /usr/bin/zsh
   }
   Clear-Host
 }
 
 function wsluser ($user) {
-  $distro = wsl -l -q | Where-Object{$_ -ne ""} | fzf
-  
-  $registry_path = "Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\"
-  $user_id = wsl -d $distro -u $user -e id -u
-  Get-ItemProperty $registry_path DistributionName | Where-Object -Property DistributionName -eq $distro | `
-  Set-ItemProperty -Name DefaultUid -Value $user_id
+  $distro = wsl -l -q | Where-Object { $_ -ne "" } | fzf
+
+  Get-ItemProperty Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\ DistributionName | Where-Object -Property DistributionName -eq $distro | Set-ItemProperty -Name DefaultUid -Value ((wsl -d $distro -u $user -e id -u) | Out-String)
 }
