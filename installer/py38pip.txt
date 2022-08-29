@@ -12,14 +12,16 @@ numba<0.55
 matplotlib
 
 opencv-python
-open3d==0.15.1
-pyclustering
+open3d==0.15.*
 laspy[lazrs,laszip]
+trimesh
 
 scikit-learn==0.23.2 
-pycaret[full]==2.3.10
+pycaret[full]==2.3.*
+pyclustering
+fastcluster
 
-tensorflow
+tensorflow==2.9.*
 tensorboard
 # for tensorboard
 protobuf~=3.20
