@@ -61,12 +61,12 @@ wsl --set-default-version 2
 
 # NuGet プロバイダー更新
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-# fzf wrapper
+# fzf wrapper (needs fzf binary from chocolatey or scoop)
 Install-Module -Name PSFzf -RequiredVersion 2.1.0 -Scope CurrentUser -Force
 # z コマンド
 Install-Module -Name ZLocation -Scope CurrentUser -Force
 
-# oh-my-posh v2 for PowerShell v5.1
+# oh-my-posh integration for git prompt
 Install-Module -Name posh-git -Scope CurrentUser -Force
 
 Function winst {
