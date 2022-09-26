@@ -4,16 +4,16 @@
     "actions": 
     [
         {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
             "command": 
             {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
         },
         {
             "command": "find",
@@ -31,7 +31,7 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{f8c4b738-40ae-4a6e-85b7-f8bccc4736dc}",
     "profiles": 
     {
         "defaults": 
@@ -48,18 +48,30 @@
         "list": 
         [
             {
+                "font": 
+                {
+                    "face": "Cica"
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+                "font": 
+                {
+                    "face": "Cica"
+                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash"
             },
             {
+                "font": 
+                {
+                    "face": "Cica"
+                },
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": true,
                 "name": "Azure Cloud Shell",
@@ -67,22 +79,33 @@
             },
             {
                 "commandline": "wsl.exe ~ -d Ubuntu-20.04 -e /opt/distrod/alias/usr/bin/zsh",
+                "font": 
+                {
+                    "face": "Cica"
+                },
                 "guid": "{dd948317-d0f0-45be-a266-7a5a18ad2d4a}",
                 "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
                 "name": "Ubuntu 20.04",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "guid": "{fdef466b-bf3a-5af1-8824-99be1ea376b5}",
+                "altGrAliasing": true,
+                "antialiasingMode": "grayscale",
+                "closeOnExit": "graceful",
+                "commandline": "%windir%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& '%USERPROFILE%\\miniconda3\\shell\\condabin\\conda-hook.ps1' ; conda activate '%USERPROFILE%\\miniconda3' \"",
+                "cursorShape": "bar",
+                "font": 
+                {
+                    "face": "Cica"
+                },
+                "guid": "{f8c4b738-40ae-4a6e-85b7-f8bccc4736dc}",
                 "hidden": false,
-                "name": "Developer Command Prompt for VS 2017",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{0d27a5b3-7d6d-5816-9e0a-6ae39949a98b}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2017",
-                "source": "Windows.Terminal.VisualStudio"
+                "historySize": 9001,
+                "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+                "name": "Miniforge",
+                "padding": "8, 8, 8, 8",
+                "snapOnInput": true,
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
