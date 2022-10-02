@@ -179,6 +179,8 @@ function dls { docker ps -a }
 
 function dim { docker images }
 
+function dclean { docker container prune }
+
 function drun {
   $selected_line = docker images | Select-Object -Skip 1 | fzf
   # null 文字を削除 & 空白区切り & 空の要素を削除
