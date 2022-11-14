@@ -43,8 +43,6 @@ fc.emacs_target_class = []
 
 # Emacs のキーバインドに“したくない”アプリケーションソフトを指定する
 # （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
-# Emacs のキーバインドに“したくない”アプリケーションソフトを指定する
-# （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
 fc.not_emacs_target = ["wsl.exe",                # WSL
                        "bash.exe",               # WSL
                        "ubuntu.exe",             # WSL
@@ -94,8 +92,7 @@ fc.not_emacs_target = ["wsl.exe",                # WSL
 
 # IME の切り替え“のみをしたい”アプリケーションソフトを指定する
 # （指定できるアプリケーションソフトは、not_emacs_target で（除外）指定したものからのみとなります）
-fc.ime_target += [
-]
+fc.ime_target += []
 
 # キーマップ毎にキー設定をスキップするキーを指定する
 # （リストに指定するキーは、define_key の第二引数に指定する記法のキーとしてください。"A-v" や "C-v"

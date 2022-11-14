@@ -1,4 +1,4 @@
-# run: pip install -r requiremnts.txt
+# run: pip install -r py38pip.txt
 # doc https://pip.pypa.io/en/stable/reference/requirements-file-format/
 # env: Python 3.8 + CUDA 11.2 + cuDNN 8.1
 
@@ -11,17 +11,19 @@ scipy<=1.5.4
 numba<0.55
 matplotlib
 
-opencv-python
+# for JetBrains IDE syntax highlighting
+# cf. https://github.com/opencv/opencv/issues/20997#issuecomment-1176523621
+opencv-python==4.5.5.62
 open3d==0.15.*
 laspy[lazrs,laszip]
 trimesh
 
 scikit-learn==0.23.2 
-pycaret[full]==2.3.*
+pycaret[full]==2.3.10
 pyclustering
 fastcluster
 
-tensorflow==2.9.*
+tensorflow
 tensorboard
 # for tensorboard
 protobuf~=3.20
