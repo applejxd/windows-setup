@@ -4,8 +4,8 @@
     "actions": 
     [
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -16,8 +16,8 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": "paste",
+            "keys": "ctrl+v"
         },
         {
             "command": 
@@ -78,7 +78,7 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -e /opt/distrod/alias/usr/bin/zsh",
+                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -e /usr/bin/zsh",
                 "font": 
                 {
                     "face": "Cica"
@@ -106,6 +106,18 @@
                 "padding": "8, 8, 8, 8",
                 "snapOnInput": true,
                 "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{0c1204a1-dd96-57d3-8ca8-6657f789a41e}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{7ec6c7e9-3644-5077-95b1-749d992a7484}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },

@@ -6,7 +6,7 @@
 
 # cf. https://boxstarter.org/Learn/WebLauncher
 
-if (-not (gcm Install-BoxstarterPackage -ea SilentlyContinue)) {
+if (-not (Get-Command Install-BoxstarterPackage -ea SilentlyContinue)) {
   # Install boxstarter (and chocolatey simultaneously)
   . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
 }
@@ -81,16 +81,17 @@ if (-not (Test-Path $path)){
   $shortcut.Save()
 }
 
-$path = $wsh.SpecialFolders("Startup") + "\XLaunch.lnk"
-if (-not (Test-Path $path)){
-  $shortcut = $wsh.CreateShortcut($path)
+# For WSL2 without WSLg
+# $path = $wsh.SpecialFolders("Startup") + "\XLaunch.lnk"
+# if (-not (Test-Path $path)){
+#   $shortcut = $wsh.CreateShortcut($path)
   
-  $shortcut.WorkingDirectory = "$env:UserProfile\src\windows-setup\config"
-  $shortcut.TargetPath = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
-  $shortcut.IconLocation = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
+#   $shortcut.WorkingDirectory = "$env:UserProfile\src\windows-setup\config"
+#   $shortcut.TargetPath = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
+#   $shortcut.IconLocation = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
   
-  $shortcut.Save()
-}
+#   $shortcut.Save()
+# }
 
 #--------------#
 # Link Configs #
