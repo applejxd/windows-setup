@@ -2,6 +2,10 @@
 # doc https://pip.pypa.io/en/stable/reference/requirements-file-format/
 # env: Python 3.8 + CUDA 11.2 + cuDNN 8.1
 
+#-------#
+# Basic #
+#-------#
+
 numpy
 pandas
 dask
@@ -11,6 +15,10 @@ scipy<=1.5.4
 numba<0.55
 matplotlib
 
+#----#
+# CV #
+#----#
+
 # for JetBrains IDE syntax highlighting
 # cf. https://github.com/opencv/opencv/issues/20997#issuecomment-1176523621
 opencv-python==4.5.5.62
@@ -18,10 +26,17 @@ open3d==0.15.*
 laspy[lazrs,laszip]
 trimesh
 
+#----#
+# ML #
+#----#
+
 scikit-learn==0.23.2 
-pycaret[full]==2.3.10
 pyclustering
 fastcluster
+
+#-----#
+# DNN #
+#-----#
 
 tensorflow
 tensorboard
@@ -31,5 +46,7 @@ protobuf~=3.20
 torch==1.9.0+cu111
 torchvision==0.10.0+cu111
 torchaudio==0.9.0 
-
 -f https://download.pytorch.org/whl/torch_stable.html
+
+# unstable dependency
+# pycaret[full]==2.3.10
