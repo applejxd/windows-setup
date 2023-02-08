@@ -78,7 +78,7 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -e /usr/bin/zsh",
+                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -u applejxd -e /usr/bin/zsh",
                 "font": 
                 {
                     "face": "Cica"
@@ -92,7 +92,7 @@
                 "altGrAliasing": true,
                 "antialiasingMode": "grayscale",
                 "closeOnExit": "graceful",
-                "commandline": "%windir%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& '%USERPROFILE%\\miniconda3\\shell\\condabin\\conda-hook.ps1' ; conda activate '%USERPROFILE%\\miniconda3' \"",
+                "commandline": "%windir%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& '%USERPROFILE%\\miniforge3\\shell\\condabin\\conda-hook.ps1' ; conda activate '%USERPROFILE%\\miniforge3' \"",
                 "cursorShape": "bar",
                 "font": 
                 {
