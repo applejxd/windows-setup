@@ -40,7 +40,7 @@
             "font": 
             {
                 "face": "Hack",
-                "size": 12
+                "size": 12.0
             },
             "opacity": 100,
             "useAcrylic": true
@@ -48,51 +48,10 @@
         "list": 
         [
             {
-                "font": 
-                {
-                    "face": "Cica"
-                },
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell"
-            },
-            {
-                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
-                "font": 
-                {
-                    "face": "Cica"
-                },
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
-                "name": "Git Bash"
-            },
-            {
-                "font": 
-                {
-                    "face": "Cica"
-                },
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
-                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -u applejxd -e /usr/bin/zsh",
-                "font": 
-                {
-                    "face": "Cica"
-                },
-                "guid": "{dd948317-d0f0-45be-a266-7a5a18ad2d4a}",
-                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "Ubuntu 20.04",
-                "startingDirectory": "%USERPROFILE%"
-            },
-            {
                 "altGrAliasing": true,
                 "antialiasingMode": "grayscale",
                 "closeOnExit": "graceful",
-                "commandline": "%windir%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& '%USERPROFILE%\\miniforge3\\shell\\condabin\\conda-hook.ps1' ; conda activate '%USERPROFILE%\\miniforge3' \"",
+                "commandline": "powershell -ExecutionPolicy ByPass -NoExit -Command \"%USERPROFILE%\\anaconda3\\shell\\condabin\\conda-hook.ps1; conda activate base\"",
                 "cursorShape": "bar",
                 "font": 
                 {
@@ -108,6 +67,37 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
+                "font": 
+                {
+                    "face": "Cica"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -u applejxd -e /usr/bin/zsh",
+                "font": 
+                {
+                    "face": "Cica"
+                },
+                "guid": "{dd948317-d0f0-45be-a266-7a5a18ad2d4a}",
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu 20.04",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+                "font": 
+                {
+                    "face": "Cica"
+                },
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "name": "Git Bash"
+            },
+            {
                 "guid": "{0c1204a1-dd96-57d3-8ca8-6657f789a41e}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
@@ -118,6 +108,16 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "font": 
+                {
+                    "face": "Cica"
+                },
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
             }
         ]
     },
@@ -353,5 +353,6 @@
             "white": "#C0C0C0",
             "yellow": "#808000"
         }
-    ]
+    ],
+    "themes": []
 }

@@ -94,8 +94,10 @@ winst Git.Git
 
 winst msys2.msys2
 winst Kitware.CMake
-winst CondaForge.Miniforge3
 winst EclipseAdoptium.Temurin.11
+
+winst CondaForge.Miniforge3
+New-Item -ItemType SymbolicLink -Path $env:UserProfile\anaconda3 -Target $env:UserProfile\miniforge3
 
 winst QL-Win.QuickLook
 winst voidtools.Everything
@@ -117,6 +119,7 @@ winst Amazon.Kindle
 
 winst Nvidia.GeForceExperience
 winst SourceFoundry.HackFonts
+winst Wacom.WacomTabletDriver
 
 cinst chocolateygui
 cinst Keypirinha

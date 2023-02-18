@@ -23,7 +23,7 @@ Function My-Invoke-WebRequest {
 if(!(Get-Command scoop -ea SilentlyContinue)) {
     Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 }
-scoop install sudo vim git ghq fzf which sed gawk pdftk
+scoop install sudo vim git ghq fzf gow which sed gawk pdftk
 
 #------------#
 # Keypirinha #
