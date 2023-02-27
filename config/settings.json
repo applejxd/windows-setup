@@ -61,7 +61,7 @@
                 "hidden": false,
                 "historySize": 9001,
                 "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
-                "name": "Miniforge",
+                "name": "Anaconda3",
                 "padding": "8, 8, 8, 8",
                 "snapOnInput": true,
                 "startingDirectory": "%USERPROFILE%"
@@ -76,7 +76,7 @@
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -u applejxd -e /usr/bin/zsh",
+                "commandline": "wsl.exe ~ -d Ubuntu-20.04 -e /usr/bin/zsh",
                 "font": 
                 {
                     "face": "Cica"
