@@ -234,7 +234,7 @@ function dbuild() {
   $date_tag = $(Get-Date -Format "yyyy.MM.dd")
   $cname = "local/" + $file_name.Split(".")[0] + ":" + "$date_tag"
   if (!([string]::IsNullOrEmpty($cname))) {
-    docker build -t "$cname" -f "$file_name" .
+    docker build -t $cname.ToLower() -f "$file_name" .
   }
 }
 
