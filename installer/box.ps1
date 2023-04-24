@@ -121,6 +121,14 @@ winst Nvidia.GeForceExperience
 winst SourceFoundry.HackFonts
 winst Wacom.WacomTabletDriver
 
+winst hadolint.hadolint
+# $folderPath = "$env:LocalAppData\Microsoft\WinGet\Links"
+# if (-not ($env:Path -split ';' | Select-String -SimpleMatch $folderPath)) {
+#    $newPath = $env:Path + ";" + $folderPath
+#    [Environment]::SetEnvironmentVariable("Path", $newPath, "Machine")
+# }
+
+
 cinst chocolateygui
 cinst Keypirinha
 cinst buffalo-nas-navigator
