@@ -1,5 +1,13 @@
-Disable-MicrosoftUpdate
-Disable-UAC
+<#
+  .SYNOPSIS
+    Boxstarter scirpt
+  .DESCRIPTION
+    Use winget and chocolatey
+    [Attention!] Includes security configurations
+#>
+
+# Disable-MicrosoftUpdate
+# Disable-UAC
 
 #-----------#
 # WinConfig #
@@ -35,6 +43,7 @@ Set-WindowsExplorerOptions -EnableShowFrequentFoldersInQuickAccess
 # WSL/Terminal #
 #--------------#
 
+# TODO: need to be updated
 # Step 1. of https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
 cinst Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 # Step 3. of https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
@@ -70,85 +79,32 @@ Install-Module -Name ZLocation -Scope CurrentUser -Force
 Install-Module -Name posh-git -Scope CurrentUser -Force
 
 Function winst {
-   $cmd = "winget install --silent --accept-package-agreements --accept-source-agreements $args"
-   Invoke-Expression $cmd
+  $cmd = "winget install --silent --accept-package-agreements --accept-source-agreements $args"
+  Invoke-Expression $cmd
 }
 
-# Avast
-winst XPDNZJFNCR1B07
 winst Google.Chrome
 winst Google.JapaneseIME
 winst 7zip.7zip
-winst Adobe.Acrobat.Reader.32-bit
 
-# Windows Terminal
-winst 9N0DX20HK701
 winst oh-my-posh
 winst Canonical.Ubuntu.2004
-winst marha.VcXsrv
-
-# for the context menus
-winget install Microsoft.VisualStudioCode --silent --accept-package-agreements --accept-source-agreements --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders"""
-winst JetBrains.Toolbox
-winst Git.Git
-
-winst msys2.msys2
-winst Kitware.CMake
-winst EclipseAdoptium.Temurin.11
-
-winst CondaForge.Miniforge3
-New-Item -ItemType SymbolicLink -Path $env:UserProfile\anaconda3 -Target $env:UserProfile\miniforge3
 
 winst QL-Win.QuickLook
 winst voidtools.Everything
 winst Ditto.Ditto
 winst WinSCP.WinSCP
 winst Microsoft.PowerToys
-winst Piriform.Recuva
-
-# Spotify from Microsoft Store
-winst 9NCBCSZSJRSB
-winst Apple.iTunes
-
-# iCloud
-winst 9PKTQ5699M62
-winst Obsidian.Obsidian
-winst Discord.Discord
-winst Valve.Steam
-winst Amazon.Kindle
-
-winst Nvidia.GeForceExperience
 winst SourceFoundry.HackFonts
-winst Wacom.WacomTabletDriver
-
-winst hadolint.hadolint
-# $folderPath = "$env:LocalAppData\Microsoft\WinGet\Links"
-# if (-not ($env:Path -split ';' | Select-String -SimpleMatch $folderPath)) {
-#    $newPath = $env:Path + ";" + $folderPath
-#    [Environment]::SetEnvironmentVariable("Path", $newPath, "Machine")
-# }
-
 
 cinst chocolateygui
 cinst Keypirinha
-cinst buffalo-nas-navigator
-# cinst mo2 vortex
 
-#-------------------#
-# Development Tools #
-#-------------------#
+#-----#
+# Git #
+#-----#
 
-# Enable path to vscode command
-refreshenv
-
-# Install VSCode extensions
-code --install-extension ms-ceintl.vscode-language-pack-ja
-code --install-extension cocopon.iceberg-theme
-code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension eamodio.gitlens
-code --install-extension coenraads.bracket-pair-colorizer-2
-code --install-extension yzhang.markdown-all-in-one
-
+winst Git.Git
 git config --global init.defaultBranch main
 git config --global core.editor vim
 git config --global core.ignorecase false
@@ -159,11 +115,74 @@ git config --global gitflow.branch.master main
 git config --global url."https://github.com/".insteadOf git@github.com:
 git config --global url."https://".insteadOf git://
 
+#--------#
+# VSCode #
+#--------#
+
+# for the context menus
+winget install Microsoft.VisualStudioCode --silent --accept-package-agreements --accept-source-agreements --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders"""
+
+# Enable path to vscode command
+refreshenv
+
+# Theme
+code --install-extension ms-ceintl.vscode-language-pack-ja
+code --install-extension Anan.jetbrains-darcula-theme
+code --install-extension chadalen.vscode-jetbrains-icon-theme
+code --install-extension usernamehw.errorlens
+
+# Git
+code --install-extension eamodio.gitlens
+code --install-extension mhutchie.git-graph
+
+# Markdown
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension DavidAnson.vscode-markdownlint
+
+# Remote
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension ms-vscode-remote.remote-containers
+
+# C/C++
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.cpptools-extension-pack
+code --install-extension ms-vscode.cpptools-themes
+code --install-extension xaver.clang-format
+code --install-extension jeff-hykin.better-cpp-syntax
+code --install-extension notskm.clang-tidy
+code --install-extension twxs.cmake
+code --install-extension ms-vscode.cmake-tools
+
+# Python
+code --install-extension ms-python.python
+code --install-extension ms-python.isort
+code --install-extension ms-python.black-formatter
+
+#-----------#
+# Dev tools #
+#-----------#
+
+winst Nvidia.GeForceExperience
+
+# Docker
+winst hadolint.hadolint
+winst Docker.DockerDesktop
+
+# C++
+winst Microsoft.VisualStudio.2022.Community
+winst Kitware.CMake
+
+# Python
+winst Python.Python.3.9
+winst Python.Python.3.10
+winst Python.Python.3.11
+winst Python.Python.3.12
+
 #-----------------#
 # Recover Setting #
 #-----------------#
 
-Enable-UAC
-Enable-MicrosoftUpdate
-# Eula = End-User License Agreement
-Install-WindowsUpdate -acceptEula
+# Enable-UAC
+# Enable-MicrosoftUpdate
+# # Eula = End-User License Agreement
+# Install-WindowsUpdate -acceptEula

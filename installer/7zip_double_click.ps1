@@ -1,6 +1,11 @@
-# 7-Zip でダブルクリックで解凍できるように
+<#
+  .SYNOPSIS
+    decompress files by double-click using 7-Zip
+  .DESCRIPTION
+    [Attension!] set registry keys
+#>
 
-# HKEY_CLASSES_ROOT を編集可能に
+# make HKEY_CLASSES_ROOT editable
 New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 
 $exts = @("7z", "zip", "rar", "lzh", "tar", "gz")

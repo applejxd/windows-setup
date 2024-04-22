@@ -1,3 +1,8 @@
+<#
+  .SYNOPSIS
+    Install packages  
+#>
+
 # Memo: Japanese comments cause new line error
 
 #------------#
@@ -31,7 +36,7 @@ if (-not (Test-Path "C:\Progra~1\keyhac")) {
 
 # cf. https://stackoverflow.com/questions/16023238/installing-system-font-with-powershell
 
-if (-not ([System.String]::Join(" ",[System.Drawing.FontFamily]::Families)).Contains("Ricty Diminished for Powerline")){
+if (-not ([System.String]::Join(" ", [System.Drawing.FontFamily]::Families)).Contains("Ricty Diminished for Powerline")) {
   $url = "https://github.com/mzyy94/RictyDiminished-for-Powerline/raw/master/powerline-fontpatched/Ricty%20Diminished%20Regular%20for%20Powerline.ttf"
   Invoke-WebRequest $url -OutFile $Home\RictyDiminished-for-Powerline.ttf
   
@@ -41,7 +46,7 @@ if (-not ([System.String]::Join(" ",[System.Drawing.FontFamily]::Families)).Cont
   Remove-Item $Home\RictyDiminished-for-Powerline.ttf
 }
 
-if (-not ([System.String]::Join(" ",[System.Drawing.FontFamily]::Families)).Contains("Cica")){
+if (-not ([System.String]::Join(" ", [System.Drawing.FontFamily]::Families)).Contains("Cica")) {
   $url = "https://github.com/miiton/Cica/releases/download/v5.0.3/Cica_v5.0.3.zip"
   Invoke-WebRequest $url -OutFile $Home\Cica.zip
   Expand-Archive -Path $Home\Cica.zip -DestinationPath $Home\Cica
@@ -60,7 +65,7 @@ if (-not ([System.String]::Join(" ",[System.Drawing.FontFamily]::Families)).Cont
 $wsh = New-Object -ComObject WScript.Shell
 
 $path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
-if (-not (Test-Path $path)){
+if (-not (Test-Path $path)) {
   $shortcut = $wsh.CreateShortcut($path)
   
   $shortcut.WorkingDirectory = "C:\Progra~1\keyhac"
@@ -71,7 +76,7 @@ if (-not (Test-Path $path)){
 }
 
 $path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
-if (-not (Test-Path $path)){
+if (-not (Test-Path $path)) {
   $shortcut = $wsh.CreateShortcut($path)
   
   $shortcut.WorkingDirectory = $env:LOCALAPPDATA + "\Programs\QuickLook\QuickLook.exe"
@@ -98,7 +103,7 @@ if (-not (Test-Path $path)){
 #--------------#
 
 $path = "$env:UserProfile\src\windows-setup"
-if (-not (Test-Path $path)){
+if (-not (Test-Path $path)) {
   git clone https://github.com/applejxd/windows-setup.git $path
 }
 
@@ -109,7 +114,7 @@ if (-not (Test-Path $Profile.CurrentUserAllHosts)) {
   # Make directories
   New-Item $Profile.CurrentUserAllHosts -type file -Force
 }
-if (-not ((Get-ItemProperty $Profile.CurrentUserAllHosts).Mode.Substring(5,1) -eq 'l')) {
+if (-not ((Get-ItemProperty $Profile.CurrentUserAllHosts).Mode.Substring(5, 1) -eq 'l')) {
   # Remove temporary file
   Remove-Item $Profile.CurrentUserAllHosts
 }
@@ -130,7 +135,7 @@ cmd /c mklink $path $env:UserProfile\src\windows-setup\config\settings.json
 cmd /c rmdir /s /q $env:AppData\Keyhac
 cmd /c mklink /D $env:AppData\Keyhac $env:UserProfile\src\windows-setup\tools\Keyhac
 $path = "$env:AppData\Keyhac\extension\fakeymacs"
-if (-not (Test-Path $path)){
+if (-not (Test-Path $path)) {
   git clone https://github.com/smzht/fakeymacs.git $path
   # For reproducibility. Use the latest revision at 2023/0223.
   git -C $path checkout 2e99c18

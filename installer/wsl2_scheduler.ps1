@@ -1,6 +1,10 @@
-# Make TaskScheduler for WSL2 portforwarding
-# cf. https://zenn.dev/fate_shelled/scraps/f6252654277ca0
-# cf. https://syanaise-soudan.com/scheduledtask-powershell/
+<#
+  .SYNOPSIS
+    Make TaskScheduler for WSL2 portforwarding
+  .DESCRIPTION
+    from https://zenn.dev/fate_shelled/scraps/f6252654277ca0
+    from  https://syanaise-soudan.com/scheduledtask-powershell/
+#>
 
 $Trigger = New-ScheduledTaskTrigger -AtLogOn
 $Action = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" `
