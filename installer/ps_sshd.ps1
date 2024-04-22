@@ -8,10 +8,15 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
 # Start the sshd service
 Start-Service sshd
-# OPTIONAL but recommended:
+# OPTIONAL but recommended
 Set-Service -Name sshd -StartupType 'Automatic'
 
+# set firewall rule
 netsh advfirewall firewall add rule name="sshd" dir=in action=allow protocol=TCP localport=22
+
+# set default shell
+# from https://takuya-1st.hatenablog.jp/entry/2022/03/04/171043
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\system32\bash.exe" -PropertyType String -Force
 
 # # Confirm the Firewall rule is configured. It should be created automatically by setup. Run the following to verify
 # if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
