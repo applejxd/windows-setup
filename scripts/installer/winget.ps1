@@ -35,7 +35,6 @@ winst 7zip.7zip
 
 # terminal
 winst oh-my-posh
-winst Canonical.Ubuntu.2004
 winst SourceFoundry.HackFonts
 
 # utilities
