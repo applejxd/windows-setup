@@ -14,32 +14,20 @@ Function Invoke-RemoteScript($url) {
 }
 
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/winget.ps1')
-# Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/scoop.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/scoop.ps1')
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/develop.ps1')
+
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/vscode.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/font.ps1')
+
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/keyhac.ps1')
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/keypirinha.ps1')
-Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/font.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/quicklook.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/everything.ps1')
 
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/regkey/7zip.ps1')
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/regkey/folder.ps1')
 
-#---------#
-# Startup #
-#---------#
-
-$wsh = New-Object -ComObject WScript.Shell
-
-$path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
-if (-not (Test-Path $path)) {
-  $shortcut = $wsh.CreateShortcut($path)
-  
-  $shortcut.WorkingDirectory = $env:LOCALAPPDATA + "\Programs\QuickLook\QuickLook.exe"
-  $shortcut.TargetPath = $env:LOCALAPPDATA + "\Programs\QuickLook\QuickLook.exe"
-  $shortcut.IconLocation = $env:LOCALAPPDATA + "\Programs\QuickLook\QuickLook.exe"
-  
-  $shortcut.Save()
-}
 
 #--------------#
 # Link Configs #
@@ -70,10 +58,3 @@ if (Test-Path $path) {
 }
 cmd /c mklink $path $env:UserProfile\src\windows-setup\config\settings.json
 
-#------------------#    
-# Software configs #
-#------------------#
-
-# Everything
-cmd /c rmdir /s /q $env:AppData\Everything
-cmd /c mklink /D $env:AppData\Everything $env:UserProfile\src\windows-setup\tools\Everything

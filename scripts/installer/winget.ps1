@@ -39,7 +39,5 @@ winst SourceFoundry.HackFonts
 
 # utilities
 winst Microsoft.PowerToys
-winst QL-Win.QuickLook
-winst voidtools.Everything
 winst Ditto.Ditto
 winst WinSCP.WinSCP
