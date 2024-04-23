@@ -15,7 +15,8 @@ Initialize Windows 10 by Chocolatey and Boxstarter
 
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process -Force
-   iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/user.ps1'))
+   iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/scoop.ps1'))
+   # iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/applejxd/windows-setup/main/personal.ps1'))
    ```
 
 3. Enable profile.ps1
