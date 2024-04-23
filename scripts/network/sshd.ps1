@@ -6,7 +6,6 @@
     from https://takuya-1st.hatenablog.jp/entry/2022/03/04/171043
 #>
 
-
 #---------#
 # Install #
 #---------#

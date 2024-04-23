@@ -11,11 +11,26 @@ winst 9PKTQ5699M62
 # Spotify from Microsoft Store
 winst 9NCBCSZSJRSB
 
-winst Piriform.Recuva
 winst Apple.iTunes
 winst Valve.Steam
 winst Amazon.Kindle
 winst Discord.Discord
+winst Piriform.Recuva
 winst Wacom.WacomTabletDriver
+
+# To avoid Internet Explorer initialization
+Function Invoke-UpdatedWebRequest {
+    $version = $PSVersionTable.PSVersion.Major
+    if ($version -le 5) {
+        $cmd = "Invoke-WebRequest $args -UseBasicParsing" 
+    }
+    else {
+        $cmd = "Invoke-WebRequest $args" 
+    }
+    Invoke-Expression $cmd
+}
+
+# for Steam
+Invoke-UpdatedWebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
 
 cinst mo2 vortex

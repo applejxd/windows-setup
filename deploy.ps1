@@ -5,75 +5,30 @@
 
 # Memo: Japanese comments cause new line error
 
-#------------#
-# Boxstarter #
-#------------#
+#---------#
+# Install #
+#---------#
 
-# cf. https://boxstarter.org/Learn/WebLauncher
-
-if (-not (Get-Command Install-BoxstarterPackage -ea SilentlyContinue)) {
-  # Install boxstarter (and chocolatey simultaneously)
-  . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | Invoke-Expression; Get-Boxstarter -Force
-}
-# Run script
-Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/box.ps1" -DisableReboots
-
-#--------#
-# Keyhac #
-#--------#
-
-# Fakeymacs needs Keyhac>=1.82
-if (-not (Test-Path "C:\Progra~1\keyhac")) {
-  $url = "http://crftwr.github.io/keyhac/download/keyhac_182.zip"
-  Invoke-WebRequest "$url" -OutFile "$Home\keyhac.zip"
-  Expand-Archive -Path "$Home\keyhac.zip" -DestinationPath "C:\Progra~1"
-  Remove-Item "$Home\keyhac.zip"
+Function Invoke-RemoteScript($url) {
+  Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($url))
 }
 
-#------#
-# Font #
-#------#
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/winget.ps1')
+# Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/installer/scoop.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/develop.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/vscode.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/keyhac.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/keypirinha.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/font.ps1')
 
-# cf. https://stackoverflow.com/questions/16023238/installing-system-font-with-powershell
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/regkey/7zip.ps1')
+Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/regkey/folder.ps1')
 
-if (-not ([System.String]::Join(" ", [System.Drawing.FontFamily]::Families)).Contains("Ricty Diminished for Powerline")) {
-  $url = "https://github.com/mzyy94/RictyDiminished-for-Powerline/raw/master/powerline-fontpatched/Ricty%20Diminished%20Regular%20for%20Powerline.ttf"
-  Invoke-WebRequest $url -OutFile $Home\RictyDiminished-for-Powerline.ttf
-  
-  # The CLSID of the special folder
-  # cf. https://tarma.com/support/im9/using/symbols/functions/csidls.htm
-  (New-Object -ComObject Shell.Application).Namespace(0x14).CopyHere("$Home\RictyDiminished-for-Powerline.ttf", 0x10)
-  Remove-Item $Home\RictyDiminished-for-Powerline.ttf
-}
-
-if (-not ([System.String]::Join(" ", [System.Drawing.FontFamily]::Families)).Contains("Cica")) {
-  $url = "https://github.com/miiton/Cica/releases/download/v5.0.3/Cica_v5.0.3.zip"
-  Invoke-WebRequest $url -OutFile $Home\Cica.zip
-  Expand-Archive -Path $Home\Cica.zip -DestinationPath $Home\Cica
-  
-  # The CLSID of the special folder
-  # cf. https://tarma.com/support/im9/using/symbols/functions/csidls.htm
-  (New-Object -ComObject Shell.Application).Namespace(0x14).CopyHere("$Home\Cica\Cica-Regular.ttf", 0x10)
-  Remove-Item $Home\Cica.zip
-  Remove-Item -Recurse $Home\Cica
-}
- 
 #---------#
 # Startup #
 #---------#
 
 $wsh = New-Object -ComObject WScript.Shell
-
-$path = $wsh.SpecialFolders("Startup") + "\keyhac.lnk"
-if (-not (Test-Path $path)) {
-  $shortcut = $wsh.CreateShortcut($path)
-  
-  $shortcut.WorkingDirectory = "C:\Progra~1\keyhac"
-  $shortcut.TargetPath = "C:\Progra~1\keyhac\keyhac.exe"
-  $shortcut.IconLocation = "C:\Progra~1\keyhac\keyhac.exe"
-
-  $shortcut.Save()
-}
 
 $path = $wsh.SpecialFolders("Startup") + "\QuickLook.lnk"
 if (-not (Test-Path $path)) {
@@ -85,18 +40,6 @@ if (-not (Test-Path $path)) {
   
   $shortcut.Save()
 }
-
-# For WSL2 without WSLg
-# $path = $wsh.SpecialFolders("Startup") + "\XLaunch.lnk"
-# if (-not (Test-Path $path)){
-#   $shortcut = $wsh.CreateShortcut($path)
-  
-#   $shortcut.WorkingDirectory = "$env:UserProfile\src\windows-setup\config"
-#   $shortcut.TargetPath = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
-#   $shortcut.IconLocation = "$env:UserProfile\src\windows-setup\config\config.xlaunch"
-  
-#   $shortcut.Save()
-# }
 
 #--------------#
 # Link Configs #
@@ -130,20 +73,6 @@ cmd /c mklink $path $env:UserProfile\src\windows-setup\config\settings.json
 #------------------#    
 # Software configs #
 #------------------#
-
-# Keyhac
-cmd /c rmdir /s /q $env:AppData\Keyhac
-cmd /c mklink /D $env:AppData\Keyhac $env:UserProfile\src\windows-setup\tools\Keyhac
-$path = "$env:AppData\Keyhac\extension\fakeymacs"
-if (-not (Test-Path $path)) {
-  git clone https://github.com/smzht/fakeymacs.git $path
-  # For reproducibility. Use the latest revision at 2023/0223.
-  git -C $path checkout 2e99c18
-}
-
-# Keypirinha
-cmd /c rmdir /s /q $env:AppData\Keypirinha
-cmd /c mklink /D $env:AppData\Keypirinha $env:UserProfile\src\windows-setup\tools\Keypirinha
 
 # Everything
 cmd /c rmdir /s /q $env:AppData\Everything
