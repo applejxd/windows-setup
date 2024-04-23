@@ -28,7 +28,6 @@ Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/ma
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/regkey/7zip.ps1')
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/regkey/folder.ps1')
 
-
 #--------------#
 # Link Configs #
 #--------------#
