@@ -22,11 +22,11 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "keys": "ctrl+c"
+            "keys": "ctrl+shift+c"
         },
         {
             "command": "paste",
-            "keys": "ctrl+v"
+            "keys": "ctrl+shift+v"
         }
     ],
     "copyFormatting": "none",
@@ -105,18 +105,6 @@
                 "hidden": true,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{8ec17422-5f94-5cae-b68c-4405b3269804}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022 (2)",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{d8a8c637-2ee8-5ca9-8aa6-760f3eec5ad9}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022 (2)",
-                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
