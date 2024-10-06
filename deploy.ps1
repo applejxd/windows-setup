@@ -48,7 +48,10 @@ if (-not ((Get-ItemProperty $Profile.CurrentUserAllHosts).Mode.Substring(5, 1) -
   # Remove temporary file
   Remove-Item $Profile.CurrentUserAllHosts
 }
-cmd /c mklink $Profile.CurrentUserAllHosts $env:UserProfile\src\windows-setup\config\profile.ps1
+# PowerShell 5.1
+cmd /c mklink $env:UserProfile\Documents\WindowsPowerShell\profile.ps1 $env:UserProfile\src\windows-setup\config\profile.ps1
+# PowerShell 7
+cmd /c mklink $env:UserProfile\Documents\PowerShell\profile.ps1 $env:UserProfile\src\windows-setup\config\profile.ps1
 
 # Windows Terminal Config
 $path = "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
