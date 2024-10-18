@@ -60,3 +60,5 @@ if (Test-Path $path) {
 }
 cmd /c mklink $path $env:UserProfile\src\windows-setup\config\settings.json
 
+# WSL2 config
+cmd /c mklink $env:UserProfile\.wslconfig $env:UserProfile\src\windows-setup\config\.wslconfig
