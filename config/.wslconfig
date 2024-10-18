@@ -1,2 +1,3 @@
 [wsl2]
+memory=32GB
 networkingMode=mirrored
