@@ -7,8 +7,10 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 # テーマ
 # OneDrive の MyDocuments 同期は非推奨（パスが変更されるため）
 # see https://ohmyposh.dev/docs/installation/customize
-# TODO: PowerShell 5.1 未対応
-oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/pure.omp.json | Invoke-Expression
+if ($PSVersionTable.PSEdition -eq "Core") {
+  # PowerShell Coreまたは7以降
+  oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/pure.omp.json | Invoke-Expression
+}
 
 # キーバインド
 Set-PSReadLineOption -EditMode Emacs
@@ -39,7 +41,10 @@ function relogin { powershell $Profile.CurrentUserAllHosts }
 $env:FZF_DEFAULT_OPTS = "--reverse --border"
 
 # C-t と C-r のラッパー
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+if ($PSVersionTable.PSEdition -eq "Core") {
+  # PowerShell Coreまたは7以降
+  Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r' 
+}
 
 # ghq-fzf
 # C-x C-g のキーバインドに関数割り当て
