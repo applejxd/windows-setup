@@ -1,4 +1,4 @@
-# cf. https://keypirinha.com/api/plugin.html
+# see https://keypirinha.com/api/plugin.html
 import datetime
 import os
 import subprocess
@@ -215,7 +215,12 @@ class SrcWindows(_BasePlugin):
 class GhqWsl(_BasePlugin):
     def __init__(self):
         super().__init__()
-        self.open_command = "wsl '/mnt/c/Progra~1/Microsoft VS Code/bin/code'"
+
+        settings = self.load_settings()
+        code_path = settings.get(
+            "code_path", "main", fallback="/mnt/c/Progra~1/Microsoft VS Code/bin/code"
+        )
+        self.open_command = f"wsl '{code_path}'"
 
     def on_start(self):
         """初期化"""
