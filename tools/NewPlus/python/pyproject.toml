@@ -1,0 +1,15 @@
+# see https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_package"                    # TODO: overwrite
+description = "My package description" # TODO: overwrite
+requires-python = ">=3.8"
+dependencies = ["fire"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = ["isort", "black", "flake8"]
+doc = ["sphinx", "sphinx_rtd_theme"]

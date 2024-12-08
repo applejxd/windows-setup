@@ -62,3 +62,10 @@ cmd /c mklink $path $env:UserProfile\src\windows-setup\config\settings.json
 
 # WSL2 config
 cmd /c mklink $env:UserProfile\.wslconfig $env:UserProfile\src\windows-setup\config\.wslconfig
+
+# PowerToys config
+$path = "$env:LocalAppData\Microsoft\PowerToys\NewPlus\テンプレート"
+if (Test-Path $path) { 
+  Remove-Item $path
+} 
+cmd /c mklink /D $path $env:UserProfile\src\windows-setup\tools\NewPlus
