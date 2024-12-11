@@ -35,6 +35,9 @@ mise use python@3.10
 # 3. Create and activate virtual environment
 python -m venv .venv
 source ./.venv/bin/activate
+
+# or do 2 & 3 by one line
+mise trust
 ```
 
 Install this library and run:

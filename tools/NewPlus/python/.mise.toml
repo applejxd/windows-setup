@@ -1,0 +1,17 @@
+# see https://mise.jdx.dev/configuration.html
+[tools]
+python = "latest"
+
+# see https://mise.jdx.dev/environments.html
+[env]
+# see https://mise.jdx.dev/lang/python.html#automatic-virtualenv-activation
+_.python.venv = { path = ".venv", create = true }
+
+# _.path = ["/usr/local/cuda-11.8/bin"]
+# # see https://keats.github.io/tera/docs/#default
+# LD_LIBRARY_PATH = "/usr/local/cuda-11.8/lib64:{{env.LD_LIBRARY_PATH | default(value='')}}"
+
+[settings]
+# for Tkinter (prebuild binaries doesn't contain GUI modules)
+# see https://www.python.jp/install/ubuntu/index.html
+python_compile = true
