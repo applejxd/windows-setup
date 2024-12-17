@@ -1,0 +1,1 @@
+powershell -Command "Start-Process ('https://www.deepl.com/translator#en/ja/' + [uri]::EscapeDataString((Get-Clipboard)))"
