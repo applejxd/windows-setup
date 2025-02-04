@@ -545,7 +545,7 @@ if 0:
 # [section-extension-capslock_key] -----------------------------------------------------------------
 
 # CapsLock キーを Ctrl キーとして使うための設定を行う
-if 1:
+if 0:
     exec(readConfigExtension(r"caplock_key\config.py"), dict(globals(), **locals()))
 
 # --------------------------------------------------------------------------------------------------

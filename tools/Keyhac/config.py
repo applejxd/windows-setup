@@ -31,15 +31,15 @@ def editor(path):
 
 
 def configure(keymap):
-    # 設定ファイルを開くエディタ
-    keymap.editor = editor
-
-    # リストウィンドウを白いテーマで
-    keymap.setTheme("white")
-
-    # # Emacs キーバインド
-    # fakeymacs.configure(keymap)
+    # Emacs キーバインド
+    fakeymacs.configure(keymap)
 
     # クリップボード拡張
     clipboard.configure(keymap)
+    
+    # 設定ファイルを開くエディタ
+    keymap.editor = editor
+    # リストウィンドウを白いテーマで
+    keymap.setTheme("white")
+
     
