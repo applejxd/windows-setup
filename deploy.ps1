@@ -38,8 +38,8 @@ if (-not (Test-Path $path)) {
 }
 
 # PowerShell Config
-# cf. https://qiita.com/smicle/items/0ca4e6ae14ea92000d18
-# cf. https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2
+# see https://qiita.com/smicle/items/0ca4e6ae14ea92000d18
+# see https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2
 if (-not (Test-Path $Profile.CurrentUserAllHosts)) {
   # Make directories
   New-Item $Profile.CurrentUserAllHosts -type file -Force

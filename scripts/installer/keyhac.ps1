@@ -28,6 +28,21 @@ if (-not (Test-Path $path)) {
   $shortcut.Save()
 }
 
+#------------#
+# Start Menu #
+#------------#
+
+$wsh = New-Object -ComObject WScript.Shell
+
+$programsFolderPath = $wsh.SpecialFolders.Item("Programs")
+$shortcutPath = [System.IO.Path]::Combine($programsFolderPath, "Keyhac.lnk")
+if (-not (Test-Path -Path $shortcutPath)) {
+    $shell = New-Object -ComObject WScript.Shell
+    $shortcut = $shell.CreateShortcut($shortcutPath)
+    $shortcut.TargetPath = "C:\Progra~1\keyhac\keyhac.exe"
+    $shortcut.Save()
+}
+
 #-------------#
 # Link Config #
 #-------------#
@@ -41,9 +56,3 @@ if (-not (Test-Path $path)) {
 # Symbolic link
 cmd /c rmdir /s /q $env:AppData\Keyhac
 cmd /c mklink /D $env:AppData\Keyhac $env:UserProfile\src\windows-setup\tools\Keyhac
-$path = "$env:AppData\Keyhac\extension\fakeymacs"
-if (-not (Test-Path $path)) {
-  git clone https://github.com/smzht/fakeymacs.git $path
-  # For reproducibility. Use the latest revision at 2023/0223.
-  git -C $path checkout 2e99c18
-}

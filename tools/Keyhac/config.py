@@ -1,18 +1,29 @@
-﻿import sys
-import os
+﻿"""
+Keyhac 設定ファイル
+See https://crftwr.github.io/keyhac/doc/ja/#id8
+"""
 import datetime
+import os
+import sys
+from pathlib import Path
 
 import pyauto
 from keyhac import *
 
-sys.path.append(r"{home}\AppData\Roaming\Keyhac".format(home=os.environ['USERPROFILE']))
+keyhac_path = Path(os.environ['USERPROFILE']) / "AppData" / "Roaming" / "Keyhac"
+sys.path.append(str(keyhac_path))
+
 from extension import clipboard
 from extension.fakeymacs import config as fakeymacs
 
 
+def editor(path):
+    shellExecute( None, None, "notepad.exe", '"%s"'% path, "" )
+
 def configure(keymap):
     # 設定ファイルを開くエディタ
-    # keymap.editor = r"C:\tools\Code.exe"
+    keymap.editor = editor
+    
     # リストウィンドウを白いテーマで
     keymap.setTheme("white")
 

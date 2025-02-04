@@ -1,0 +1,3 @@
+[submodule "tools/Keyhac/extension/fakeymacs"]
+	path = tools/Keyhac/extension/fakeymacs
+	url = https://github.com/smzht/fakeymacs.git
