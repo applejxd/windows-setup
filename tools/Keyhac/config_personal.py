@@ -337,6 +337,7 @@ fc.lancherList_listers = [
 # [section-extensions] -----------------------------------------------------------------------------
 # https://github.com/smzht/fakeymacs/blob/master/fakeymacs_manuals/extensions.org
 
+# パスの不整合を解消 (これ以前の dataPath は config_personal.py ロードのためにそのまま)
 setDataPath(rf"{dataPath()}\extension\fakeymacs")
 
 # --------------------------------------------------------------------------------------------------
