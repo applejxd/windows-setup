@@ -337,6 +337,8 @@ fc.lancherList_listers = [
 # [section-extensions] -----------------------------------------------------------------------------
 # https://github.com/smzht/fakeymacs/blob/master/fakeymacs_manuals/extensions.org
 
+setDataPath(rf"{dataPath()}\extension\fakeymacs")
+
 # --------------------------------------------------------------------------------------------------
 # ■ ウィンドウ操作関連
 # --------------------------------------------------------------------------------------------------
@@ -545,7 +547,7 @@ if 0:
 # [section-extension-capslock_key] -----------------------------------------------------------------
 
 # CapsLock キーを Ctrl キーとして使うための設定を行う
-if 0:
-    exec(readConfigExtension(r"caplock_key\config.py"), dict(globals(), **locals()))
+if 1:
+    exec(readConfigExtension(r"capslock_key\config.py"), dict(globals(), **locals()))
 
 # --------------------------------------------------------------------------------------------------
