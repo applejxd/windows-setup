@@ -1,16 +1,16 @@
 # エンコーディングを US-ASCII から変更
-# cf. https://dattesar.com/powershell-utf8/
+# see https://dattesar.com/powershell-utf8/
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
-# cf. https://secon.dev/entry/2020/08/17/070735/
+# see https://secon.dev/entry/2020/08/17/070735/
 
 # テーマ
 # OneDrive の MyDocuments 同期は非推奨（パスが変更されるため）
 # see https://ohmyposh.dev/docs/installation/customize
-if ($PSVersionTable.PSEdition -eq "Core") {
+# if ($PSVersionTable.PSEdition -eq "Core") {
   # PowerShell Coreまたは7以降
-  oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/pure.omp.json | Invoke-Expression
-}
+oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/pure.omp.json | Invoke-Expression
+# }
 
 # キーバインド
 Set-PSReadLineOption -EditMode Emacs
@@ -24,19 +24,20 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-#########
+#-------#
 # alias #
-#########
+#-------#
 
 Set-Alias open explorer.exe
 Set-Alias pbcopy clip.exe
 Set-Alias pbpaste Get-Clipboard
 function relogin { powershell $Profile.CurrentUserAllHosts }
 
-#######
+#-----#
 # fzf #
-#######
-#cf. https://github.com/junegunn/fzf/wiki/Windows
+#-----#
+
+# see https://github.com/junegunn/fzf/wiki/Windows
 
 $env:FZF_DEFAULT_OPTS = "--reverse --border"
 
@@ -84,9 +85,9 @@ function fssh {
   Clear-Host
 }
 
-############
+#----------#
 # Anaconda #
-############
+#----------#
 
 function condals { conda env list }
 
@@ -105,9 +106,9 @@ function condarm {
 }
 
 
-#######
+#-----#
 # WSL #
-#######
+#-----#
 
 function wslls { wsl -l -v }
 
@@ -116,7 +117,7 @@ function wslex {
   $distro = wsl -l -q | Where-Object { $_ -ne "" } | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
-    # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
+    # see https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = $distro -replace "`0", ""
     $date = Get-Date -UFormat "%y.%m.%d"
     # https://sevenb.jp/wordpress/ura/2016/06/01/powershell%E6%96%87%E5%AD%97%E5%88%97%E5%86%85%E3%81%AE%E5%A4%89%E6%95%B0%E5%B1%95%E9%96%8B%E3%81%A7%E5%A4%89%E6%95%B0%E5%90%8D%E3%82%92%E7%A2%BA%E5%AE%9A%E3%81%95%E3%81%9B%E3%82%8B/
@@ -140,7 +141,7 @@ function wslrm {
   $distro = wsl -l -q | Where-Object { $_ -ne "" } | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
-    # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
+    # see https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = $distro -replace "`0", ""
     wsl --unregister $distro
   }
@@ -152,7 +153,7 @@ function wslin {
   $distro = wsl -l --online | Where-Object { $_ -ne "" } | Select-Object -Skip 3 | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除 & スペース区切りで最初の文字列取得
-    # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
+    # see https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = ($distro -replace "`0", "").Split(" ")[0]
     wsl --install -d $distro
   }
@@ -164,7 +165,7 @@ function wslrun {
   $distro = wsl -l -q | Where-Object { $_ -ne "" } | fzf
   if (!([string]::IsNullOrEmpty($distro))) {
     # null 文字を削除
-    # cf. https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
+    # see https://stackoverflow.com/questions/9863455/how-to-remove-null-char-0x00-from-object-within-powershell
     $distro = $distro -replace "`0", ""
     wsl ~ -d $distro $args -e /usr/bin/bash
   }
