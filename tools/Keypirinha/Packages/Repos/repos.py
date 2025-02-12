@@ -216,11 +216,7 @@ class GhqWsl(_BasePlugin):
     def __init__(self):
         super().__init__()
 
-        settings = self.load_settings()
-        code_path = settings.get(
-            "code_path", "main", fallback="/mnt/c/Progra~1/Microsoft VS Code/bin/code"
-        )
-        self.open_command = f"wsl '{code_path}'"
+        self.open_command = "wsl 'code'"
 
     def on_start(self):
         """初期化"""
