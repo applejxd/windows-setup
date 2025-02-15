@@ -72,6 +72,7 @@ cmd /c mklink $path $env:UserProfile\src\windows-setup\config\settings.json
 cmd /c mklink $env:UserProfile\.wslconfig $env:UserProfile\src\windows-setup\config\.wslconfig
 
 # PowerToys config
+chcp 65001
 $path = "$env:LocalAppData\Microsoft\PowerToys\NewPlus\テンプレート"
 if (Test-Path $path) { 
   Remove-Item $path
