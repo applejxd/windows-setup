@@ -14,7 +14,6 @@ Function Invoke-RemoteScript($url) {
 }
 
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/winget.ps1')
-Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/scoop.ps1')
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/develop.ps1')
 
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/vscode.ps1')
