@@ -41,7 +41,7 @@ powercfg /setacvalueindex SCHEME_CURRENT SUB_BUTTONS LIDACTION 1
 
 $path = "$env:UserProfile\src\windows-setup"
 if (-not (Test-Path $path)) {
-  git clone https://github.com/applejxd/windows-setup.git $path
+  git clone --recursive https://github.com/applejxd/windows-setup.git $path
 }
 
 # PowerShell Config
