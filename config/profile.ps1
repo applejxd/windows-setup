@@ -7,9 +7,11 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 # テーマ
 # OneDrive の MyDocuments 同期は非推奨（パスが変更されるため）
 # see https://ohmyposh.dev/docs/installation/customize
+# see https://github.com/JanDeDobbeleer/oh-my-posh/discussions/2089#discussioncomment-2569096
+
 # if ($PSVersionTable.PSEdition -eq "Core") {
   # PowerShell Coreまたは7以降
-oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/pure.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\pure.omp.json" | Invoke-Expression
 # }
 
 # キーバインド
@@ -78,7 +80,7 @@ if (Get-Command z -ea SilentlyContinue) {
 }
 
 function fssh {
-  $destination = Get-Content "$HOME/.ssh/config" | Select-String "^Host ([^*]+)$" | ForEach-Object { $_ -replace "Host ", "" } | fzf
+  $destination = Get-Content "$HOME\.ssh\config" | Select-String "^Host ([^*]+)$" | ForEach-Object { $_ -replace "Host ", "" } | fzf
   if (!([string]::IsNullOrEmpty($destination))) { 
     ssh "$destination"
   }
