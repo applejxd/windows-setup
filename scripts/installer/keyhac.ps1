@@ -5,6 +5,9 @@
 
 # Fakeymacs needs Keyhac>=1.82
 if (-not (Test-Path "C:\Progra~1\keyhac")) {
+  # Dependent DLL
+  winget install Microsoft.VCRedist.2015+.x86
+  
   $url = "https://crftwr.github.io/keyhac/download/keyhac_182.zip"
   Invoke-WebRequest "$url" -OutFile "$Home\keyhac.zip"
   Expand-Archive -Path "$Home\keyhac.zip" -DestinationPath "C:\Progra~1"

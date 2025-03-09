@@ -8,10 +8,10 @@ Function winst {
 
 # iCloud
 winst 9PKTQ5699M62
-# Spotify from Microsoft Store
-winst 9NCBCSZSJRSB
 
 winst Apple.iTunes
+winst Spotify.Spotify
+
 winst Valve.Steam
 winst Amazon.Kindle
 winst Discord.Discord
