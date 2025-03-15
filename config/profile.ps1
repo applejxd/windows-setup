@@ -7,6 +7,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 # テーマ
 # OneDrive の MyDocuments 同期は非推奨（パスが変更されるため）
 # see https://ohmyposh.dev/docs/installation/customize
+$env:Path += ";$env:LocalAppData\Programs\oh-my-posh\bin"
 # if ($PSVersionTable.PSEdition -eq "Core") {
   # PowerShell Coreまたは7以降
 oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/pure.omp.json | Invoke-Expression
