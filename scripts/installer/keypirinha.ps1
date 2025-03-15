@@ -10,13 +10,13 @@
 # ---------- #
 
 # Install chocolatey
-if (-not (Get-Command cinst -ea SilentlyContinue)) {
+if (-not (Get-Command choco -ea SilentlyContinue)) {
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
     Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 }
 
-cinst chocolateygui
-cinst Keypirinha
+choco install chocolateygui
+choco install Keypirinha
 
 # ---------- #
 # Extensions #

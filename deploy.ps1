@@ -14,7 +14,6 @@ Function Invoke-RemoteScript($url) {
 }
 
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/winget.ps1')
-Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/scoop.ps1')
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/develop.ps1')
 
 Invoke-RemoteScript('https://raw.githubusercontent.com/applejxd/windows-setup/main/scripts/installer/vscode.ps1')
@@ -42,7 +41,7 @@ powercfg /setacvalueindex SCHEME_CURRENT SUB_BUTTONS LIDACTION 1
 
 $path = "$env:UserProfile\src\windows-setup"
 if (-not (Test-Path $path)) {
-  git clone https://github.com/applejxd/windows-setup.git $path
+  git clone --recursive https://github.com/applejxd/windows-setup.git $path
 }
 
 # PowerShell Config
@@ -72,7 +71,7 @@ cmd /c mklink $path $env:UserProfile\src\windows-setup\config\settings.json
 cmd /c mklink $env:UserProfile\.wslconfig $env:UserProfile\src\windows-setup\config\.wslconfig
 
 # PowerToys config
-$path = "$env:LocalAppData\Microsoft\PowerToys\NewPlus\テンプレート"
+$path = "$env:LocalAppData\Microsoft\PowerToys\NewPlus\Template"
 if (Test-Path $path) { 
   Remove-Item $path
 } 
