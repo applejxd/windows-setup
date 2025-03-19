@@ -11,5 +11,14 @@ dependencies = ["fire"]
 dynamic = ["version"]
 
 [project.optional-dependencies]
-dev = ["isort", "black", "flake8"]
-doc = ["sphinx", "sphinx_rtd_theme"]
+dev = [
+    "isort", 
+    "black", 
+    "flake8", 
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+    "sphinx", 
+    "sphinx_rtd_theme",
+    "sphinx_mdinclude"
+]

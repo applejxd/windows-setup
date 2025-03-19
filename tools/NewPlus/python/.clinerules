@@ -1,0 +1,40 @@
+# .clinerules for Python Libraries
+
+## 1. Comments and Docstrings
+- Each module, class, and function must have a **sphinx-notypes style** docstring  
+  *Docstrings must follow the noun phrase style (ending without a verb)*
+- Code comments must also follow the noun phrase style  
+
+## 2. Documentation Requirements
+- `README.md` must include an overview of the library, installation instructions, and usage examples  
+- API references must be automatically generated using tools like Sphinx  
+- All changes must be recorded in `CHANGELOG.md`, documenting version updates  
+
+## 3. Architecture Decision Records (ADR)
+- Significant decisions, such as introducing dependencies, major API changes, or adopting design patterns, must be documented in `/docs/adr`  
+- Each ADR must follow the `/docs/adr/template.md` format, describing the background, reasoning, and alternatives  
+
+## 4. Code Style and Patterns
+- Code must follow **PEP8**, with **flake8** used as the static analysis tool  
+- Type hints must be used to improve readability and maintainability  
+- Modules and packages should be structured for reusability and scalability  
+- Common utilities and shared logic must be organized into dedicated modules, following the DRY principle  
+
+## 5. Testing Guidelines
+- Unit tests must be implemented for all features using **pytest**  
+- External dependencies must be mocked using **pytest-mock** to ensure test isolation  
+- Test coverage must be measured using **pytest-cov**  
+  *Improve test coverage by adding or refining tests as needed*  
+- CI/CD pipelines must execute automated tests to ensure quality during pull requests  
+
+## 6. Release and Versioning
+- Follow **Semantic Versioning (SemVer)** to manage major, minor, and patch versions  
+- Update `CHANGELOG.md` with version changes to inform users about updates  
+
+## 7. Deployment and Packaging
+- Use **pyproject.toml** to define package dependencies and entry points  
+- Before distribution, automate the build and testing process  
+
+## 8. Environment Setup
+- Use **venv** for environment management  
+- The virtual environment must be created as `.venv` in the project root directory  
