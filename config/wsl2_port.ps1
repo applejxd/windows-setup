@@ -1,5 +1,5 @@
 # Open ports for WSL2
-# cf. https://zenn.dev/fate_shelled/scraps/f6252654277ca0
+# see https://zenn.dev/fate_shelled/scraps/f6252654277ca0
 
 # WSL2 の IP
 $WSL2_IPV4=wsl -e ip address show eth0 | awk '/inet / {print $2}' | awk -F / '{print $1}'

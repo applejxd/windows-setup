@@ -5,6 +5,7 @@
 
 # for the context menus
 winget install Microsoft.VisualStudioCode --silent --accept-package-agreements --accept-source-agreements --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders"""
+refreshenv
 
 # Enable path to vscode command
 # from https://stackoverflow.com/questions/17794507/reload-the-path-in-powershell

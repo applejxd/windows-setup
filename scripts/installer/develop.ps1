@@ -14,6 +14,7 @@ Function winst {
 #-----#
 
 winst Git.Git
+refreshenv
 
 git config --global init.defaultBranch main
 git config --global core.editor vim

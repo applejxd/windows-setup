@@ -12,7 +12,7 @@ if (!(Get-Command scoop -ea SilentlyContinue)) {
 }
 
 # Linux commands (gow = Gnu on Windows)
-# cf. https://github.com/bmatzelle/gow/wiki/executables_list
+# see https://github.com/bmatzelle/gow/wiki/executables_list
 scoop install sudo gow
 
 # build tools
