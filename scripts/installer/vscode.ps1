@@ -10,36 +10,50 @@ refreshenv
 # Enable path to vscode command
 # from https://stackoverflow.com/questions/17794507/reload-the-path-in-powershell
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User") 
+# Define extension categories
+$extensions = @{
+  "Theme"      = @(
+      "ms-ceintl.vscode-language-pack-ja",
+      "Anan.jetbrains-darcula-theme",
+      "chadalen.vscode-jetbrains-icon-theme",
+      "usernamehw.errorlens"
+  )
+  "Git"        = @(
+      "eamodio.gitlens",
+      "mhutchie.git-graph"
+  )
+  "Remote"     = @(
+      "ms-vscode-remote.remote-wsl",
+      "ms-vscode-remote.remote-containers"
+  )
+  "AI agent"   = @(
+      "genieai.chatgpt-vscode",
+      "saoudrizwan.claude-dev"
+  )
+  "Markdown"   = @(
+      "yzhang.markdown-all-in-one",
+      "DavidAnson.vscode-markdownlint"
+  )
+  "C/C++"      = @(
+      "ms-vscode.cpptools",
+      "ms-vscode.cpptools-extension-pack",
+      "ms-vscode.cpptools-themes",
+      "xaver.clang-format",
+      "jeff-hykin.better-cpp-syntax",
+      "notskm.clang-tidy",
+      "twxs.cmake",
+      "ms-vscode.cmake-tools"
+  )
+  "Python"     = @(
+      "ms-python.python",
+      "ms-python.isort",
+      "ms-python.black-formatter"
+  )
+}
 
-# Theme
-code --install-extension ms-ceintl.vscode-language-pack-ja
-code --install-extension Anan.jetbrains-darcula-theme
-code --install-extension chadalen.vscode-jetbrains-icon-theme
-code --install-extension usernamehw.errorlens
-
-# Git
-code --install-extension eamodio.gitlens
-code --install-extension mhutchie.git-graph
-
-# Markdown
-code --install-extension yzhang.markdown-all-in-one
-code --install-extension DavidAnson.vscode-markdownlint
-
-# Remote
-code --install-extension ms-vscode-remote.remote-wsl
-code --install-extension ms-vscode-remote.remote-containers
-
-# C/C++
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-vscode.cpptools-extension-pack
-code --install-extension ms-vscode.cpptools-themes
-code --install-extension xaver.clang-format
-code --install-extension jeff-hykin.better-cpp-syntax
-code --install-extension notskm.clang-tidy
-code --install-extension twxs.cmake
-code --install-extension ms-vscode.cmake-tools
-
-# Python
-code --install-extension ms-python.python
-code --install-extension ms-python.isort
-code --install-extension ms-python.black-formatter
+# Install all extensions
+foreach ($category in $extensions.Keys) {
+  foreach ($extension in $extensions[$category]) {
+      code --install-extension $extension
+  }
+}
