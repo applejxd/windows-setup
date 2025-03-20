@@ -18,4 +18,4 @@ scoop install sudo gow
 # build tools
 scoop install mingw-winlibs
 # other tools
-scoop install ghq fzf pdftk
+scoop install ghq pdftk

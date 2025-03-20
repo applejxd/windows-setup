@@ -24,7 +24,7 @@ Install-Module -Name posh-git -Scope CurrentUser -Force
 # ------ #
 
 Function winst {
-  $cmd = "winget install --silent --accept-package-agreements --accept-source-agreements $args"
+  $cmd = "winget install --source winget --silent --accept-package-agreements --accept-source-agreements $args"
   Invoke-Expression $cmd
 }
 
@@ -32,12 +32,15 @@ Function winst {
 winst Google.Chrome
 winst Google.JapaneseIME
 winst 7zip.7zip
+winst junegunn.fzf
 
 # terminal
-winst oh-my-posh
+winst JanDeDobbeleer.OhMyPosh
 winst SourceFoundry.HackFonts
 
 # utilities
 winst Microsoft.PowerToys
 winst Ditto.Ditto
 winst WinSCP.WinSCP
+
+refreshenv
