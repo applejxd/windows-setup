@@ -27,13 +27,8 @@ Set-Service -Name sshd -StartupType 'Automatic'
 
 # ファイアウォールにルールを追加してSSHポートを開放
 
-# for Windows
-New-NetFirewallRule -Name "OpenSSH Server (sshd)" -DisplayName "OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
-# for WSL
-New-NetFirewallRule -Name "WSL OpenSSH Server (sshd)" -DisplayName "WSL OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 50022
-
 # set firewall rule
-# netsh advfirewall firewall add rule name="sshd" dir=in action=allow protocol=TCP localport=22
+netsh advfirewall firewall add rule name="sshd" dir=in action=allow protocol=TCP localport=22
 
 # # Confirm the Firewall rule is configured. It should be created automatically by setup. Run the following to verify
 # if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
