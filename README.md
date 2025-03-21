@@ -4,7 +4,7 @@ Initialize Windows 10 by Chocolatey and Boxstarter
 
 ## How To Use
 
-1. Run a script as administrator
+1. Run a script as administrator via Powershell (not Windows Terminal)
 
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process -Force
