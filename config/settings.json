@@ -78,11 +78,12 @@
                 "name": "cmd"
             },
             {
-                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu /usr/bin/zsh",
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe ~ -d Ubuntu /usr/bin/zsh",
+                "guid": "{1e85b72e-838d-5527-9413-9842233a041b}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "startingDirectory" : "%USERPROFILE%",
+                "source": "Microsoft.WSL"
             },
             {
                 "guid": "{db1d8c35-5f1f-5c6e-bf9b-ade86c5c16c4}",
