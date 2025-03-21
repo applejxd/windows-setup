@@ -34,3 +34,7 @@ Function Invoke-UpdatedWebRequest {
 Invoke-UpdatedWebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
 
 cinst mo2 vortex
+
+# WSL
+wsl --install
+wsl --import-in-place Ubuntu "D:\wsl\Ubuntu\ext4.vhdx"
