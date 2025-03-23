@@ -6,16 +6,14 @@ Function winst {
     Invoke-Expression $cmd
 }
 
-# iCloud
-winst 9PKTQ5699M62
-
+winst Bitwarden.Bitwarden
+winst Apple.iCloud
 winst Apple.iTunes
-winst Spotify.Spotify
 
+winst Spotify.Spotify
 winst Valve.Steam
 winst Amazon.Kindle
 winst Discord.Discord
-winst Piriform.Recuva
 winst Wacom.WacomTabletDriver
 
 # To avoid Internet Explorer initialization
@@ -33,8 +31,9 @@ Function Invoke-UpdatedWebRequest {
 # for Steam
 Invoke-UpdatedWebRequest "https://github.com/EhsanKia/keypirinha-plugins/raw/master/keypirinha-steam/build/Steam.keypirinha-package" -OutFile "$install_dir/Steam.keypirinha-package"
 
-cinst mo2 vortex
+# cinst mo2 vortex
+# winst Piriform.Recuva
 
-# WSL
-wsl --install
-wsl --import-in-place Ubuntu "D:\wsl\Ubuntu\ext4.vhdx"
+# # WSL
+# wsl --install
+# wsl --import-in-place Ubuntu "D:\wsl\Ubuntu\ext4.vhdx"
