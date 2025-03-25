@@ -1,40 +1,61 @@
-# .clinerules for Python Libraries
+# .clinerules for Python Library
 
-## 1. Comments and Docstrings
-- Each module, class, and function must have a **sphinx-notypes style** docstring  
-  *Docstrings must follow the noun phrase style (ending without a verb)*
-- Code comments must also follow the noun phrase style  
+## Documentation Requirements
 
-## 2. Documentation Requirements
-- `README.md` must include an overview of the library, installation instructions, and usage examples  
-- API references must be automatically generated using tools like Sphinx  
-- All changes must be recorded in `CHANGELOG.md`, documenting version updates  
+- The `README.md` should include an overview of the library, installation steps, and usage examples  
+- API references should be auto-generated using tools like Sphinx  
+- All changes should be recorded in `CHANGELOG.md` and documented for version updates  
 
-## 3. Architecture Decision Records (ADR)
-- Significant decisions, such as introducing dependencies, major API changes, or adopting design patterns, must be documented in `/docs/adr`  
-- Each ADR must follow the `/docs/adr/template.md` format, describing the background, reasoning, and alternatives  
+## Architecture Decision Record (ADR)
 
-## 4. Code Style and Patterns
-- Code must follow **PEP8**, with **flake8** used as the static analysis tool  
-- Type hints must be used to improve readability and maintainability  
-- Modules and packages should be structured for reusability and scalability  
-- Common utilities and shared logic must be organized into dedicated modules, following the DRY principle  
+- Important decisions such as adding dependencies, major API changes, and design pattern adoptions should be recorded in `/docs/adr`  
+- Each ADR should follow the `/docs/adr/template.md` format, documenting background, reasons, and alternatives  
 
-## 5. Testing Guidelines
-- Unit tests must be implemented for all features using **pytest**  
-- External dependencies must be mocked using **pytest-mock** to ensure test isolation  
-- Test coverage must be measured using **pytest-cov**  
-  *Improve test coverage by adding or refining tests as needed*  
-- CI/CD pipelines must execute automated tests to ensure quality during pull requests  
+## Code Style and Patterns
 
-## 6. Release and Versioning
+- The code must adhere to **PEP8**, using **flake8** for static analysis  
+- Type hints should be used to enhance readability and maintainability  
+- Modules and packages should be structured with reusability and scalability in mind  
+- Common utilities and shared logic should be organized into dedicated modules, following the DRY principle  
+
+## Comments and Docstrings
+
+- Each module, class, and function must have a docstring in **sphinx-notypes style**  
+  *Docstrings should be written in a noun phrase (not ending with a verb)*  
+- Code comments should also follow the noun phrase style  
+- Example format:  
+
+  ```python
+  def add(a: int, b: int) -> int:
+      """
+      Add two numbers.
+
+      :param a: The first number.
+      :param b: The second number.
+      :return: The sum of the two numbers.
+      """
+      return a + b
+  ```
+
+## Test Guidelines
+
+- Unit tests for all features should be implemented using **pytest**  
+- External dependencies should be mocked using **pytest-mock** to ensure test independence  
+- Test coverage should be measured using **pytest-cov**  
+  *Tests should be added or improved to increase coverage*  
+- Automated tests should run in the CI/CD pipeline to ensure quality during pull requests  
+
+## Release and Versioning
+
 - Follow **Semantic Versioning (SemVer)** to manage major, minor, and patch versions  
-- Update `CHANGELOG.md` with version changes to inform users about updates  
+- Update `CHANGELOG.md` to inform users about version changes  
 
-## 7. Deployment and Packaging
+## Deployment and Packaging
+
 - Use **pyproject.toml** to define package dependencies and entry points  
-- Before distribution, automate the build and testing process  
+- Automate the build and test process before distribution  
 
-## 8. Environment Setup
+## Environment Setup
+
 - Use **venv** for environment management  
-- The virtual environment must be created as `.venv` in the project root directory  
+- Create the virtual environment as `.venv` in the project root directory  
