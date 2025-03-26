@@ -49,3 +49,26 @@ pip install -e .
 # Help message for this CLI
 python -m mylib --help
 ```
+
+## Build docs
+
+```shell
+# for Ubuntu
+sudo apt-get install -y graphviz 
+sudo apt-get install -y texlive-full    # manual installation preferred
+source ./.venv/bin/activate
+
+# for Windows
+winget install Graphviz.Graphviz
+sudo choco install texlive -y
+$env:Path+=";C:\Program Files\Graphviz\bin"
+.\.venv\Scripts\Activate.ps1
+
+pip install -e .[dev]
+cd docs
+
+# for Ubuntu
+./build.sh
+# for Windows
+.\build.ps1
+```
