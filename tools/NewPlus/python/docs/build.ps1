@@ -1,13 +1,26 @@
-# フォルダの有無で初期化実行
-if (-Not(Test-Path sphinx)) {
-    $ProjectName = Convert-Path $ScriptDir\.. | Split-Path -Leaf
-    sphinx-quickstart -q -p $ProjectName -a applejxd -v 0.1 -l ja sphinx
+# 仮想環境のアクティベート
+$venvPath = "..\.venv\Scripts\Activate.ps1"
+if (Test-Path $venvPath) {
+    & $venvPath
+} else {
+    Write-Error "Virtual environment not found."
+    exit 1
 }
 
-# ドキュメント生成
-sphinx-apidoc -e -f -o $ScriptDir\sphinx .
-sphinx-build -a $ScriptDir\sphinx $ScriptDir\docs
+# Sphinx の API ドキュメント生成
+sphinx-apidoc -e -f -M -o .\sphinx ..\src
 
-Set-Location $ScriptDir\sphinx
-make latexpdfja
-Set-Location $ScriptDir
+# 画像ディレクトリのコピー（既存のものを削除してからコピー）
+$imgHtmlPath = ".\build\html\img"
+$imgLatexPath = ".\build\latex\img"
+$srcImgPath = "..\img"
+
+if (Test-Path $imgHtmlPath) { Remove-Item -Recurse -Force $imgHtmlPath }
+Copy-Item -Recurse -Force $srcImgPath $imgHtmlPath
+
+if (Test-Path $imgLatexPath) { Remove-Item -Recurse -Force $imgLatexPath }
+Copy-Item -Recurse -Force ".\img" $imgLatexPath
+
+# ビルド処理
+make html
+make latexpdf

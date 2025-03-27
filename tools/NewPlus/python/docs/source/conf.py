@@ -66,4 +66,21 @@ latex_elements = {
     # ブランクページを削除
     # 参考：https://stackoverflow.com/questions/5422997/sphinx-docs-remove-blank-pages-from-generated-pdfs
     "extraclassoptions": "openany,oneside",
+#     # カスタムヘッダー・フッター
+#     "preamble": """
+# \makeatletter
+#   \fancypagestyle{normal}{
+#     \fancyhf{}
+#     \fancyfoot[LE,RO]{{\py@HeaderFamily\thepage}}
+#     \fancyfoot[LO]{{\py@HeaderFamily\nouppercase{\rightmark}}}
+#     \fancyfoot[RE]{{\py@HeaderFamily\nouppercase{\leftmark}}}
+#     \fancyhead[LE,RO]{{\py@HeaderFamily \@title, \py@release}}
+#     \renewcommand{\headrulewidth}{0.4pt}
+#     \renewcommand{\footrulewidth}{0.4pt}
+#     % define chaptermark with \@chappos when \@chappos is available for Japanese
+#     \spx@ifundefined{@chappos}{}
+#       {\def\chaptermark##1{\markboth{\@chapapp\space\thechapter\space\@chappos\space ##1}{}}}
+#   }
+# \makeatother
+# """,
 }
