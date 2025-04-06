@@ -33,6 +33,7 @@ winst Google.Chrome
 winst Google.JapaneseIME
 winst 7zip.7zip
 winst junegunn.fzf
+winst Obsidian.Obsidian
 
 # terminal
 winst JanDeDobbeleer.OhMyPosh

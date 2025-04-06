@@ -9,6 +9,7 @@ Function winst {
 winst Bitwarden.Bitwarden
 winst Apple.iCloud
 winst Apple.iTunes
+winst Dropbox.Dropbox
 
 winst Spotify.Spotify
 winst Valve.Steam
