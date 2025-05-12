@@ -13,10 +13,26 @@
 
 ## Code Style and Patterns
 
-- The code must adhere to **PEP8**, using **flake8** for static analysis  
-- Type hints should be used to enhance readability and maintainability  
-- Modules and packages should be structured with reusability and scalability in mind  
-- Common utilities and shared logic should be organized into dedicated modules, following the DRY principle  
+- Code must comply with **PEP8**, using **flake8** for static analysis.
+- Common utilities and shared logic should be organized into dedicated modules following the DRY principle.
+- Type hints should be used to improve readability and maintainability.
+- Modules and packages should be structured with reusability and scalability in mind.
+- Use `pathlib` for handling path strings.
+
+## Naming Conventions
+
+- Private member variables and methods should start with an underscore.
+- Class names should use CamelCase (PascalCase).
+- Function names should use snake_case.
+- Constants should use UPPER_SNAKE_CASE.
+- Module names should use lower_snake_case.
+- Package names should use lower_snake_case.
+- Test file names should be prefixed with `test_`  
+  _Example: `test_module.py`_
+- Test class names should be prefixed with `Test`  
+  _Example: `TestMyClass`_
+- Test method names should be prefixed with `test_`  
+  _Example: `test_addition`_
 
 ## Comments and Docstrings
 
