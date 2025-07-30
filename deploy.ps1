@@ -78,3 +78,10 @@ if (Test-Path $path) {
   Remove-Item $path
 } 
 cmd /c mklink /D $path $env:UserProfile\src\windows-setup\tools\NewPlus
+
+# Claude Desktop config
+$path = "$env:AppData\Claude\claude_desktop_config.json"
+if (Test-Path $path) {
+  Remove-Item $path
+}
+cmd /c mklink $path $env:UserProfile\src\windows-setup\config\claude_desktop_config.json

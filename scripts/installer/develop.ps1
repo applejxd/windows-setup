@@ -45,3 +45,5 @@ winst Python.Python.3.9
 winst Python.Python.3.10
 winst Python.Python.3.11
 winst Python.Python.3.12
+
+winst OpenJS.NodeJS
