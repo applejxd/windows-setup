@@ -4,7 +4,7 @@
 #>
 
 # for the context menus
-winget install Microsoft.VisualStudioCode --silent --accept-package-agreements --accept-source-agreements --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders"""
+sudo winget install Microsoft.VisualStudioCode --scope machine --silent --accept-package-agreements --accept-source-agreements --override "/silent /mergetasks=""addcontextmenufiles,addcontextmenufolders"""
 refreshenv
 
 # Enable path to vscode command

@@ -107,18 +107,6 @@
                 "source": "QMK"
             },
             {
-                "guid": "{0c1204a1-dd96-57d3-8ca8-6657f789a41e}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{7ec6c7e9-3644-5077-95b1-749d992a7484}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
@@ -145,13 +133,13 @@
             {
                 "guid": "{5fa94892-c9bd-5f04-90a9-a3650fc45994}",
                 "hidden": false,
-                "name": "Developer Command Prompt for VS 2022 (2)",
+                "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{1a7ce9f8-e38e-5c71-973a-1256277acfe7}",
                 "hidden": false,
-                "name": "Developer PowerShell for VS 2022 (2)",
+                "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             }
         ]
