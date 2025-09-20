@@ -10,6 +10,7 @@ winst Bitwarden.Bitwarden
 winst Apple.iCloud
 winst Apple.iTunes
 winst Dropbox.Dropbox
+winst yt-dlp
 
 winst Spotify.Spotify
 winst Valve.Steam
