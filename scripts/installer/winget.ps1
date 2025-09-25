@@ -29,6 +29,7 @@ Function winst {
 }
 
 # tools
+winst Microsoft.PowerShell
 winst Google.Chrome
 winst Google.JapaneseIME
 winst 7zip.7zip
