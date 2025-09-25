@@ -180,9 +180,9 @@ function wsluser ($distro, $user) {
     Set-ItemProperty -Name DefaultUid -Value ((wsl -d $distro -u $user -e id -u) | Out-String)
 }
 
-#######
-# WSL #
-#######
+#--------#
+# docker #
+#--------#
 
 function dls { docker ps -a }
 
